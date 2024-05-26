@@ -7,27 +7,37 @@ import { ServicesListingView } from "./views/ServicesListingView";
 import { ContactView } from "./views/ContactView";
 import { LoginView } from "./views/LoginView";
 
+
+
 function App() {
-  const newLocal = (
-    <div className="mt-28">
-      <Routes>
-        <Route path="*" element={<Navigate to="/" />} />
-        <Route path="/" element={<HomeView />} />
-        <Route path="/services" element={<ServicesView />} />
-        <Route path="/dashboard" element={<DashboardView />} />
-        <Route path="/services-listing" element={<ServicesListingView />} />
-        <Route path="/contact" element={<ContactView />} />
-        <Route path="/login" element={<LoginView />} />
-      </Routes>
-    </div>
-  );
+  // const newLocal = (
+  //   <div className="mt-28">
+  //     <Routes>
+  //       <Route path="*" element={<Navigate to="/" />} />
+  //       <Route path="/" element={<HomeView />} />
+  //       <Route path="/services" element={<ServicesView />} />
+  //       <Route path="/dashboard" element={<DashboardView />} />
+  //       <Route path="/services-listing" element={<ServicesListingView />} />
+  //       <Route path="/contact" element={<ContactView />} />
+  //       <Route path="/login" element={<LoginView />} />
+  //     </Routes>
+  //   </div>
+  // );
   return (
     <div className="flex flex-col items-center mt-4">
       <Navbar />
-
-      {newLocal}
+      <div className='mt-28 w-[98%]'>
+        <Routes>
+          <Route path="*" element={<Navigate to="/" />} />
+          <Route path="/" element={<HomeView />} />
+          <Route path="/services" element={<ServicesView />} />
+          <Route path="/dashboard" element={<DashboardView />} />
+          <Route path="/services-listing" element={<ServicesListingView />} />
+          <Route path="/contact" element={<ContactView />} />
+          <Route path="/login" element={<LoginView />} />
+        </Routes>
+      </div>
     </div>
   );
 }
-
 export default App;
