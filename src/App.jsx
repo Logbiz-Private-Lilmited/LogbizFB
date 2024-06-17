@@ -6,6 +6,7 @@ import { DashboardView } from "./views/DashboardView";
 import { ServicesListingView } from "./views/ServicesListingView";
 import { ContactView } from "./views/ContactView";
 import { LoginView } from "./views/LoginView";
+import WarehouseListing from "./components/Forms/WarehouseListing";
 
 function App() {
   const newLocal = (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/services-listing" element={<ServicesListingView />} />
         <Route path="/contact" element={<ContactView />} />
         <Route path="/login" element={<LoginView />} />
+        <Route path="/wform" element={<WarehouseListing />} />
       </Routes>
     </div>
   );
