@@ -138,7 +138,7 @@ const WarehouseListing = () => {
       </div>
       <form
         onSubmit={handleSubmit}
-        className="h-full w-full px-8 md:px-28 grid grid-flow-row md:grid-cols-2 lg:grid-cols-4 md:justify-around py-4 gap-4 md:gap-6 lg:gap-10 items-center text-justify"
+        className="h-full w-full px-8 md:px-28 grid grid-flow-row md:grid-cols-2 lg:grid-cols-4 md:justify-around py-4 gap-5 md:gap-6 lg:gap-10 items-center text-justify"
       >
         {Object.keys(formData).map((key, index) => (
           <label htmlFor={key} className={labelCSS} key={index}>
@@ -176,7 +176,7 @@ const WarehouseListing = () => {
         <div className="md:col-span-2 lg:col-span-4 flex justify-end ">
           <button
             type="submit"
-            className="border rounded-md px-8 py-1 text-sm bg-gray-400 "
+            className="border rounded-md px-8 py-1 text-sm bg-gray-200 "
           >
             Submit
           </button>
