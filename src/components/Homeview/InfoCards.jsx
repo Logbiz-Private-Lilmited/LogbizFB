@@ -9,14 +9,14 @@ const InfoComponent = ({heading, paragraphs, buttonText})=>{
                 <p key={index} className="leading-p text-xl text-paraColor">{paragraph}</p>
             ))}
         
-            <button className="ml-auto my-5 bg-btn-grey px-5 py-1 rounded-md font-bold">{buttonText}</button>
+            <button className="ml-auto my-5 bg-btn-grey px-5 py-1 rounded-md font-bold hover:bg-black hover:text-white">{buttonText}</button>
         </div>
     );
 };
 
 const InfoCards = ({ info })=>{
     return(
-        <div>
+        <div className="py-10">
         <div className="flex lg:flex-row md:flex-row md:justify-around flex-col ">
             {info.map((box, index) =>(
                 <>
