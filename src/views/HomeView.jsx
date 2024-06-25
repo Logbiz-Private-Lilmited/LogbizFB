@@ -1,11 +1,13 @@
 import React from "react";
 import Stats from "../components/HeroSection/Stats";
 import ServiceBtn from "../components/HeroSection/ServiceBtn";
+
 import Hero1 from "../assets/HeroSection/Hero1.jpeg";
-import infoDetails from '../components/Homeview/InfoDetails'
-import InfoCards from '../components/Homeview/InfoCards'
-import BoxesComponent from '../components/Homeview/ServiceBoxes'
-import BoxData from '../components/Homeview/BoxData'
+import infoDetails from "../components/Homeview/InfoDetails";
+import InfoCards from "../components/Homeview/InfoCards";
+import BoxesComponent from "../components/Homeview/ServiceBoxes";
+import BoxData from "../components/Homeview/BoxData";
+import BoxesCarousel from "../components/Homeview/ServiceBoxes";
 
 export const HomeView = () => {
   return (
@@ -26,13 +28,13 @@ export const HomeView = () => {
             <ServiceBtn
               img={Hero1}
               title="Provide your Logistic service"
-              scrollTo="section2"
+              scrollTo="section2" // Change this to another section ID if needed
             />
           </div>
         </div>
       </section>
-      <InfoCards info={infoDetails}  />
-      <BoxesComponent info={BoxData}/>
+      <InfoCards info={infoDetails} />
+      <BoxesCarousel info={BoxData} />
     </div>
-  )
-}
+  );
+};
