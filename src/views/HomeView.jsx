@@ -1,16 +1,11 @@
 import React from "react";
 import Stats from "../components/HeroSection/Stats";
 import ServiceBtn from "../components/HeroSection/ServiceBtn";
-
 import Hero1 from "../assets/HeroSection/Hero1.jpeg";
-<<<<<<< Updated upstream
-=======
-import infoDetails from "../components/Homeview/InfoDetails";
-import InfoCards from "../components/Homeview/InfoCards";
-import BoxesComponent from "../components/Homeview/ServiceBoxes";
-import BoxData from "../components/Homeview/BoxData";
-import BoxesCarousel from "../components/Homeview/ServiceBoxes";
->>>>>>> Stashed changes
+import infoDetails from '../components/Homeview/InfoDetails'
+import InfoCards from '../components/Homeview/InfoCards'
+import BoxesComponent from '../components/Homeview/ServiceBoxes'
+import BoxData from '../components/Homeview/BoxData'
 
 export const HomeView = () => {
   return (
@@ -31,112 +26,13 @@ export const HomeView = () => {
             <ServiceBtn
               img={Hero1}
               title="Provide your Logistic service"
-              scrollTo="section2" // Change this to another section ID if needed
+              scrollTo="section2"
             />
           </div>
         </div>
       </section>
-<<<<<<< Updated upstream
-
-      <section
-        className="flex flex-col gap-20 mt-8 h-full bg-teal-300"
-        id="section1"
-      >
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet modi
-          minus delectus officia, accusamus deserunt quo sit repellat voluptas
-          quae, voluptates aspernatur ducimus? Aspernatur ipsum odio provident
-          ea. Totam, adipisci?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet modi
-          minus delectus officia, accusamus deserunt quo sit repellat voluptas
-          quae, voluptates aspernatur ducimus? Aspernatur ipsum odio provident
-          ea. Totam, adipisci?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet modi
-          minus delectus officia, accusamus deserunt quo sit repellat voluptas
-          quae, voluptates aspernatur ducimus? Aspernatur ipsum odio provident
-          ea. Totam, adipisci?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet modi
-          minus delectus officia, accusamus deserunt quo sit repellat voluptas
-          quae, voluptates aspernatur ducimus? Aspernatur ipsum odio provident
-          ea. Totam, adipisci?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet modi
-          minus delectus officia, accusamus deserunt quo sit repellat voluptas
-          quae, voluptates aspernatur ducimus? Aspernatur ipsum odio provident
-          ea. Totam, adipisci?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet modi
-          minus delectus officia, accusamus deserunt quo sit repellat voluptas
-          quae, voluptates aspernatur ducimus? Aspernatur ipsum odio provident
-          ea. Totam, adipisci?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet modi
-          minus delectus officia, accusamus deserunt quo sit repellat voluptas
-          quae, voluptates aspernatur ducimus? Aspernatur ipsum odio provident
-          ea. Totam, adipisci?
-        </p>
-      </section>
-
-      <section
-        className="flex flex-col gap-20 mt-8 h-full bg-slate-500"
-        id="section2"
-      >
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet modi
-          minus delectus officia, accusamus deserunt quo sit repellat voluptas
-          quae, voluptates aspernatur ducimus? Aspernatur ipsum odio provident
-          ea. Totam, adipisci?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet modi
-          minus delectus officia, accusamus deserunt quo sit repellat voluptas
-          quae, voluptates aspernatur ducimus? Aspernatur ipsum odio provident
-          ea. Totam, adipisci?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet modi
-          minus delectus officia, accusamus deserunt quo sit repellat voluptas
-          quae, voluptates aspernatur ducimus? Aspernatur ipsum odio provident
-          ea. Totam, adipisci?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet modi
-          minus delectus officia, accusamus deserunt quo sit repellat voluptas
-          quae, voluptates aspernatur ducimus? Aspernatur ipsum odio provident
-          ea. Totam, adipisci?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet modi
-          minus delectus officia, accusamus deserunt quo sit repellat voluptas
-          quae, voluptates aspernatur ducimus? Aspernatur ipsum odio provident
-          ea. Totam, adipisci?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet modi
-          minus delectus officia, accusamus deserunt quo sit repellat voluptas
-          quae, voluptates aspernatur ducimus? Aspernatur ipsum odio provident
-          ea. Totam, adipisci?
-        </p>
-        <p id="section2">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet modi
-          minus delectus officia, accusamus deserunt quo sit repellat voluptas
-          quae, voluptates aspernatur ducimus? Aspernatur ipsum odio provident
-          ea. Totam, adipisci?
-        </p>
-      </section>
-=======
-      <InfoCards info={infoDetails} />
-      <BoxesCarousel info={BoxData} />
->>>>>>> Stashed changes
+      <InfoCards info={infoDetails}  />
+      <BoxesComponent info={BoxData}/>
     </div>
-  );
-};
+  )
+}
