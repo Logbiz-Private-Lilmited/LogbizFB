@@ -15,7 +15,7 @@ export const NavbarButton = ({ to, view, onClick }) => {
 
     return (
         <NavLink
-            className='text-xs md:text-sm text-black font-bold text-center rounded py-3 px-4 bg-white hover:bg-customOrange hover:text-white transition-all duration-300'
+            className='text-lg md:text-sm text-black font-bold text-center rounded py-3 px-4 bg-white hover:bg-customOrange hover:text-white transition-all duration-300'
             to={to}
             title={view}
             onClick={handleClick}>

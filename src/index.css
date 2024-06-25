@@ -1,3 +1,21 @@
+@import 'slick-carousel/slick/slick.css';
+@import 'slick-carousel/slick/slick-theme.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.custom-arrow::before {
+    font-size: 60px;
+    color: #000000; /* Example color */
+    opacity: 1;
+  }
+  
+  .slick-prev {
+    left: -65px; /* Adjust position */
+  }
+  
+  .slick-next {
+    right: -25px; /* Adjust position */
+  }
+  
