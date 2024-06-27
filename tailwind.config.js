@@ -7,7 +7,6 @@ export default {
         customOrange: "#FF6600",
         paraColor: "#675F5F",
       },
-    },
     fontFamily: {
       body: ["SF Pro Display", "sans-serif"],
     },
@@ -36,5 +35,6 @@ export default {
       transitionProperty: ["hover"],
     },
   },
+},
   plugins: [],
 };
