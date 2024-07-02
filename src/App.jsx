@@ -8,6 +8,7 @@ import { ContactView } from "./views/ContactView";
 import Signup from "./components/Signup/Signup";
 import { LoginView } from "./views/LoginView";
 import WarehouseListing from "./components/Forms/WarehouseListing";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/wform" element={<WarehouseListing />} />
         </Routes>
       </div>
+      <Footer />
     </div>
   );
 }

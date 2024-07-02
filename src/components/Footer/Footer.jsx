@@ -7,7 +7,7 @@ import YoutubeIcon from "../../assets/footerAssets/youtube.png";
 
 const Footer = () => {
   return (
-    <footer className="h-full px-6 py-4 w-full bg-[#F6F4F4]">
+    <footer className="h-full px-6 py-4 w-full bg-[#dfdfdf]">
       <section className="flex flex-col gap-y-2 text-[#4F4F4F] justify-center items-start">
         <h1 className="font-bold text-3xl mb-4">Contact Us</h1>
         <h3 className="text-xl">Phone & Email</h3>
