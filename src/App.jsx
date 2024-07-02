@@ -6,6 +6,8 @@ import { DashboardView } from "./views/DashboardView";
 import { ServicesListingView } from "./views/ServicesListingView";
 import { ContactView } from "./views/ContactView";
 import Signup from "./components/Signup/Signup";
+import { LoginView } from "./views/LoginView";
+import WarehouseListing from "./components/Forms/WarehouseListing";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           <Route path="/services-listing" element={<ServicesListingView />} />
           <Route path="/contact" element={<ContactView />} />
           <Route path="/login" element={<Signup />} />
+          <Route path="/login" element={<LoginView />} />
+          <Route path="/wform" element={<WarehouseListing />} />
         </Routes>
       </div>
     </div>
