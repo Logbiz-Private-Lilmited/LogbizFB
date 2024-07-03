@@ -5,12 +5,15 @@ import { ServicesView } from "./views/ServicesView";
 import { DashboardView } from "./views/DashboardView";
 import { ServicesListingView } from "./views/ServicesListingView";
 import { ContactView } from "./views/ContactView";
+import Signup from "./components/Signup/Signup";
 import { LoginView } from "./views/LoginView";
 import WarehouseListing from "./components/Forms/WarehouseListingForm";
 import FSPRegistration from "./components/Forms/Registrations/FSPRegistration";
 import DistributionHubForm from "./components/Forms/Registrations/DistributionHubForm";
 import WarehouseRegistration from "./components/Forms/Registrations/WarehouseRegistration";
 import Transport from "./components/Forms/Registrations/Transport";
+
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -24,6 +27,7 @@ function App() {
           <Route path="/dashboard" element={<DashboardView />} />
           <Route path="/services-listing" element={<ServicesListingView />} />
           <Route path="/contact" element={<ContactView />} />
+          <Route path="/login" element={<Signup />} />
           <Route path="/login" element={<LoginView />} />
           <Route path="/formWarehouse" element={<WarehouseListing />} />
           {/* <Route path="/dynamicFormTest" element={<TestForm />} /> */}
@@ -33,7 +37,9 @@ function App() {
           <Route path="transport" element={<Transport />} />
         </Routes>
       </div>
+      <Footer />
     </div>
   );
 }
+
 export default App;

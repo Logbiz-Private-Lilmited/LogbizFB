@@ -1,12 +1,9 @@
 import React from "react";
 import Stats from "../components/HeroSection/Stats";
-import ServiceBtn from "../components/HeroSection/ServiceBtn";
-import Hero1 from "../assets/HeroSection/Hero1.jpeg";
 import infoDetails from "../components/Homeview/InfoDetails";
 import InfoCards from "../components/Homeview/InfoCards";
 import BoxesComponent from "../components/Homeview/ServiceBoxes";
 import BoxData from "../components/Homeview/BoxData";
-import LogbizStat from "../assets/HeroSection/LogbizStats.svg";
 import AnimatedStats from "../components/HeroSection/AnimatedStats";
 
 export const HomeView = () => {

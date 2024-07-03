@@ -20,6 +20,20 @@ export default {
         "btn-grey": "#d9d9d9",
         boxBg: "#fafafa",
       },
+      boxShadow: {
+        "custom-light": "#FF6600 0 0.95px 2.6px",
+        "custom-light-hover": "#FF6600 1px 0px 4px",
+      },
+      transitionDuration: {
+        3000: "3000ms",
+      },
+    },
+  },
+  variants: {
+    extend: {
+      boxShadow: ["hover"],
+      borderColor: ["hover"],
+      transitionProperty: ["hover"],
     },
   },
   plugins: [],
