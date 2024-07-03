@@ -7,7 +7,12 @@ import { ServicesListingView } from "./views/ServicesListingView";
 import { ContactView } from "./views/ContactView";
 import Signup from "./components/Signup/Signup";
 import { LoginView } from "./views/LoginView";
-import WarehouseListing from "./components/Forms/WarehouseListing";
+import WarehouseListing from "./components/Forms/WarehouseListingForm";
+import FSPRegistration from "./components/Forms/Registrations/FSPRegistration";
+import DistributionHubForm from "./components/Forms/Registrations/DistributionHubForm";
+import WarehouseRegistration from "./components/Forms/Registrations/WarehouseRegistration";
+import Transport from "./components/Forms/Registrations/Transport";
+
 import Footer from "./components/Footer/Footer";
 
 function App() {
@@ -24,7 +29,12 @@ function App() {
           <Route path="/contact" element={<ContactView />} />
           <Route path="/login" element={<Signup />} />
           <Route path="/login" element={<LoginView />} />
-          <Route path="/wform" element={<WarehouseListing />} />
+          <Route path="/formWarehouse" element={<WarehouseListing />} />
+          {/* <Route path="/dynamicFormTest" element={<TestForm />} /> */}
+          <Route path="formFSP" element={<FSPRegistration />} />
+          <Route path="formDistribution" element={<DistributionHubForm />} />
+          <Route path="registerWarehouse" element={<WarehouseRegistration />} />
+          <Route path="transport" element={<Transport />} />
         </Routes>
       </div>
       <Footer />
