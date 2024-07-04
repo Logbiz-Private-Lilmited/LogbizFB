@@ -7,10 +7,10 @@ const BoxComponent = ({ link, svgPath, text }) => {
   return (
     <Link
       to={link}
-      className="h-full rounded-lg flex flex-col justify-center items-center p-5 border-2 border-transparent duration-300 transition-border ease-linear hover:border-customOrange hover:shadow-custom-light-hover"
+      className="h-full rounded-lg flex flex-col justify-center items-center p-5 border-2 border-transparent duration-300 transition-border ease-linear hover:border-customOrange hover:shadow-custom-light-hover hover:bg-[#efefef]"
     >
       <img src={svgPath} alt={text} className="h-20" />
-      <p className="mt-2 text-base font-bold text-center">{text}</p>
+      <p className="mt-2 text-lg font-bold text-center">{text}</p>
     </Link>
   );
 };
@@ -39,12 +39,19 @@ const BoxesCarousel = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 2,
+    slidesToScroll: 3,
     prevArrow: <CustomPrevArrow />,
     nextArrow: <CustomNextArrow />,
     responsive: [
       {
-        breakpoint: 480, // Extra small devices
+        breakpoint: 768, // Medium devices (tablets)
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 480, // Small devices
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -53,19 +60,24 @@ const BoxesCarousel = () => {
     ],
   };
   return (
-    <div className="mb-20 sm:w-4/5 lg:w-2/5 mx-auto">
-      <Slider {...settings}>
-        {boxData.map((box, index) => (
-          <div key={index} className="px-2 h-[205px]">
-            <BoxComponent
-              bgColor={box.bgColor}
-              svgPath={box.svgPath}
-              text={box.text}
-              link={box.link}
-            />
-          </div>
-        ))}
-      </Slider>
+    <div className="Slider-wrapper p-10">
+      <div className="mb-20 sm:w-4/5 lg:w-2/5 mx-auto">
+        <h2 className="text-4xl font-bold flex-1 leading-h2 mb-10 text-center">
+          Services Available
+        </h2>
+        <Slider {...settings}>
+          {boxData.map((box, index) => (
+            <div key={index} className="px-2 h-[205px]">
+              <BoxComponent
+                bgColor={box.bgColor}
+                svgPath={box.svgPath}
+                text={box.text}
+                link={box.link}
+              />
+            </div>
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 };

@@ -7,7 +7,12 @@ import { ServicesListingView } from "./views/ServicesListingView";
 import { ContactView } from "./views/ContactView";
 import Signup from "./components/Signup/Signup";
 import { LoginView } from "./views/LoginView";
-import WarehouseListing from "./components/Forms/WarehouseListing";
+import WarehouseListing from "./components/Forms/WarehouseListingForm";
+import FSPRegistration from "./components/Forms/Registrations/FSPRegistration";
+import DistributionHubForm from "./components/Forms/Registrations/DistributionHubForm";
+import WarehouseRegistration from "./components/Forms/Registrations/WarehouseRegistration";
+import Transport from "./components/Forms/Registrations/Transport";
+
 import Footer from "./components/Footer/Footer";
 import DynamicPage1 from "./components/ServicePages/DynamicPage1";
 import TransportDetails from "./components/ServicePages/Transport";
@@ -28,10 +33,19 @@ function App() {
           <Route path="/contact" element={<ContactView />} />
           <Route path="/login" element={<Signup />} />
           <Route path="/login" element={<LoginView />} />
+<<<<<<< HEAD
           <Route path="/wform" element={<WarehouseListing />} />
           <Route path="/transportpage" element={<DynamicPage1 Name="Road Transportation" Data={TransportDetails}/>} />
           <Route path="/warehousepage" element={<DynamicPage1 Name="Warehouse" Data={WarehouseDetails} />} />
           <Route path="/logisticspage" element={<DynamicPage1 Name="Logistics" Data={LogisticsDetails}/>} />
+=======
+          <Route path="/formWarehouse" element={<WarehouseListing />} />
+          {/* <Route path="/dynamicFormTest" element={<TestForm />} /> */}
+          <Route path="formFSP" element={<FSPRegistration />} />
+          <Route path="formDistribution" element={<DistributionHubForm />} />
+          <Route path="registerWarehouse" element={<WarehouseRegistration />} />
+          <Route path="transport" element={<Transport />} />
+>>>>>>> 9f7644d8996752283ff762ef9afc75bcc8d7a8e1
         </Routes>
       </div>
       <Footer />
