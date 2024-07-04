@@ -9,6 +9,10 @@ import Signup from "./components/Signup/Signup";
 import { LoginView } from "./views/LoginView";
 import WarehouseListing from "./components/Forms/WarehouseListing";
 import Footer from "./components/Footer/Footer";
+import DynamicPage1 from "./components/ServicePages/DynamicPage1";
+import TransportDetails from "./components/ServicePages/Transport";
+import WarehouseDetails from "./components/ServicePages/Warehouse";
+import LogisticsDetails from "./components/ServicePages/Logistics";
 
 function App() {
   return (
@@ -25,6 +29,9 @@ function App() {
           <Route path="/login" element={<Signup />} />
           <Route path="/login" element={<LoginView />} />
           <Route path="/wform" element={<WarehouseListing />} />
+          <Route path="/transportpage" element={<DynamicPage1 Name="Road Transportation" Data={TransportDetails}/>} />
+          <Route path="/warehousepage" element={<DynamicPage1 Name="Warehouse" Data={WarehouseDetails} />} />
+          <Route path="/logisticspage" element={<DynamicPage1 Name="Logistics" Data={LogisticsDetails}/>} />
         </Routes>
       </div>
       <Footer />
