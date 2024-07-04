@@ -7,21 +7,21 @@ import YoutubeIcon from "../../assets/footerAssets/youtube.png";
 
 const Footer = () => {
   return (
-    <footer className="h-full px-6 py-4 w-full bg-[#dfdfdf]">
-      <section className="flex flex-col gap-y-2 text-[#4F4F4F] justify-center items-start">
+    <footer className="h-full px-6 py-4 w-full bg-[#4f4f4f] md:bg-[#dfdfdf]">
+      <section className="flex flex-col gap-y-2 text-white md:text-[#4F4F4F] justify-center items-start">
         <h1 className="font-bold text-3xl mb-4">Contact Us</h1>
         <h3 className="text-xl">Phone & Email</h3>
         <h5 className="text-lg font-semibold">Email us at</h5>
         <a href="#">info@logbizgroup.com</a>
         <h5 className="text-lg font-semibold">Phone number</h5>
-        <ul className="">
+        <ul>
           <li>+91 9620777650</li>
           <li>+91 9620777650</li>
           <li>+91 9620777650</li>
         </ul>
         <h5 className="text-lg font-semibold">Links</h5>
         <ul className="underline">
-          <li>Pllet Guudie</li>
+          <li>Pallet Guide</li>
           <li>Contact Us</li>
           <li>Blogs</li>
           <li>Terms and Condition</li>
@@ -29,13 +29,13 @@ const Footer = () => {
           <li>Refund and Cancellation Policy</li>
           <li>Shipping and Delivery Policy</li>
         </ul>
-        <div className="flex justify-between w-full items-center">
-          <p className="text-xs w-3/5">
+        <div className="flex justify-between mt-2 w-full items-center">
+          <p className="text-xs md:w-3/5 w-full">
             Logbiz Pvt Ltd, THE ADDRESS, Building, Survey No 17/1,
             Kadubeesanahalli, Outer Ring Road, Marathahalli, Bangalore - 560103
             Branch Office: 1020, Sector 36, Chandigarh
           </p>
-          <nav className="flex justify-center items-center gap-x-7">
+          <nav className="md:flex hidden justify-center items-center gap-x-7">
             <img
               width={30}
               height={30}

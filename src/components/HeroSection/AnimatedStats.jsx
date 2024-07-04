@@ -136,13 +136,12 @@ function Icon() {
 
 const AnimatedStats = () => {
   return (
-    <div className="md:text-4xl xl:text-5xl 2xl:text-6xl font-bold    w-full text-3xl xl:m-6 ">
+    <div className="md:text-4xl xl:text-5xl 2xl:text-6xl font-bold w-full text-3xl xl:m-6 ">
       <div className="md:w-1/2">
-        {" "}
-        LogBiz offers single window{" "}
-        <span className="text-customOrange">services</span> &{" "}
+        LogBiz offers single window
+        <span className="text-customOrange">services</span> &
         <span className="text-customOrange">solutionss</span> to all your
-        logistics needs{" "}
+        logistics needs
       </div>
       <div className="h-fit lg:absolute lg:right-0 lg:bottom-[15%] -z-0">
         <Icon />
