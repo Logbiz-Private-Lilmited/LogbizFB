@@ -41,7 +41,7 @@ export const Navbar = () => {
       {/* Buttons */}
       <nav className="hidden lg:flex justify-end items-center gap-2 w-5/12">
         <NavbarButton to="/contact" view="Contact us"></NavbarButton>
-        <NavbarButton to="/login" view="Sign up/login"></NavbarButton>
+        <NavbarButton to="/signup" view="Sign up/login"></NavbarButton>
       </nav>
 
       {/* Hamburger Menu Button */}

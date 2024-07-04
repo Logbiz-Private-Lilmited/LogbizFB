@@ -64,12 +64,12 @@ const Signup = () => {
             placeholder="Create a Password"
             className="border-2 border-[#E9E7E2] w-full px-4 py-2 rounded-sm placeholder:text-[#393938] placeholder:text-base"
           />
-          <div
+          <span
             className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer"
             onClick={togglePasswordVisibility}
           >
             {passwordVisible ? <LuEyeOff /> : <LuEye />}
-          </div>
+          </span>
         </div>
       </div>
     </div>
