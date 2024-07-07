@@ -17,7 +17,12 @@ export default function DynamicPage1(props){
     return(
         <div>
             <div className="flex justify-between">
-                <h1 className="text-3xl max-[435px]:text-xl font-bold">Available {props.Name} Services</h1>
+                <div className=" inline-flex gap-3">
+                    <a href="/" className="bg-[#d9d9d9] align-middle p-3 rounded-lg">
+                        <img src="/src/assets/BackArrow.png" alt="" />
+                    </a>
+                    <h1 className="text-3xl max-[435px]:text-xl font-bold">Available {props.Name} Services</h1>
+                </div>
                 <div className="flex flex-row flex-wrap gap-3">
                     <div>
                         <input type="text" placeholder="Serach" className="border-2 border-[E9E7E2] p-1 rounded-md" />
@@ -29,7 +34,7 @@ export default function DynamicPage1(props){
             <div className="p-4">
                 <div>
                     <h1 className="text-2xl font-medium mb-6">On Demand</h1>
-                    <div className="flex flex-wrap px-4 gap-4">
+                    <div className="flex flex-wrap justify-evenly px-4 gap-8">
                         {
                             details.map((detail, index) => {
                                 if (detail.on_demand == true){
@@ -50,7 +55,7 @@ export default function DynamicPage1(props){
                 </div>
                 <div className="mt-4">
                     <h1 className="text-2xl font-medium mb-6 ">Advanced Booking</h1>
-                    <div className="flex flex-wrap px-4 gap-4">
+                    <div className="flex flex-wrap justify-evenly px-4 gap-4">
                         {
                             details.map((detail, index) => {
                                 if (detail.advanced === true){
