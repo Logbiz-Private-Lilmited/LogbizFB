@@ -4,7 +4,7 @@ const boxData = [
     {
       svgPath:'/truck.svg',
       text: 'Road transportation',
-      link: '/box1',
+      link: '/transportpage',
     },
     {
       svgPath: '/international-shipping 1.svg',
@@ -14,7 +14,7 @@ const boxData = [
     {
       svgPath: '/warehouse 1.svg',
       text: 'Warehouse Service ',
-      link: '/box2',
+      link: '/warehousepage',
     },
     {
       svgPath: '/distribution 1.svg',
@@ -29,7 +29,7 @@ const boxData = [
     {
       svgPath: '/consultant 1.svg',
       text: 'Logistics Consulting Services',
-      link: '/box2',
+      link: '/logisticpage',
     },
     {
       svgPath: '/manufacturing 1.svg',
