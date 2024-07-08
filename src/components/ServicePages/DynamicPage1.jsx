@@ -1,4 +1,4 @@
-import React from "react";
+import React , {useEffect} from "react";
 import ServiceCard from "./ServiceCard";
 import Dropdown from "./Dropdown";
 import PLImg1 from "/src/assets/ServicePages/PartLoadImg1.png"
@@ -11,6 +11,10 @@ const PLImgs = [PLImg1,PLImg2,PLImg3]
 
 
 export default function DynamicPage1(props){
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const details = [...props.Data]
 
@@ -34,7 +38,7 @@ export default function DynamicPage1(props){
             <div className="p-4">
                 <div>
                     <h1 className="text-2xl font-medium mb-6">On Demand</h1>
-                    <div className="flex flex-wrap justify-evenly px-4 gap-8">
+                    <div className="flex flex-wrap justify-between px-4 gap-8">
                         {
                             details.map((detail, index) => {
                                 if (detail.on_demand == true){
@@ -55,7 +59,7 @@ export default function DynamicPage1(props){
                 </div>
                 <div className="mt-4">
                     <h1 className="text-2xl font-medium mb-6 ">Advanced Booking</h1>
-                    <div className="flex flex-wrap justify-evenly px-4 gap-4">
+                    <div className="flex flex-wrap justify-between px-4 gap-4">
                         {
                             details.map((detail, index) => {
                                 if (detail.advanced === true){
