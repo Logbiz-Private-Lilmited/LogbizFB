@@ -22,7 +22,7 @@ export default function DynamicPage1(props){
         <div>
             <div className="flex justify-between">
                 <div className=" inline-flex gap-3">
-                    <a href="/" className="bg-[#d9d9d9] align-middle p-3 rounded-lg">
+                    <a href="/" className="bg-[#d9d9d9] h-fit align-middle p-3 rounded-lg">
                         <img src="/src/assets/BackArrow.png" alt="" />
                     </a>
                     <h1 className="text-3xl max-[435px]:text-xl font-bold">Available {props.Name} Services</h1>
