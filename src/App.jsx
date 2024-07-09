@@ -15,9 +15,8 @@ import WarehouseListing from "./components/Forms/WarehouseListingForm";
 
 import Footer from "./components/Footer/Footer";
 import DynamicPage1 from "./components/ServicePages/DynamicPage1";
-import TransportDetails from "./components/ServicePages/Transport";
-import WarehouseDetails from "./components/ServicePages/Warehouse";
-import LogisticsDetails from "./components/ServicePages/Logistics";
+import FreightPage from "./components/ServicePages/FreightPage";
+import { TransportDetails,LogisticsDetails,WarehouseDetails,FreightDetails } from "./components/ServicePages/data";
 
 function App() {
   const location = useLocation();
@@ -60,6 +59,7 @@ function App() {
             path="/logisticspage"
             element={<DynamicPage1 Name="Logistics" Data={LogisticsDetails} img="/src/assets/ServicePages/logistics.jpg" />}
           />
+          <Route path="/freightpage" element={<FreightPage Data={FreightDetails} />} />
         </Routes>
       </div>
       {!hideFooterPaths.includes(location.pathname) && <Footer />}
