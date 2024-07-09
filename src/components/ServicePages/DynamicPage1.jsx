@@ -45,6 +45,7 @@ export default function DynamicPage1(props){
                                     return(
                                         <ServiceCard
                                         key={index}
+                                        Img={props.img}
                                         Name={detail.name}
                                         Location={detail.location}
                                         Model={detail.vehicle_model}
@@ -66,6 +67,7 @@ export default function DynamicPage1(props){
                                     return(
                                         <ServiceCard
                                         key={index}
+                                        Img={props.img}
                                         Name={detail.name}
                                         Location={detail.location}
                                         Model={detail.vehicle_model}

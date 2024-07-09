@@ -29,7 +29,7 @@ const boxData = [
     {
       svgPath: '/consultant 1.svg',
       text: 'Logistics Consulting Services',
-      link: '/logisticpage',
+      link: '/logisticspage',
     },
     {
       svgPath: '/manufacturing 1.svg',

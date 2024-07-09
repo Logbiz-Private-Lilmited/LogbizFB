@@ -48,16 +48,17 @@ function App() {
               <DynamicPage1
                 Name="Road Transportation"
                 Data={TransportDetails}
+                img={"/src/assets/ServicePages/transport.png"}
               />
             }
           />
           <Route
             path="/warehousepage"
-            element={<DynamicPage1 Name="Warehouse" Data={WarehouseDetails} />}
+            element={<DynamicPage1 Name="Warehouse" Data={WarehouseDetails} img="/src/assets/ServicePages/warehouse.png" />}
           />
           <Route
             path="/logisticspage"
-            element={<DynamicPage1 Name="Logistics" Data={LogisticsDetails} />}
+            element={<DynamicPage1 Name="Logistics" Data={LogisticsDetails} img="/src/assets/ServicePages/logistics.jpg" />}
           />
         </Routes>
       </div>
