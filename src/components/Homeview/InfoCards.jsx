@@ -2,7 +2,7 @@ import React from "react";
 
 const InfoComponent = ({ heading, paragraphs, buttonText }) => {
   return (
-    <div className="flex flex-col w-5/6 max-h-fit md:w-2/5 flex-wrap self-center sm:w-10/12">
+    <div className="flex flex-col w-3/4 max-h-fit flex-wrap self-center sm:w-10/12">
       <h2 className="text-4xl font-bold flex-1 leading-h2 mb-10">{heading}</h2>
 
       {paragraphs.map((paragraph, index) => (
@@ -21,7 +21,7 @@ const InfoComponent = ({ heading, paragraphs, buttonText }) => {
 const InfoCards = ({ info }) => {
   return (
     <div className="py-10">
-      <div className="flex lg:flex-row md:flex-row md:justify-around flex-col ">
+      <div className="flex lg:flex-row md:flex-row md:justify-center flex-col ">
         {info.map((box, index) => (
           <div key={index}>
             <InfoComponent
