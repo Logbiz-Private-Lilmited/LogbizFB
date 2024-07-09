@@ -5,8 +5,6 @@ import PLImg1 from "/src/assets/ServicePages/PartLoadImg1.png"
 import PLImg2 from "/src/assets/ServicePages/PartLoadImg2.png"
 import PLImg3 from "/src/assets/ServicePages/PartLoadImg3.png"
 
-const options=["City","Capacity","Body Type"]
-
 const PLImgs = [PLImg1,PLImg2,PLImg3]
 
 
@@ -32,7 +30,7 @@ export default function DynamicPage1(props){
                         <input type="text" placeholder="Serach" className="border-2 border-[E9E7E2] p-1 rounded-md" />
                     </div>
                     <h1 className="font-semibold block text-nowrap p-1">Sort by:</h1>
-                    <Dropdown options={options} />
+                    <Dropdown/>
                 </div>
             </div>
             <div className="p-4">

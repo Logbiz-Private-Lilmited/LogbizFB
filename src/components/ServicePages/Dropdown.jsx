@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Dropdown = ({ options, onSelect }) => {
+const Dropdown = ({onSelect }) => {
   const [selectedOption, setSelectedOption] = useState(options[0]);
 
   const handleSelectChange = (event) => {
@@ -8,6 +8,8 @@ const Dropdown = ({ options, onSelect }) => {
     setSelectedOption(value);
     onSelect(value);
   };
+
+  const options=["City","Capacity","Body Type"]
 
   return (
     <div className="relative inline-block w-fit text-black font-semibold p-1">
