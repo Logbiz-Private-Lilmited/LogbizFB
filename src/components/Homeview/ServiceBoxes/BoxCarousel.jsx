@@ -1,5 +1,4 @@
 import React from "react";
-import boxData from "./BoxData";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 
@@ -10,7 +9,7 @@ const BoxComponent = ({ link, svgPath, text }) => {
       className="h-full rounded-lg flex flex-col justify-center items-center p-5 border-2 border-transparent duration-300 transition-border ease-linear hover:border-customOrange hover:shadow-custom-light-hover hover:bg-[#efefef]"
     >
       <img src={svgPath} alt={text} className="h-20" />
-      <p className="mt-2 text-lg font-bold text-center">{text}</p>
+      <p className="mt-2 text-xl font-bold text-center">{text}</p>
     </Link>
   );
 };
@@ -33,7 +32,7 @@ const CustomNextArrow = (props) => {
   );
 };
 
-const BoxesCarousel = () => {
+const BoxesCarousel = ({ datasets }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -61,20 +60,26 @@ const BoxesCarousel = () => {
   };
   return (
     <div className="Slider-wrapper p-10">
-      <div className="mb-20 sm:w-4/5 lg:w-2/5 mx-auto">
-        <Slider {...settings}>
-          {boxData.map((box, index) => (
-            <div key={index} className="px-2 h-[205px]">
-              <BoxComponent
-                bgColor={box.bgColor}
-                svgPath={box.svgPath}
-                text={box.text}
-                link={box.link}
-              />
-            </div>
-          ))}
-        </Slider>
-      </div>
+      {datasets &&
+        datasets.map((data, dataIndex) => (
+          <div key={dataIndex} className="mb-20 sm:w-4/5 lg:w-2/5 mx-auto">
+            <h2 className="text-4xl font-bold flex-1 leading-h2 mb-10 text-center">
+              {data.title}
+              {data.subtitle}
+            </h2>
+            <Slider {...settings}>
+              {data.items.map((box, index) => (
+                <div key={index} className="px-2 h-[205px]">
+                  <BoxComponent
+                    svgPath={box.svgPath}
+                    text={box.text}
+                    link={box.link}
+                  />
+                </div>
+              ))}
+            </Slider>
+          </div>
+        ))}
     </div>
   );
 };
