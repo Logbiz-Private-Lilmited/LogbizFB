@@ -32,6 +32,13 @@ export const HomeView = () => {
           <Link></Link>
         </button>
       </div>
+      <div className="subscribe-button w-fit text-sm font-bold p-3 mx-4 bg-black text-white rounded-md">
+        <Link>
+          {" "}
+          Subscribe to our{" "}
+          <span className="text-customOrange">News Letters</span> here
+        </Link>
+      </div>
     </div>
   );
 };
