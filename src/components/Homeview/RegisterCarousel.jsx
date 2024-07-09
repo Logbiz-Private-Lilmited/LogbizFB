@@ -55,12 +55,9 @@ const RegisterCarousel = () => {
           <h1 className="md:text-2xl font-semibold text-lg ">
             Looking to provide logistic service?
           </h1>
-          <Link
-            to={"/signup"}
-            className="font-semibold text-customOrange text-2xl italic"
-          >
+          <h1 className="font-semibold text-customOrange text-2xl italic">
             Register
-          </Link>
+          </h1>
           <h1 className="text-sm font-semibold mt-4 md:w-full w-3/4 text-center">
             Register in any of the services you would like to offer.
           </h1>{" "}

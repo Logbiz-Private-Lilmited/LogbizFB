@@ -32,7 +32,7 @@ export const HomeView = () => {
           <Link></Link>
         </button>
       </div>
-      <div className="subscribe-button w-fit text-sm font-bold p-3 mx-4 bg-black text-white rounded-md">
+      <div className="subscribe-button w-fit text-sm font-bold p-3 md:mx-4 bg-black text-white rounded-md my-2">
         <Link>
           {" "}
           Subscribe to our{" "}
