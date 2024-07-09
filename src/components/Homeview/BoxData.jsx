@@ -9,7 +9,7 @@ const boxData = [
     {
       svgPath: '/international-shipping 1.svg',
       text: 'Freight Forwarding',
-      link: '/box2',
+      link: '/freightpage',
     },
     {
       svgPath: '/warehouse 1.svg',
