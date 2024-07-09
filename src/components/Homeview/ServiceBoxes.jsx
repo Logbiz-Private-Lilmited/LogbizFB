@@ -62,9 +62,6 @@ const BoxesCarousel = () => {
   return (
     <div className="Slider-wrapper p-10">
       <div className="mb-20 sm:w-4/5 lg:w-2/5 mx-auto">
-        <h2 className="text-4xl font-bold flex-1 leading-h2 mb-10 text-center">
-          Services Available
-        </h2>
         <Slider {...settings}>
           {boxData.map((box, index) => (
             <div key={index} className="px-2 h-[205px]">
