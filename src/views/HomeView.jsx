@@ -5,6 +5,7 @@ import InfoCards from "../components/Homeview/InfoCards";
 import BoxesComponent from "../components/Homeview/ServiceBoxes";
 import BoxData from "../components/Homeview/BoxData";
 import AnimatedStats from "../components/HeroSection/AnimatedStats";
+import VideoPlayback from "../components/Homeview/VideoPlayback";
 
 export const HomeView = () => {
   return (
@@ -15,6 +16,7 @@ export const HomeView = () => {
       </section>
       <InfoCards info={infoDetails} />
       <BoxesComponent info={BoxData} />
+      <VideoPlayback />
     </div>
   );
 };
