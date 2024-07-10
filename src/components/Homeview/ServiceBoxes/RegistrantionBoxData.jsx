@@ -31,7 +31,7 @@ const RegBoxData = [
   },
   {
     svgPath: "/manufacturing 1.svg",
-    text: "Original Equipment Manufacturers Services Registration",
+    text: "OEM Services Registration",
     link: "/box2",
   },
   {

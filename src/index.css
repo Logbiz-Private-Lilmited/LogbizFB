@@ -12,10 +12,19 @@
   }
   
   .slick-prev {
-    left: -65px; /* Adjust position */
+    left: -65px;
   }
   
   .slick-next {
-    right: -25px; /* Adjust position */
+    right: -25px;
   }
   
+  .slick-dots li button:before{
+    font-size: 15px;
+  }
+
+  @media (max-width: 375px) {
+    .custom-arrow{
+      display: none;
+    }
+  }

@@ -33,7 +33,7 @@ const InfoCards = ({ info }) => {
               buttonText={box.buttonText}
               buttonLink={box.buttonLink}
             />
-            <hr className="block lg:hidden md:hidden w-11/12 my-5 border-black border-y-4 m-auto" />
+            <hr className="block lg:hidden md:hidden w-full my-5 border-black border-y-4 m-auto" />
           </div>
         ))}
       </div>
