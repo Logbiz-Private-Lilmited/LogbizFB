@@ -65,8 +65,9 @@ const BoxesCarousel = ({ datasets }) => {
           <div key={dataIndex} className="mb-20 sm:w-4/5 lg:w-2/5 mx-auto">
             <h2 className="text-4xl font-bold flex-1 leading-h2 mb-10 text-center">
               {data.title}
-              {data.subtitle}
+              <span className="text-customOrange italic">{data.subtitle}</span>
             </h2>
+            <h3 className="text-center text-2xl font-bold mb-10">{data.smalltitle}</h3>
             <Slider {...settings}>
               {data.items.map((box, index) => (
                 <div key={index} className="px-2 h-[205px]">
