@@ -22,13 +22,13 @@
   .slick-prev:before {
     content: '◀';
     font-size: 80px;
-    color: #FF6600;
+    color: #000000;
   }
 
 .slick-next:before {
     content: '▶'; 
     font-size: 80px;
-    color: #FF6600;
+    color: #000000;
   }
 
   .slick-dots li button:before{
