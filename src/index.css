@@ -14,16 +14,28 @@
   .slick-prev {
     left: -65px;
   }
-  
+
   .slick-next {
     right: -25px;
   }
-  
+
+  .slick-prev:before {
+    content: '◀';
+    font-size: 80px;
+    color: #FF6600;
+  }
+
+.slick-next:before {
+    content: '▶'; 
+    font-size: 80px;
+    color: #FF6600;
+  }
+
   .slick-dots li button:before{
     font-size: 15px;
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 650px) {
     .custom-arrow{
       display: none;
     }
