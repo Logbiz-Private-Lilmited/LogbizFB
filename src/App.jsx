@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import '../src/index.css';
 import { Navbar } from "./components/Navbar/Navbar";
 import { HomeView } from "./views/HomeView";
 import { ServicesView } from "./views/ServicesView";
@@ -12,11 +13,15 @@ import WarehouseListing from "./components/Forms/WarehouseListingForm";
 // import DistributionHubForm from "./components/Forms/Registrations/DistributionHubForm";
 // import WarehouseRegistration from "./components/Forms/Registrations/WarehouseRegistration";
 // import Transport from "./components/Forms/Registrations/Transport";
-
 import Footer from "./components/Footer/Footer";
 import DynamicPage1 from "./components/ServicePages/DynamicPage1";
 import FreightPage from "./components/ServicePages/FreightPage";
-import { TransportDetails,LogisticsDetails,WarehouseDetails,FreightDetails } from "./components/ServicePages/data";
+import {
+  TransportDetails,
+  LogisticsDetails,
+  WarehouseDetails,
+  FreightDetails,
+} from "./components/ServicePages/data";
 
 function App() {
   const location = useLocation();
@@ -27,8 +32,8 @@ function App() {
     <div className="flex flex-col items-center mt-4">
       {!hideNavbarPaths.includes(location.pathname) && <Navbar />}
       <div
-        className={`mt-24 w-[98%] ${
-          hideNavbarPaths.includes(location.pathname) ? "mt-0" : ""
+        className={` w-[98%] ${
+          hideNavbarPaths.includes(location.pathname) ? "mt-0" : "mt-24"
         }`}
       >
         <Routes>
@@ -53,13 +58,28 @@ function App() {
           />
           <Route
             path="/warehousepage"
-            element={<DynamicPage1 Name="Warehouse" Data={WarehouseDetails} img="/src/assets/ServicePages/warehouse.png" />}
+            element={
+              <DynamicPage1
+                Name="Warehouse"
+                Data={WarehouseDetails}
+                img="/src/assets/ServicePages/warehouse.png"
+              />
+            }
           />
           <Route
             path="/logisticspage"
-            element={<DynamicPage1 Name="Logistics" Data={LogisticsDetails} img="/src/assets/ServicePages/logistics.jpg" />}
+            element={
+              <DynamicPage1
+                Name="Logistics"
+                Data={LogisticsDetails}
+                img="/src/assets/ServicePages/logistics.jpg"
+              />
+            }
           />
-          <Route path="/freightpage" element={<FreightPage Data={FreightDetails} />} />
+          <Route
+            path="/freightpage"
+            element={<FreightPage Data={FreightDetails} />}
+          />
         </Routes>
       </div>
       {!hideFooterPaths.includes(location.pathname) && <Footer />}
