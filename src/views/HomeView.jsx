@@ -9,6 +9,7 @@ import { BiArrowFromRight, BiLeftArrow } from "react-icons/bi";
 import { GoArrowRight } from "react-icons/go";
 import RegBoxes from "../components/Homeview/ServiceBoxes/RegBox";
 import ServiceBoxes from "../components/Homeview/ServiceBoxes/ServiceBox";
+import LogoWithLines from "../components/Homeview/LogoLine";
 
 export const HomeView = () => {
   return (
@@ -18,9 +19,10 @@ export const HomeView = () => {
         <Stats />
       </section>
       <InfoCards info={infoDetails} />
+      <LogoWithLines />
       <ServiceBoxes />
-      <RegBoxes />
       <VideoPlayback />
+      <RegBoxes />
       <div className="w-full flex items-center justify-center text-center">
         <button className="flex md:p-8 bg-[#f2f2f2] md:text-2xl text-lg items-center md:gap-4 gap-2 p-4">
           Get an advantage with Logbiz Plans <GoArrowRight size={30} />

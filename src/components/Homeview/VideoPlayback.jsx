@@ -12,7 +12,7 @@ const VideoPlayback = () => {
         </button>
       </div>
       <div className="flex w-full gap-4 p-4 md:px-8 lg:px-10 px-6 md:flex-row flex-col">
-        <div className="border rounded-md md:w-3/4 w-full md:h-80 h-40"></div>
+        <div className="border rounded-md md:w-3/4 w-full md:h-80 h-40 border-black"></div>
         <div className="border rounded-md md:w-1/2 w-full">
           <iframe
             src="https://www.youtube.com/embed/Nuv4Iba7ttM?si=onVHmKtW5I8haeWQ?autoplay=1"

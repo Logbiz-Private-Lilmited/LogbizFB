@@ -13,7 +13,7 @@ export default {
       lineHeight: {
         h1: "83.54px",
         h2: "47.73px",
-        h3: "29.83",
+        h3: "29.83px",
         p: "23.87px",
       },
       backgroundColor: {
