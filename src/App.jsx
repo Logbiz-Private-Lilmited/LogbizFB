@@ -1,5 +1,5 @@
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
-import '../src/index.css';
+import "../src/index.css";
 import { Navbar } from "./components/Navbar/Navbar";
 import { HomeView } from "./views/HomeView";
 import { ServicesView } from "./views/ServicesView";
@@ -9,10 +9,9 @@ import { ContactView } from "./views/ContactView";
 import Signup from "./components/Signup/Signup";
 // import { LoginView } fro .m "./views/LoginView";
 import WarehouseListing from "./components/Forms/WarehouseListingForm";
-// import FSPRegistration from "./components/Forms/Registrations/FSPRegistration";
-// import DistributionHubForm from "./components/Forms/Registrations/DistributionHubForm";
-// import WarehouseRegistration from "./components/Forms/Registrations/WarehouseRegistration";
-// import Transport from "./components/Forms/Registrations/Transport";
+import FSPRegistration from "./components/Forms/Registrations/FSPRegistration";
+import DistributionHubForm from "./components/Forms/Registrations/DistributionHubForm";
+import WarehouseRegistration from "./components/Forms/Registrations/WarehouseRegistration";
 import Footer from "./components/Footer/Footer";
 import DynamicPage1 from "./components/ServicePages/DynamicPage1";
 import FreightPage from "./components/ServicePages/FreightPage";
@@ -22,6 +21,10 @@ import {
   WarehouseDetails,
   FreightDetails,
 } from "./components/ServicePages/data";
+import ISPRegistration from "./components/Forms/Registrations/ISPRegistration";
+import Parcel from "./components/Forms/Registrations/Parcel";
+import ThreePL from "./components/Forms/Registrations/ThreePL";
+import Transport from "./components/Forms/Registrations/Trasport";
 
 function App() {
   const location = useLocation();
@@ -44,8 +47,27 @@ function App() {
           <Route path="/services-listing" element={<ServicesListingView />} />
           <Route path="/contact" element={<ContactView />} />
           <Route path="/signup" element={<Signup />} />
-          {/* <Route path="/login" element={<LoginView />} /> */}
+
+          {/* forms-start */}
+
           <Route path="/wform" element={<WarehouseListing />} />
+
+          <Route
+            path="/warehouseRegistration"
+            element={<WarehouseRegistration />}
+          />
+          <Route path="/ispRegistration" element={<ISPRegistration />} />
+          <Route path="/parcelRegistration" element={<Parcel />} />
+          <Route path="/3plRegistration" element={<ThreePL />} />
+          <Route path="/transportRegistration" element={<Transport />} />
+          <Route path="/fspRegistration" element={<FSPRegistration />} />
+          <Route
+            path="/distributionHubRegistration"
+            element={<DistributionHubForm />}
+          />
+
+          {/* forms-end  */}
+
           <Route
             path="/transportpage"
             element={
