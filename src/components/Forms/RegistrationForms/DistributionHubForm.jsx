@@ -1,5 +1,6 @@
 import React from "react";
 import DynamicForm from "../DynamicForm";
+import ScrollToTopOnMount from "../ScrollToTop";
 
 const DistributionHubForm = () => {
   const distributionHubOwnerformCSS =
@@ -40,6 +41,7 @@ const DistributionHubForm = () => {
   ];
   return (
     <div>
+      <ScrollToTopOnMount />
       <DynamicForm
         config={distributionHubOwnerformData}
         isBankDetails={true}
@@ -47,6 +49,7 @@ const DistributionHubForm = () => {
         formDivCSS="grid grid-cols-1 md:grid-cols-3 w-full md:w-fit justify-center items-center gap-5"
         formTitle={"Distribution Hub Owner"}
         requestID={"12345"}
+        key={"distributionHubForm"}
       />
     </div>
   );

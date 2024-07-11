@@ -1,4 +1,5 @@
 import DynamicForm from "../DynamicForm";
+import ScrollToTopOnMount from "../ScrollToTop";
 
 const FSPRegistration = () => {
   const formInputs = [
@@ -31,12 +32,14 @@ const FSPRegistration = () => {
 
   return (
     <>
+      <ScrollToTopOnMount />
       <DynamicForm
         config={formInputs}
         formCSS="w-full flex justify-center items-center flex-col gap-6"
         isBankDetails={true}
         formDivCSS="grid grid-cols-1 md:grid-cols-2 w-full md:w-fit justify-center items-center gap-5"
         formTitle={"FSP Registration"}
+        key={"fspRegistration"}
       />
     </>
   );
