@@ -8,10 +8,17 @@ import { ServicesListingView } from "./views/ServicesListingView";
 import { ContactView } from "./views/ContactView";
 import Signup from "./components/Signup/Signup";
 // import { LoginView } fro .m "./views/LoginView";
+
 import WarehouseListing from "./components/Forms/WarehouseListingForm";
+
 import FSPRegistration from "./components/Forms/Registrations/FSPRegistration";
 import DistributionHubForm from "./components/Forms/Registrations/DistributionHubForm";
 import WarehouseRegistration from "./components/Forms/Registrations/WarehouseRegistration";
+import ISPRegistration from "./components/Forms/Registrations/ISPRegistration";
+import Parcel from "./components/Forms/Registrations/Parcel";
+import ThreePL from "./components/Forms/Registrations/ThreePL";
+import Transport from "./components/Forms/Registrations/Transport";
+
 import Footer from "./components/Footer/Footer";
 import DynamicPage1 from "./components/ServicePages/DynamicPage1";
 import FreightPage from "./components/ServicePages/FreightPage";
@@ -21,10 +28,6 @@ import {
   WarehouseDetails,
   FreightDetails,
 } from "./components/ServicePages/data";
-import ISPRegistration from "./components/Forms/Registrations/ISPRegistration";
-import Parcel from "./components/Forms/Registrations/Parcel";
-import ThreePL from "./components/Forms/Registrations/ThreePL";
-import Transport from "./components/Forms/Registrations/Trasport";
 
 function App() {
   const location = useLocation();
