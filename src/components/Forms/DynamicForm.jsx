@@ -9,8 +9,15 @@ const DynamicForm = ({
   formTitle,
   requestID,
   note,
+  ifLabel,
+  checkboxCSS,
 }) => {
   const initialValues = config.reduce((acc, field) => {
+    if (field.type === "checkbox") {
+      field.serviceOfferings.forEach((offer) => {
+        acc[offer.name] = false;
+      });
+    }
     if (field.type === "group") {
       field.fields.forEach((subField) => {
         acc[subField.name] = "";
@@ -23,7 +30,8 @@ const DynamicForm = ({
 
   const { values, handleChange, setValues } = useForm(initialValues);
   const labelCSS = "flex flex-col";
-  const inputCSS = "border rounded-sm p-2 w-full placeholder:text-sm mt-2";
+  const inputCSS =
+    "border rounded-sm p-2 md:w-fit w-full placeholder:text-sm mt-2 placeholder:text-gray-800";
   const radioInputCSS = "mt-2";
 
   const bankDetails = [
@@ -41,9 +49,11 @@ const DynamicForm = ({
       case "date":
         return (
           <div key={field.name} className="">
-            <label htmlFor={field.name} className={labelCSS}>
-              {field.label}
-            </label>
+            {ifLabel && (
+              <label htmlFor={field.name} className={labelCSS}>
+                {field.label}
+              </label>
+            )}
             <input
               type={field.type}
               name={field.name}
@@ -57,18 +67,26 @@ const DynamicForm = ({
         );
       case "checkbox":
         return (
-          <div key={field.name}>
-            <label htmlFor={field.name} className={labelCSS}>
-              <input
-                type="checkbox"
-                name={field.name}
-                id={field.name}
-                checked={values[field.name]}
-                onChange={handleChange}
-                className={inputCSS}
-              />
-              {field.label}
-            </label>
+          <div className="mt-4 w-full">
+            <h2 className="text-lg mb-4">Service Offerings</h2>
+            <div className="grid sm:grid-flow-row md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {field.serviceOfferings.map((offer) => (
+                <div
+                  key={offer.name}
+                  className="checkbox-group flex items-center"
+                >
+                  <input
+                    type="checkbox"
+                    name={offer.name}
+                    id={offer.name}
+                    checked={values[offer.name]}
+                    onChange={handleChange}
+                    className="mx-2"
+                  />
+                  <label htmlFor={offer.name}>{offer.label}</label>
+                </div>
+              ))}
+            </div>
           </div>
         );
       case "select":
@@ -177,9 +195,9 @@ const DynamicForm = ({
           config.map((field) => renderInput(field))
         )}
         {isBankDetails && (
-          <div className="border-2 md:mx-20 gap-4 flex flex-col p-4 rounded">
+          <div className="border-2 gap-4 flex flex-col p-4 rounded w-full md:w-fit">
             <h1 className="md:text-lg">Bank Details</h1>
-            <div className="flex sm:flex-row flex-col gap-4">
+            <div className="flex md:flex-row flex-col gap-4">
               {bankDetails.map((item) => (
                 <input
                   className={inputCSS}

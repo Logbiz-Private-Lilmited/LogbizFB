@@ -37,7 +37,7 @@ const RegBoxData = [
   {
     svgPath: "/finance 1.svg",
     text: "Finance Service Registration",
-    link: "/box2",
+    link: "/",
   },
 ];
 export default RegBoxData;
