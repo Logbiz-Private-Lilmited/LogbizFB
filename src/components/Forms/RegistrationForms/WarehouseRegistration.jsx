@@ -1,5 +1,6 @@
 import React from "react";
 import DynamicForm from "../DynamicForm";
+import ScrollToTopOnMount from "../ScrollToTop";
 
 const WarehouseRegistration = () => {
   const warehouseRegistration = [
@@ -125,12 +126,14 @@ const WarehouseRegistration = () => {
 
   return (
     <div>
+      <ScrollToTopOnMount />
       <DynamicForm
         config={warehouseRegistration}
         isBankDetails={false}
         formCSS={warehouseRegistrationFormCSS}
         formTitle={"Register a Warehouse"}
         requestID={"12345"}
+        key={"warehouseRegistration"}
       />
     </div>
   );

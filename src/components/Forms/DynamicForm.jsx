@@ -1,5 +1,6 @@
 import React from "react";
 import useForm from "./useform";
+import { Link } from "react-router-dom";
 
 const DynamicForm = ({
   config,
@@ -9,8 +10,14 @@ const DynamicForm = ({
   formTitle,
   requestID,
   note,
+  ifLabel,
 }) => {
   const initialValues = config.reduce((acc, field) => {
+    if (field.type === "checkbox") {
+      field.options.forEach((offer) => {
+        acc[offer.name] = false;
+      });
+    }
     if (field.type === "group") {
       field.fields.forEach((subField) => {
         acc[subField.name] = "";
@@ -23,7 +30,8 @@ const DynamicForm = ({
 
   const { values, handleChange, setValues } = useForm(initialValues);
   const labelCSS = "flex flex-col";
-  const inputCSS = "border rounded-sm p-2 w-full placeholder:text-sm mt-2";
+  const inputCSS =
+    "border rounded-sm p-2 md:w-fit w-full placeholder:text-sm mt-2 placeholder:text-gray-800";
   const radioInputCSS = "mt-2";
 
   const bankDetails = [
@@ -41,9 +49,11 @@ const DynamicForm = ({
       case "date":
         return (
           <div key={field.name} className="">
-            <label htmlFor={field.name} className={labelCSS}>
-              {field.label}
-            </label>
+            {ifLabel && (
+              <label htmlFor={field.name} className={labelCSS}>
+                {field.label}
+              </label>
+            )}
             <input
               type={field.type}
               name={field.name}
@@ -57,18 +67,26 @@ const DynamicForm = ({
         );
       case "checkbox":
         return (
-          <div key={field.name}>
-            <label htmlFor={field.name} className={labelCSS}>
-              <input
-                type="checkbox"
-                name={field.name}
-                id={field.name}
-                checked={values[field.name]}
-                onChange={handleChange}
-                className={inputCSS}
-              />
-              {field.label}
-            </label>
+          <div className="mt-4 w-full">
+            <h2 className="text-lg mb-4 font-semibold">{field.label}</h2>
+            <div className="grid sm:grid-flow-row md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {field.options.map((offer) => (
+                <div
+                  key={offer.name}
+                  className="checkbox-group flex items-center"
+                >
+                  <input
+                    type="checkbox"
+                    name={offer.name}
+                    id={offer.name}
+                    checked={values[offer.name]}
+                    onChange={handleChange}
+                    className="mx-2"
+                  />
+                  <label htmlFor={offer.name}>{offer.label}</label>
+                </div>
+              ))}
+            </div>
           </div>
         );
       case "select":
@@ -142,7 +160,10 @@ const DynamicForm = ({
   return (
     <>
       <div className="flex justify-between md:items-center md:text-center h-full w-screen md:px-12 md:py-4 px-4 py-2">
-        <button className="border rounded-lg px-2 bg-gray-300 w-fit">
+        <a
+          href="/registerCarousel"
+          className="border rounded-lg px-2 bg-gray-300 w-fit"
+        >
           <svg
             fill="#000000"
             version="1.1"
@@ -160,7 +181,7 @@ const DynamicForm = ({
               d="M154.394,325.606C157.322,328.535,161.161,330,165,330s7.678-1.465,10.607-4.394l75-75 c5.858-5.857,5.858-15.355,0-21.213c-5.858-5.857-15.356-5.857-21.213,0L180,278.787V15c0-8.284-6.716-15-15-15 c-8.284,0-15,6.716-15,15v263.787l-49.394-49.394c-5.858-5.857-15.355-5.857-21.213,0c-5.858,5.857-5.858,15.355,0,21.213 L154.394,325.606z"
             />
           </svg>
-        </button>
+        </a>
         <div className="flex justify-center items-center text-center w-fit">
           <h1 className="md:text-xl font-bold flex justify-between">
             {formTitle}
@@ -168,7 +189,11 @@ const DynamicForm = ({
         </div>
         <div className="w-fit">Request ID:{requestID}</div>
       </div>
-      <form className={formCSS} onSubmit={handleSubmit}>
+      <form
+        className={formCSS}
+        onSubmit={handleSubmit}
+        preventScrollReset={true}
+      >
         {formDivCSS ? (
           <div className={formDivCSS}>
             {config.map((field) => renderInput(field))}
@@ -177,9 +202,9 @@ const DynamicForm = ({
           config.map((field) => renderInput(field))
         )}
         {isBankDetails && (
-          <div className="border-2 md:mx-20 gap-4 flex flex-col p-4 rounded">
+          <div className="border-2 gap-4 flex flex-col p-4 rounded w-full md:w-fit">
             <h1 className="md:text-lg">Bank Details</h1>
-            <div className="flex sm:flex-row flex-col gap-4">
+            <div className="flex md:flex-row flex-col gap-4">
               {bankDetails.map((item) => (
                 <input
                   className={inputCSS}
