@@ -19,12 +19,12 @@ const boxData = [
     {
       svgPath: '/distribution 1.svg',
       text: 'Distribution Service',
-      link: '/box2',
+      link: '/distribution',
     },
     {
       svgPath: '/insurance 1.svg',
       text: 'Insurance Service',
-      link: '/box2',
+      link: '/insurance',
     },
     {
       svgPath: '/consultant 1.svg',
