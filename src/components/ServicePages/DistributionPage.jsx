@@ -49,7 +49,7 @@ export default function DistributionPage(props){
                         <th className="bg-black text-white text-lg md:text-xl lg:text-2xl p-2 md:p-3">Service Network</th>
                         <th className="bg-black text-white text-lg md:text-xl lg:text-2xl p-2 md:p-3">Rating</th>
                         <th className="bg-black text-white text-lg md:text-xl lg:text-2xl p-2 md:p-3">More Info</th>
-                        <th className="bg-black text-white text-lg md:text-xl lg:text-2xl p-2 md:p-3 pr-3 max-[435px]:rounded-r-2xl">Select</th>
+                        <th className="bg-black text-white text-lg md:text-xl lg:text-2xl p-2 pr-5 rounded-r-full max-[435px]:rounded-r-2xl">Select</th>
                         </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-200">
