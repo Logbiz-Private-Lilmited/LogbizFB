@@ -15,12 +15,16 @@ import WarehouseListing from "./components/Forms/WarehouseListingForm";
 // import Transport from "./components/Forms/Registrations/Transport";
 import Footer from "./components/Footer/Footer";
 import DynamicPage1 from "./components/ServicePages/DynamicPage1";
+import InsurancePage from "./components/ServicePages/InsurancePage";
+import DistributionPage from "./components/ServicePages/DistributionPage";
 import FreightPage from "./components/ServicePages/FreightPage";
 import {
   TransportDetails,
   LogisticsDetails,
   WarehouseDetails,
   FreightDetails,
+  InsuranceDetails,
+  DistributionDetails,
 } from "./components/ServicePages/data";
 
 function App() {
@@ -80,6 +84,8 @@ function App() {
             path="/freightpage"
             element={<FreightPage Data={FreightDetails} />}
           />
+          <Route path="/insurance" element={<InsurancePage Data={InsuranceDetails} />}/>
+          <Route path="/distribution" element={<DistributionPage Name="Distribution" Data={DistributionDetails} />}/>
         </Routes>
       </div>
       {!hideFooterPaths.includes(location.pathname) && <Footer />}
