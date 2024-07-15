@@ -190,3 +190,53 @@ export const FreightDetails =[
         description : "Our rail freight service offers a reliable and efficient solution for transporting goods over land. We provide cost-effective and environmentally friendly shipping options for a wide range of cargo, from bulk commodities to containerized goods. With our extensive rail network and strategic partnerships, we ensure timely and secure delivery across regional and international routes. Our dedicated team works closely with you to tailor services that meet your specific logistics needs, providing seamless and hassle-free transportation from origin to destination."
     }
 ]
+
+export const InsuranceDetails=[
+    {   
+        index:1,
+        name:"Cargo Insurance",
+        description:[
+            "Marine Cargo Insurance: Protects cargo during sea transportation.",
+            "Inland Cargo Insurance: Covers cargo while in transit by land (road and rail).",
+            "Air Cargo Insurance: Ensures cargo safety during air transportation. Follow the link to get comprehensive"
+        ]
+    },
+    {   
+        index:2,
+        name:"Vehicle Insurance",
+        description:["Truck Insurance: Provides coverage for trucks used in transportation.","Fleet Insurance: Covers multiple vehicles under a single policy.","Commercial Auto Insurance: Protects commercial vehicles, including cars, vans, and trucks."]
+    },
+    {   
+        index:3,
+        name:"Property Insurance",
+        description:["Warehouse Insurance: Safeguards storage facilities and their contents.","Distribution Center Insurance: Covers distribution centers and their operations.","Terminal Insurance: Protects transportation terminals (e.g., ports, airports)."]
+    },
+    {   
+        index:4,
+        name:"Liability Insurance",
+        description:[" Third-Party Liability Insurance: Covers damages or injuries caused to third parties.","Errors and Omissions Insurance: Protects against professional errors or omissions.","General Liability Insurance: Offers broad protection for various liabilities."]
+    }
+]
+
+export const DistributionDetails=[
+    {
+        index:1,
+        name:"3PL Services",
+        description:[]
+    },
+    {
+        index:2,
+        name:"Distribution",
+        description:[]
+    },
+    {
+        index:3,
+        name:"Utilities",
+        description:[]
+    },
+    {
+        index:4,
+        name:"Storage",
+        description:[]
+    }
+]
