@@ -1,8 +1,13 @@
-import React from "react";
+import React,{useEffect} from "react";
 import ServiceNavbar from "./ServiceNavbar";
 import Dropdown from "./Dropdown";
 
 export default function DistributionPage(props){
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const distdata=[
         {
             name:"Messan Logistics",

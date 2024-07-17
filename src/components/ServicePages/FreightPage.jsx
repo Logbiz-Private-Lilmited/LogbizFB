@@ -1,8 +1,11 @@
-import React from "react";
+import React,{useEffect} from "react";
 import Dropdown from "./Dropdown";
 import FreightCard from "./FreightCard";
 
 export default function FreightPage(props){
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const details =[...props.Data]
 
