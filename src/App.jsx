@@ -27,6 +27,7 @@ import DynamicPage1 from "./components/ServicePages/DynamicPage1";
 import InsurancePage from "./components/ServicePages/InsurancePage";
 import DistributionPage from "./components/ServicePages/DistributionPage";
 import FreightPage from "./components/ServicePages/FreightPage";
+import FinancePage from "./components/ServicePages/FinancePage";
 import {
   TransportDetails,
   LogisticsDetails,
@@ -34,6 +35,7 @@ import {
   FreightDetails,
   InsuranceDetails,
   DistributionDetails,
+  FinanceDetails
 } from "./components/ServicePages/data";
 
 function App() {
@@ -121,6 +123,7 @@ function App() {
             element={<FreightPage Data={FreightDetails} />}
           />
           <Route path="/insurance" element={<InsurancePage Data={InsuranceDetails} />}/>
+          <Route path="/finance" element={<FinancePage Data={FinanceDetails} />}/>
           <Route path="/distribution" element={<DistributionPage Name="Distribution" Data={DistributionDetails} />}/>
         </Routes>
       </div>
