@@ -240,3 +240,39 @@ export const DistributionDetails=[
         description:[]
     }
 ]
+
+export const FinanceDetails=[
+    {
+        index:1,
+        name:"Working Capital",
+        description:["Working Capital Loans: These are short-term loans designed to cover day-to-day operational expenses, such as fuel, maintenance, payroll, and other immediate needs.",
+            "Invoice Financing (Factoring): Logistics companies can sell their accounts receivable (invoices) to a third party at a discount in exchange for immediate cash flow.",
+            "Trade Credit: This involves extending credit terms with suppliers and customers, allowing logistics companies to better manage their cash flow."
+        ]
+    },
+    {
+        index:2,
+        name:"Asset Financing",
+        description:["Truck Financing: Logistics companies can secure financing to purchase or lease trucks, trailers, and other transportation assets.",
+            "Warehouse Financing: Financing is provided for the construction, expansion, or maintenance of warehouses and storage facilities.",
+            "Equipment Leasing: Leasing agreements for equipment like forklifts, loading docks, and logistics technology can help reduce upfront costs."
+        ]
+    },
+    {
+        index:3,
+        name:"Investment Management",
+        description:["Asset Management: Professional management of logistics assets, such as trucks, warehouses, and  equipment, to optimize returns and reduce operational costs.",
+            "Investment Services: Assistance with investment strategies and opportunities to grow a logistics company's capital, including investments in technology and expansion.",
+            "Financial Advisory: Expert advice on financial planning, risk management, and investment strategies tailored to the logistics industry.",
+            "Each of these finance services plays a vital role in ensuring the smooth operation and growth of logistics businesses. By categorizing them into these four buckets, logistics companies can better understand and manage their financial needs."
+        ]
+    },
+    {
+        index:4,
+        name:"Strategic Growth and Expansion",
+        description:["Investment Services: Assistance with investment strategies and opportunities to grow a logistics company's capital, including investments in technology and expansion.",
+            "Financial Advisory: Expert advice on financial planning, risk management, and investment strategies tailored to the logistics industry",
+            "Mergers and Acquisitions (M&A): Support in identifying potential mergers or acquisitions to expand market reach and capabilities."
+        ]
+    }
+]

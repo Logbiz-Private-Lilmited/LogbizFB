@@ -39,7 +39,7 @@ const boxData = [
     {
       svgPath: '/finance 1.svg',
       text: 'Finance Service',
-      link: '/box2',
+      link: '/finance',
     },
   
     
