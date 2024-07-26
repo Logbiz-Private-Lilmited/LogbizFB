@@ -35,7 +35,7 @@ import {
   InsuranceDetails,
   DistributionDetails,
 } from "./components/ServicePages/data";
-
+import TruckDetails from "./components/ServicePages/ServiceDetails/truckdetails";
 function App() {
   const location = useLocation();
   const hideNavbarPaths = ["/signup"];
@@ -122,6 +122,7 @@ function App() {
           />
           <Route path="/insurance" element={<InsurancePage Data={InsuranceDetails} />}/>
           <Route path="/distribution" element={<DistributionPage Name="Distribution" Data={DistributionDetails} />}/>
+          <Route path="/truckDetails" element={<TruckDetails />} />
         </Routes>
       </div>
       {!hideFooterPaths.includes(location.pathname) && <Footer />}
