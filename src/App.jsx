@@ -7,30 +7,35 @@ import { DashboardView } from "./views/DashboardView";
 import { ServicesListingView } from "./views/ServicesListingView";
 import { ContactView } from "./views/ContactView";
 import Signup from "./components/Signup/Signup";
-// import { LoginView } fro .m "./views/LoginView";
 
-<<<<<<< Updated upstream
-import WarehouseListing from "./components/Forms/WarehouseListingForm";
-=======
 import WarehouseListing from "./components/Forms/QuoteBookingForms/WarehouseListingForm";
->>>>>>> Stashed changes
 
-import FSPRegistration from "./components/Forms/Registrations/FSPRegistration";
-import DistributionHubForm from "./components/Forms/Registrations/DistributionHubForm";
-import WarehouseRegistration from "./components/Forms/Registrations/WarehouseRegistration";
-import ISPRegistration from "./components/Forms/Registrations/ISPRegistration";
-import Parcel from "./components/Forms/Registrations/Parcel";
-import ThreePL from "./components/Forms/Registrations/ThreePL";
-import Transport from "./components/Forms/Registrations/Transport";
+import {
+  ConsultingRegistration,
+  DistributionHubForm,
+  FSPRegistration,
+  FreightRegistration,
+  ISPRegistration,
+  ParcelRegistration,
+  ThreePL,
+  Transport,
+  WarehouseRegistration,
+} from "./components/Forms/RegistrationForms";
 
 import Footer from "./components/Footer/Footer";
 import DynamicPage1 from "./components/ServicePages/DynamicPage1";
+import InsurancePage from "./components/ServicePages/InsurancePage";
+import DistributionPage from "./components/ServicePages/DistributionPage";
 import FreightPage from "./components/ServicePages/FreightPage";
+import FinancePage from "./components/ServicePages/FinancePage";
 import {
   TransportDetails,
   LogisticsDetails,
   WarehouseDetails,
   FreightDetails,
+  InsuranceDetails,
+  DistributionDetails,
+  FinanceDetails,
 } from "./components/ServicePages/data";
 import Insurance from "./components/Forms/QuoteBookingForms/Insurance";
 import ULC from "./components/Forms/QuoteBookingForms/ULC";
@@ -66,7 +71,7 @@ function App() {
             element={<WarehouseRegistration />}
           />
           <Route path="/ispRegistration" element={<ISPRegistration />} />
-          <Route path="/parcelRegistration" element={<Parcel />} />
+          <Route path="/parcelRegistration" element={<ParcelRegistration />} />
           <Route path="/3plRegistration" element={<ThreePL />} />
           <Route path="/transportRegistration" element={<Transport />} />
           <Route path="/fspRegistration" element={<FSPRegistration />} />
@@ -77,6 +82,14 @@ function App() {
 
           <Route path="/insurance" element={<Insurance />} />
           <Route path="/ulcDetails" element={<ULC />} />
+          <Route
+            path="/consultingRegistration"
+            element={<ConsultingRegistration />}
+          />
+          <Route
+            path="/freightRegistration"
+            element={<FreightRegistration />}
+          />
 
           {/* forms-end  */}
 
@@ -113,6 +126,23 @@ function App() {
           <Route
             path="/freightpage"
             element={<FreightPage Data={FreightDetails} />}
+          />
+          <Route
+            path="/insurance"
+            element={<InsurancePage Data={InsuranceDetails} />}
+          />
+          <Route
+            path="/finance"
+            element={<FinancePage Data={FinanceDetails} />}
+          />
+          <Route
+            path="/distribution"
+            element={
+              <DistributionPage
+                Name="Distribution"
+                Data={DistributionDetails}
+              />
+            }
           />
         </Routes>
       </div>

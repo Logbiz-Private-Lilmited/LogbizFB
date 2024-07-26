@@ -1,4 +1,4 @@
-import DynamicForm from "./DynamicForm";
+import DynamicForm from "../../DynamicForm";
 
 const WarehouseListingForm = () => {
   const initialFormData = [

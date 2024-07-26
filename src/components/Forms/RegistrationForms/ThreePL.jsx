@@ -1,4 +1,5 @@
 import DynamicForm from "../DynamicForm";
+import ScrollToTopOnMount from "../ScrollToTop";
 
 const ThreePL = () => {
   const formInputs = [
@@ -25,7 +26,7 @@ const ThreePL = () => {
     {
       label: "Service Offerings",
       type: "checkbox",
-      serviceOfferings: [
+      options: [
         { name: "orderFulfillment", label: "Order Fulfillment" },
         { name: "loadDeconsolidation", label: "Load Deconsolidation" },
         { name: "bondedRegime", label: "Bonded Regime" },
@@ -64,6 +65,7 @@ const ThreePL = () => {
 
   return (
     <>
+      <ScrollToTopOnMount />
       <DynamicForm
         config={formInputs}
         formCSS="md:w-fit flex justify-center items-center flex-col gap-6 lg:mx-16 my-2 mx-4"
@@ -73,6 +75,7 @@ const ThreePL = () => {
         formTitle={"3PL Registration"}
         requestID={"1234"}
         ifLabel={false}
+        key={"3PL"}
       />
     </>
   );

@@ -2,42 +2,42 @@ const RegBoxData = [
   {
     svgPath: "/truck.svg",
     text: "Road transportation Registration",
-    link: "/box1",
+    link: "/transportRegistration",
   },
   {
     svgPath: "/international-shipping 1.svg",
     text: "Freight Forwarding Registration",
-    link: "/box2",
+    link: "/freightRegistration",
   },
   {
     svgPath: "/warehouse 1.svg",
     text: "Warehouse Service Registration",
-    link: "/box2",
+    link: "/warehouseRegistration",
   },
   {
     svgPath: "/distribution 1.svg",
     text: "Distribution Service Registration",
-    link: "/box2",
+    link: "/distributionHubRegistration",
   },
   {
     svgPath: "/insurance 1.svg",
     text: "Insurance Service Registration",
-    link: "/box2",
+    link: "/ispRegistration",
   },
   {
     svgPath: "/consultant 1.svg",
     text: "Logistics Consulting Services Registration",
-    link: "/box2",
+    link: "/consultingRegistration",
   },
   {
     svgPath: "/manufacturing 1.svg",
-    text: "Original Equipment Manufacturers Services Registration",
-    link: "/box2",
+    text: "OEM Services Registration",
+    link: "/3plRegistration",
   },
   {
     svgPath: "/finance 1.svg",
     text: "Finance Service Registration",
-    link: "/",
+    link: "/fspRegistration",
   },
 ];
 export default RegBoxData;

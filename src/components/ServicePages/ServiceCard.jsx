@@ -5,11 +5,11 @@ import Point from "/src/assets/ServicePages/point.png"
 
 export default function ServiceCard(props){
     return(
-        <div className="border-2 border-black rounded-md h-fit w-fit p-2 pr-[30px] flex gap-4">
-            <img src={props.Img} alt="" className="w-[190px] h-[190px]" />
+        <div className="border-2 border-black rounded-md h-fit w-fit p-2 pr-[15px] flex gap-4">
+            <img src={props.Img} alt="" className="w-[190px] h-[190px] max-[435px]:w-[130px] max-[435px]:h-[130px]" />
             <div className="flex flex-col gap-2">
-                <h1 className="text-4xl max-[435px]:text-2xl font-medium">{props.Name}</h1>
-                <div className="flex gap-2 mt-3">
+                <h1 className="text-4xl max-[435px]:text-xl font-medium">{props.Name}</h1>
+                <div className="flex gap-2 mt-3 max-[435px]:mt-0">
                     <img src={Location} alt="" className="h-5" />
                     <h1 className="text-[18px] max-[435px]:text-[13px]">{props.Location}</h1>
                 </div>

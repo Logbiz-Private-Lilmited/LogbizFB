@@ -7,12 +7,12 @@ const RegBoxes = () => {
       title: "Looking to provide a logistic service ?",
       subtitle: "REGISTER",
       items: RegBoxData,
-      smalltitle:"Register in any of the services you would like to offer.",
+      smalltitle: "Register in any of the services you would like to offer.",
     },
   ];
 
   return (
-    <div>
+    <div id="registerCarousel">
       <BoxesCarousel datasets={datasets} />
     </div>
   );

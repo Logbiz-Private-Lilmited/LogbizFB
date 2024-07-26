@@ -1,10 +1,8 @@
 // src/Freight.js
 import React from "react";
-<<<<<<< Updated upstream:src/components/Forms/Registrations/Transport.jsx
-import useForm from "../useform";
-=======
 import ScrollToTopOnMount from "../ScrollToTop";
->>>>>>> Stashed changes:src/components/Forms/RegistrationForms/Transport.jsx
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom"; // if using React Router
 
 const personalDetailsLeft = [
   { placeholder: "Name", type: "text" },
@@ -95,6 +93,8 @@ const renderField = (field) => {
 const Transport = () => {
   return (
     <>
+      <ScrollToTopOnMount />
+
       <div className="flex justify-between md:items-center md:text-center h-full w-screen md:px-12 md:py-4 px-4 py-2">
         <button className="border rounded-lg px-2 bg-gray-300 w-fit">
           <svg
