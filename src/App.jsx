@@ -8,7 +8,7 @@ import { ServicesListingView } from "./views/ServicesListingView";
 import { ContactView } from "./views/ContactView";
 import Signup from "./components/Signup/Signup";
 
-import WarehouseListing from "./components/Forms/Quote/BookingForms/WarehouseListingForm";
+import WarehouseListing from "./components/Forms/QuoteBookingForms/WarehouseListingForm";
 
 import {
   ConsultingRegistration,
@@ -35,8 +35,10 @@ import {
   FreightDetails,
   InsuranceDetails,
   DistributionDetails,
-  FinanceDetails
+  FinanceDetails,
 } from "./components/ServicePages/data";
+import Insurance from "./components/Forms/QuoteBookingForms/Insurance";
+import ULC from "./components/Forms/QuoteBookingForms/ULC";
 
 function App() {
   const location = useLocation();
@@ -77,6 +79,9 @@ function App() {
             path="/distributionHubRegistration"
             element={<DistributionHubForm />}
           />
+
+          <Route path="/insurance" element={<Insurance />} />
+          <Route path="/ulcDetails" element={<ULC />} />
           <Route
             path="/consultingRegistration"
             element={<ConsultingRegistration />}
@@ -122,9 +127,23 @@ function App() {
             path="/freightpage"
             element={<FreightPage Data={FreightDetails} />}
           />
-          <Route path="/insurance" element={<InsurancePage Data={InsuranceDetails} />}/>
-          <Route path="/finance" element={<FinancePage Data={FinanceDetails} />}/>
-          <Route path="/distribution" element={<DistributionPage Name="Distribution" Data={DistributionDetails} />}/>
+          <Route
+            path="/insurance"
+            element={<InsurancePage Data={InsuranceDetails} />}
+          />
+          <Route
+            path="/finance"
+            element={<FinancePage Data={FinanceDetails} />}
+          />
+          <Route
+            path="/distribution"
+            element={
+              <DistributionPage
+                Name="Distribution"
+                Data={DistributionDetails}
+              />
+            }
+          />
         </Routes>
       </div>
       {!hideFooterPaths.includes(location.pathname) && <Footer />}

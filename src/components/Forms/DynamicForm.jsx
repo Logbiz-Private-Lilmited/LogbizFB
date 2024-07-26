@@ -1,5 +1,6 @@
 import React from "react";
 import useForm from "./useform";
+import axios from "axios";
 import { Link } from "react-router-dom";
 
 const DynamicForm = ({
@@ -11,14 +12,16 @@ const DynamicForm = ({
   requestID,
   note,
   ifLabel,
+  formType,
+  formRadioCSS,
+  formGroupCSS,
 }) => {
   const initialValues = config.reduce((acc, field) => {
     if (field.type === "checkbox") {
-      field.options.forEach((offer) => {
-        acc[offer.name] = false;
+      field.options.forEach((option) => {
+        acc[option.name] = false;
       });
-    }
-    if (field.type === "group") {
+    } else if (field.type === "group") {
       field.fields.forEach((subField) => {
         acc[subField.name] = "";
       });
@@ -29,16 +32,16 @@ const DynamicForm = ({
   }, {});
 
   const { values, handleChange, setValues } = useForm(initialValues);
-  const labelCSS = "flex flex-col";
+
   const inputCSS =
     "border rounded-sm p-2 md:w-fit w-full placeholder:text-sm mt-2 placeholder:text-gray-800";
-  const radioInputCSS = "mt-2";
+  const radioInputCSS = "w-fit";
 
   const bankDetails = [
-    { label: "Name", name: "name", value: "" },
-    { label: "Account Number", name: "accountNumber", value: "" },
-    { label: "Branch Name", name: "branchName", value: "" },
-    { label: "IFSC Code", name: "ifscCode", value: "" },
+    { label: "Name", name: "name" },
+    { label: "Account Number", name: "accountNumber" },
+    { label: "Branch Name", name: "branchName" },
+    { label: "IFSC Code", name: "ifscCode" },
   ];
 
   const renderInput = (field) => {
@@ -46,11 +49,14 @@ const DynamicForm = ({
       case "text":
       case "email":
       case "password":
-      case "date":
         return (
-          <div key={field.name} className="">
+          <div key={field.name}>
             {ifLabel && (
-              <label htmlFor={field.name} className={labelCSS}>
+              <label
+                htmlFor={field.name}
+                className="flex flex-col"
+                key={field.name}
+              >
                 {field.label}
               </label>
             )}
@@ -62,28 +68,51 @@ const DynamicForm = ({
               onChange={handleChange}
               placeholder={field.label}
               className={inputCSS}
+              key={field.name}
+            />
+          </div>
+        );
+
+      case "date":
+        return (
+          <div key={field.name} className=" flex flex-col">
+            {
+              <label htmlFor={field.name} className="flex flex-col">
+                {field.label}
+              </label>
+            }
+            <input
+              type={field.type}
+              name={field.name}
+              id={field.name}
+              value={values[field.name]}
+              onChange={handleChange}
+              placeholder={field.label}
+              className={
+                "border rounded-sm p-2 w-fit md:w-[195px] placeholder:text-sm mt-2 placeholder:text-gray-800"
+              }
             />
           </div>
         );
       case "checkbox":
         return (
-          <div className="mt-4 w-full">
+          <div className="mt-4 w-full" key={field.label}>
             <h2 className="text-lg mb-4 font-semibold">{field.label}</h2>
             <div className="grid sm:grid-flow-row md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {field.options.map((offer) => (
+              {field.options.map((option) => (
                 <div
-                  key={offer.name}
+                  key={option.name}
                   className="checkbox-group flex items-center"
                 >
                   <input
                     type="checkbox"
-                    name={offer.name}
-                    id={offer.name}
-                    checked={values[offer.name]}
+                    name={option.name}
+                    id={option.name}
+                    checked={values[option.name]}
                     onChange={handleChange}
                     className="mx-2"
                   />
-                  <label htmlFor={offer.name}>{offer.label}</label>
+                  <label htmlFor={option.name}>{option.label}</label>
                 </div>
               ))}
             </div>
@@ -92,7 +121,7 @@ const DynamicForm = ({
       case "select":
         return (
           <div key={field.name}>
-            <label htmlFor={field.name} className={labelCSS}>
+            <label htmlFor={field.name} className="flex flex-col">
               {field.label}
             </label>
             <select
@@ -112,11 +141,11 @@ const DynamicForm = ({
         );
       case "radio":
         return (
-          <div key={field.name} className="w-full">
-            <label className={labelCSS}>{field.label}</label>
-            <div className="flex flex-col">
+          <div key={field.name} className="">
+            <label className="flex flex-col">{field.label}</label>
+            <div className={!formRadioCSS ? `flex flex-col` : formRadioCSS}>
               {field.options.map((option) => (
-                <label key={option} className="flex items-center mt-2">
+                <label key={option} className="flex items-center mt-2 gap-1">
                   <input
                     type="radio"
                     name={field.name}
@@ -133,14 +162,11 @@ const DynamicForm = ({
         );
       case "group":
         return (
-          <div
-            key={field.label}
-            className="form-group flex items-center justify-center flex-col"
-          >
-            <label className="font-body text-xl text-center pb-10">
+          <div key={field.name} className="flex flex-col gap-2 ">
+            <label className="font-body text-xl" key={field.label}>
               {field.label}
             </label>
-            <div className="form-group-fields grid grid-cols-3 grid-rows-7 gap-8 ">
+            <div className={formGroupCSS} key={field.name}>
               {field.fields.map((subField) => renderInput(subField))}
             </div>
           </div>
@@ -151,6 +177,15 @@ const DynamicForm = ({
   };
 
   const handleSubmit = (e) => {
+    e.preventDefault();
+    // axios
+    //   .post("http://localhost:3000/submit-form", { ...values, formType }) // Include formType in the data sent to the backend
+    //   .then((response) => {
+    //     console.log(response.data);
+    //   })
+    //   .catch((error) => {
+    //     console.error("There was an error submitting the form!", error);
+    //   });
     e.preventDefault();
     const data = values;
     console.log("submitted values:", data);
@@ -217,6 +252,8 @@ const DynamicForm = ({
             </div>
           </div>
         )}
+        {/* Hidden input to store formType */}
+        <input type="hidden" name="formType" value={formType} />
         <div className="md:col-span-2 lg:col-span-4 flex justify-end">
           <button
             type="submit"
@@ -231,9 +268,9 @@ const DynamicForm = ({
           <h1 className="text-sm font-bold">Note</h1>
           <div className="text-sm">
             <ul className="gap-8 flex flex-col">
-              {note.map((note) => {
-                return <li key={note}>{note}</li>;
-              })}
+              {note.map((noteItem, index) => (
+                <li key={index}>{noteItem}</li>
+              ))}
             </ul>
           </div>
         </div>
