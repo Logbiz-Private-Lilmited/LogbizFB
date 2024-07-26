@@ -17,6 +17,7 @@ const FreightRegistration = () => {
     { label: "State", name: "state", type: "text" },
 
     {
+      name: "sevicesCheckbox",
       label: "Services",
       type: "checkbox",
       options: [
@@ -58,7 +59,8 @@ const FreightRegistration = () => {
         formTitle={"Freight Registration"}
         requestID={"1234"}
         ifLabel={false}
-        key={"FreightRegistration"}
+        key={"freightRegistration"}
+        formType={"freightRegistration"}
       />
     </>
   );

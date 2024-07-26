@@ -8,7 +8,7 @@ import { ServicesListingView } from "./views/ServicesListingView";
 import { ContactView } from "./views/ContactView";
 import Signup from "./components/Signup/Signup";
 
-import WarehouseListing from "./components/Forms/Quote/BookingForms/WarehouseListingForm";
+import WarehouseListing from "./components/Forms/QuoteBookingForms/WarehouseListingForm";
 
 import {
   ConsultingRegistration,
@@ -27,6 +27,7 @@ import DynamicPage1 from "./components/ServicePages/DynamicPage1";
 import InsurancePage from "./components/ServicePages/InsurancePage";
 import DistributionPage from "./components/ServicePages/DistributionPage";
 import FreightPage from "./components/ServicePages/FreightPage";
+import FinancePage from "./components/ServicePages/FinancePage";
 import {
   TransportDetails,
   LogisticsDetails,
@@ -34,8 +35,12 @@ import {
   FreightDetails,
   InsuranceDetails,
   DistributionDetails,
+  FinanceDetails,
 } from "./components/ServicePages/data";
 import TruckDetails from "./components/ServicePages/ServiceDetails/truckdetails";
+import Insurance from "./components/Forms/QuoteBookingForms/Insurance";
+import ULC from "./components/Forms/QuoteBookingForms/ULC";
+
 function App() {
   const location = useLocation();
   const hideNavbarPaths = ["/signup"];
@@ -75,6 +80,9 @@ function App() {
             path="/distributionHubRegistration"
             element={<DistributionHubForm />}
           />
+
+          <Route path="/insurance" element={<Insurance />} />
+          <Route path="/ulcDetails" element={<ULC />} />
           <Route
             path="/consultingRegistration"
             element={<ConsultingRegistration />}
@@ -123,6 +131,23 @@ function App() {
           <Route path="/insurance" element={<InsurancePage Data={InsuranceDetails} />}/>
           <Route path="/distribution" element={<DistributionPage Name="Distribution" Data={DistributionDetails} />}/>
           <Route path="/truckDetails" element={<TruckDetails />} />
+          <Route
+            path="/insurance"
+            element={<InsurancePage Data={InsuranceDetails} />}
+          />
+          <Route
+            path="/finance"
+            element={<FinancePage Data={FinanceDetails} />}
+          />
+          <Route
+            path="/distribution"
+            element={
+              <DistributionPage
+                Name="Distribution"
+                Data={DistributionDetails}
+              />
+            }
+          />
         </Routes>
       </div>
       {!hideFooterPaths.includes(location.pathname) && <Footer />}

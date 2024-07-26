@@ -1,8 +1,19 @@
-import React from "react";
+import React,{useEffect} from "react";
 import ServiceNavbar from "./ServiceNavbar";
 import Dropdown from "./Dropdown";
+import PLImg1 from "/src/assets/ServicePages/PartLoadImg1.png"
+import PLImg2 from "/src/assets/ServicePages/PartLoadImg2.png"
+import PLImg3 from "/src/assets/ServicePages/PartLoadImg3.png"
+
+const PLImgs = [PLImg1,PLImg2,PLImg3]
+
 
 export default function DistributionPage(props){
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const distdata=[
         {
             name:"Messan Logistics",
@@ -83,6 +94,30 @@ export default function DistributionPage(props){
                     <h1 className="bg-[#ff6600] text-white p-3 w-fit text-center rounded-lg">ULC Hire</h1>
                 </div>
             </div>
+            <div className=" flex justify-center items-center mt-4">
+                        <h1 className="bg-[#f2f2f2] w-fit p-2 rounded-md font-semibold text-center">Did not find vehicle for your load destination?</h1>
+                        <img src="/src/assets/ServicePages/Question.png" alt="" className=" w-8 h-8 p-1 mt-1 inline-block" />
+                    </div>
+                    <div className="flex justify-center items-center mt-3">
+                        <div className="border-2 border-black rounded-lg px-10 py-4 flex flex-col justify-center items-center w-max">
+                            <div className=" flex justify-center items-center gap-2">
+                                <h1 className="font-semibold text-center ">If you want Part Load Booking click here !</h1>
+                                <img src="/src/assets/ServicePages/Question.png" alt="" className=" w-5 h-5 inline-block" />
+                            </div>
+                            <div className="mt-10">
+                                {
+                                    PLImgs.map((image,index) =>{
+                                        return(
+                                            <img src={image} alt="" key={index} className=" inline-block w-[120px] max-[435px]:w-[70px]" />
+                                        )
+                                    })
+                                }
+                            </div>
+                            <div className="font-semibold mt-2">
+                                Book cube space shipments on pallets for efficient transport 
+                            </div>
+                        </div>
+                    </div>
         </div>
     )
 }
