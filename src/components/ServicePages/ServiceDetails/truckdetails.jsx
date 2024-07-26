@@ -1,86 +1,190 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const TruckDetails = () => {
-  const textClass = "text-black font-['SF Pro Display'] w-1/2";
-  const largeTextClass = `${textClass} text-3xl font-medium`;
-  const smallTextClass = `${textClass} text-base font-normal text-neutral-700 leading-normal`;
-  const boxClass = "w-full h-96 bg-zinc-300 rounded-2xl mb-4";
-  const formInputClass = "w-full px-4 py-1 rounded-md border-2 border-stone-200 flex flex-col";
+const TruckDetails = ({ data = mockData }) => {
+  const navigate = useNavigate();
+
+  // Utility classes
+  const textBase = "text-black font-['SF Pro Display']";
+  const textLarge = `${textBase} text-3xl font-medium`;
+  const textSmall = `${textBase} text-base font-normal text-neutral-700 leading-normal`;
+  const boxBase = "w-full h-96 bg-zinc-300 rounded-2xl mb-4";
+  const formInputBase = "w-full py-1 flex flex-col";
+  const fieldPadding = "py-4";
+  const inputBase = "w-full px-4 py-2 rounded-md border-2 border-stone-200";
+  const buttonBase =
+    "text-lg md:text-sm text-black font-bold text-center rounded py-3 px-4 border-2 border-black bg-white hover:bg-customOrange hover:border-customOrange hover:text-white transition-all duration-300";
 
   return (
     <div className="container mx-auto p-4">
-      <div className="w-full text-black text-4xl font-bold font-['SF Pro Display'] mb-4 text-center">
-        M/S SK Transportation Company
-        <div className="text-black text-4xl font-medium font-['SF Pro Display'] mb-4">
-          HR55AL4900
+      <div className={`${textBase} text-4xl font-bold mb-4 text-center`}>
+        {data.companyName || "M/S SK Transportation Company"}
+        <div className={`${textBase} text-4xl font-medium mb-4`}>
+          {data.registrationNumber || "HR55AL4900"}
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row gap-4 mb-4">
-        <div className="flex flex-col gap-4 w-full md:w-1/2">
-          <div className="flex items-center">
-            <div className={largeTextClass}>Location</div>
-            <div className={largeTextClass}>Gurgaon</div>
-          </div>
-          <div className="flex items-center">
-            <div className={largeTextClass}>Pin code</div>
-            <div className={largeTextClass}>635109</div>
-          </div>
-          <div className={largeTextClass}>Body type</div>
-          <div className={largeTextClass}>Volume Metrics</div>
-          <div className="flex">
-            <div className={largeTextClass}>L</div>
-            <div className={largeTextClass}>B</div>
-            <div className={largeTextClass}>H</div>
-          </div>
-          <div className={largeTextClass}>Capacity</div>
-          <div className={largeTextClass}>Insurance active</div>
-          <div className={largeTextClass}>Yes</div>
-          <div className={largeTextClass}>Registration Certificate No</div>
-        </div>
-        <div className="flex flex-col w-full md:w-1/2 gap-4">
-          <div className={boxClass}>
-            <div className={`${textClass} text-3xl font-normal`}>Images of LSP’S asset</div>
-          </div>
-          <div className={boxClass}>
-            <div className={`${textClass} text-3xl font-normal`}>Images of LSP’S asset</div>
-          </div>
-        </div>
-      </div>
+      <div className="flex flex-col gap-4 mb-4 md:flex-row">
+        <div className="flex flex-col gap-4 w-full md:w-3/4">
+          {[
+            { label: "Location", value: data.location || "N/A" },
+            { label: "Pin code", value: data.pinCode || "N/A" },
+            { label: "Body type", value: data.bodyType || "N/A" },
+            { label: "Model", value: data.model || "N/A" },
+          ].map(({ label, value }) => (
+            <div
+              className={`${fieldPadding} flex flex-col md:flex-row items-start`}
+              key={label}
+            >
+              <div className={`${textLarge} md:w-2/5`}>{label}</div>
+              <div className={`${textLarge} md:w-3/5`}>{value}</div>
+            </div>
+          ))}
 
-      <div className="bg-neutral-50 rounded-3xl border border-black w-full h-auto mb-4 p-4">
-        <div className={`${textClass} text-2xl font-medium mb-4 w-full`}>Estimation</div>
-        <div className="flex flex-col md:flex-row gap-4 mb-4">
-          <div className={`${textClass} text-2xl font-medium`}>Load Pick Up Location</div>
-          <div className={formInputClass}>
-            <div className={smallTextClass}>Pick up</div>
+          <div
+            className={`${fieldPadding} flex flex-col md:flex-row items-start`}
+          >
+            <div className={`${textLarge} md:w-2/5`}>Volume Metrics</div>
+            <div className="flex flex-col md:flex-row md:w-3/5">
+              {[
+                { label: data.volumeMetrics?.L || "L" },
+                { label: data.volumeMetrics?.B || "B" },
+                { label: data.volumeMetrics?.H || "H" },
+                { label: data.capacity || "Capacity" },
+              ].map(({ label }) => (
+                <div className={textLarge} key={label}>
+                  {label}
+                </div>
+              ))}
+            </div>
           </div>
-          <div className={formInputClass}>
-            <div className={smallTextClass}>Pincode</div>
+
+          {[
+            {
+              label: "Insurance active",
+              value: data.insuranceActive ? "Yes" : "No",
+            },
+            {
+              label: "Registration Certificate No",
+              value: data.registrationCertificateNo || "N/A",
+            },
+          ].map(({ label, value }) => (
+            <div
+              className={`${fieldPadding} flex flex-col md:flex-row items-start`}
+              key={label}
+            >
+              <div className={`${textLarge} md:w-2/5`}>{label}</div>
+              <div className={`${textLarge} md:w-3/5`}>{value}</div>
+            </div>
+          ))}
+
+          {/* Estimate box */}
+          <div className="bg-neutral-50 rounded-3xl border border-black w-full h-auto mb-4 p-4">
+            <div className={`${textBase} text-2xl font-medium mb-4 w-full`}>
+              Estimation
+            </div>
+            <div className="flex flex-col md:flex-row gap-4 mb-4">
+              {[
+                {
+                  title: "Load Pick Up Location",
+                  fields: [
+                    {
+                      placeholder: "Enter pick up location",
+                      value: data.pickUpLocation || "",
+                    },
+                    {
+                      placeholder: "Enter pincode",
+                      value: data.pickUpPincode || "",
+                    },
+                  ],
+                },
+                {
+                  title: "Load Drop Location",
+                  fields: [
+                    {
+                      placeholder: "Enter drop location",
+                      value: data.dropLocation || "",
+                    },
+                    {
+                      placeholder: "Enter pincode",
+                      value: data.dropPincode || "",
+                    },
+                  ],
+                },
+              ].map(({ title, fields }) => (
+                <div className="w-full md:w-1/2" key={title}>
+                  <div className={`${textBase} text-2xl font-medium mb-4`}>
+                    {title}
+                  </div>
+                  <div className="flex flex-col gap-4">
+                    {fields.map(({ placeholder, value }, idx) => (
+                      <div className={formInputBase} key={idx}>
+                        <input
+                          type="text"
+                          placeholder={placeholder}
+                          className={inputBase}
+                          value={value}
+                          readOnly
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-col gap-4 mb-4 lg:flex-row justify-between w-3/5">
+              <div className={`${textBase} text-2xl font-normal`}>
+                Distance:
+              </div>
+              <div className={`${textBase} text-2xl font-normal`}>Amount:</div>
+              <button
+                onClick={() => navigate("/signup")}
+                className={buttonBase}
+              >
+                Book now
+              </button>
+            </div>
           </div>
+          {/* Estimate box end */}
         </div>
-        <div className="flex flex-col md:flex-row gap-4 mb-4">
-          <div className={`${textClass} text-2xl font-medium`}>Load Drop Location</div>
-          <div className={formInputClass}>
-            <div className={smallTextClass}>Pick up</div>
-          </div>
-          <div className={formInputClass}>
-            <div className={smallTextClass}>Pincode</div>
-          </div>
-        </div>
-        <div className="flex flex-col md:flex-row gap-4 mb-4">
-          <div className={`${textClass} text-2xl font-normal`}>Distance:</div>
-          <div className={`${textClass} text-2xl font-normal`}>Amount:</div>
-        </div>
-        <div className="w-40 h-16 relative rounded border-2 border-black mb-4 mx-auto">
-          <div className="absolute w-40 h-16 bg-white rounded"></div>
-          <div className="absolute w-28 h-7 left-[34px] top-[18px] text-black text-xl font-bold">
-            Book now
-          </div>
+
+        <div className="flex flex-col w-full md:w-1/4 gap-4">
+          {Array(2)
+            .fill()
+            .map((_, idx) => (
+              <div className={boxBase} key={idx}>
+                <div className={`${textBase} text-3xl font-normal text-center`}>
+                  {data.assetImages?.[idx] || "Images of LSP’S asset"}
+                </div>
+              </div>
+            ))}
         </div>
       </div>
     </div>
   );
+};
+
+// Mock data for development/testing
+const mockData = {
+  companyName: "M/S SK Transportation Company",
+  registrationNumber: "HR55AL4900",
+  location: "Gurgaon",
+  pinCode: "635109",
+  bodyType: "Closed Body",
+  model: "TATA 1109G LPT DCR49CBC 85B6M5XD 2022",
+  volumeMetrics: {
+    L: "L",
+    B: "B",
+    H: "H",
+  },
+  capacity: "Capacity",
+  insuranceActive: true,
+  registrationCertificateNo: "123456",
+  pickUpLocation: "Pickup Location",
+  pickUpPincode: "123456",
+  dropLocation: "Drop Location",
+  dropPincode: "654321",
+  assetImages: ["Image1", "Image2"],
 };
 
 export default TruckDetails;
