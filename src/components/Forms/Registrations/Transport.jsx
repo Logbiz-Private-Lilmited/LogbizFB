@@ -1,6 +1,10 @@
 // src/Freight.js
 import React from "react";
+<<<<<<< Updated upstream:src/components/Forms/Registrations/Transport.jsx
 import useForm from "../useform";
+=======
+import ScrollToTopOnMount from "../ScrollToTop";
+>>>>>>> Stashed changes:src/components/Forms/RegistrationForms/Transport.jsx
 
 const personalDetailsLeft = [
   { placeholder: "Name", type: "text" },

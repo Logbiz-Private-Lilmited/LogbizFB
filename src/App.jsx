@@ -9,7 +9,11 @@ import { ContactView } from "./views/ContactView";
 import Signup from "./components/Signup/Signup";
 // import { LoginView } fro .m "./views/LoginView";
 
+<<<<<<< Updated upstream
 import WarehouseListing from "./components/Forms/WarehouseListingForm";
+=======
+import WarehouseListing from "./components/Forms/QuoteBookingForms/WarehouseListingForm";
+>>>>>>> Stashed changes
 
 import FSPRegistration from "./components/Forms/Registrations/FSPRegistration";
 import DistributionHubForm from "./components/Forms/Registrations/DistributionHubForm";
@@ -28,6 +32,8 @@ import {
   WarehouseDetails,
   FreightDetails,
 } from "./components/ServicePages/data";
+import Insurance from "./components/Forms/QuoteBookingForms/Insurance";
+import ULC from "./components/Forms/QuoteBookingForms/ULC";
 
 function App() {
   const location = useLocation();
@@ -68,6 +74,9 @@ function App() {
             path="/distributionHubRegistration"
             element={<DistributionHubForm />}
           />
+
+          <Route path="/insurance" element={<Insurance />} />
+          <Route path="/ulcDetails" element={<ULC />} />
 
           {/* forms-end  */}
 

@@ -13,7 +13,7 @@ const WarehouseRegistration = () => {
       type: "radio",
       options: [
         "Built to Suit (BTS)",
-        "Warehouse Ready to Move In (RTM)",
+        "Warehouse ReadyToMoveIn(RTM)",
         "Pallet Storage",
         "Land Parcels for Logistics Park",
       ],
