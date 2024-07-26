@@ -5,6 +5,12 @@ import DynamicForm from "../DynamicForm";
 const ULC = () => {
   const formInputs = [
     {
+      name: "freightDestination",
+      type: "radio",
+      label: "Freight Destination",
+      options: ["Domestic", "International"],
+    },
+    {
       name: "ulcinfo",
       label: "ULC information in MM & Kg",
       type: "group",
@@ -12,6 +18,7 @@ const ULC = () => {
         {
           name: "ulcType",
           type: "select",
+          label: "ULC Type",
           options: ["Type1", "Type2", "Type3"],
         },
         { name: "length", type: "text", label: "Length" },
@@ -73,8 +80,8 @@ const ULC = () => {
         formTitle={"ULC Details"}
         key={"ulc"}
         formRadioCSS={"flex gap-2 md:flex-row flex-col md:gap-4"}
-        formCSS="md:w-fit flex justify-center flex-col gap-6 lg:mx-16 my-2 mx-4"
-        formGroupCSS="flex gap-2 md:flex-row flex-col flex-wrap"
+        formCSS="md:w-fit flex flex-wrap gap-6 lg:mx-16 my-2 mx-8 text-start items-end "
+        formGroupCSS="flex gap-2 md:flex-row flex-col flex-wrap md:flex-nowrap items-end"
         note={[
           "Quote will be excluding GST Charges which will be calculated based on your declaration whether its forward charge or revers charge or you intend to send sample goods. If you have multiple options please raise separate quote requests. Our experts will get in touch shortly ...",
         ]}

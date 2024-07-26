@@ -162,7 +162,7 @@ const DynamicForm = ({
         );
       case "group":
         return (
-          <div key={field.name} className="flex flex-col gap-2 ">
+          <div key={field.name} className="flex flex-col gap-2 w-full ">
             <label className="font-body text-xl" key={field.label}>
               {field.label}
             </label>
@@ -252,9 +252,8 @@ const DynamicForm = ({
             </div>
           </div>
         )}
-        {/* Hidden input to store formType */}
-        <input type="hidden" name="formType" value={formType} />
-        <div className="md:col-span-2 lg:col-span-4 flex justify-end">
+
+        <div className="md:col-span-2 lg:col-span-4 flex justify-end w-full">
           <button
             type="submit"
             className="border rounded-md px-8 py-1 text-sm bg-gray-200"
