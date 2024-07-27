@@ -8,8 +8,6 @@ import { ServicesListingView } from "./views/ServicesListingView";
 import { ContactView } from "./views/ContactView";
 import Signup from "./components/Signup/Signup";
 
-import WarehouseListing from "./components/Forms/QuoteBookingForms/WarehouseListingForm";
-
 import {
   ConsultingRegistration,
   DistributionHubForm,
@@ -37,9 +35,15 @@ import {
   DistributionDetails,
   FinanceDetails,
 } from "./components/ServicePages/data";
-import TruckDetails from "./components/ServicePages/ServiceDetails/truckdetails";
-import Insurance from "./components/Forms/QuoteBookingForms/Insurance";
-import ULC from "./components/Forms/QuoteBookingForms/ULC";
+
+import {
+  HireAFreight,
+  Insurance,
+  Pallet,
+  ULC,
+  WarehouseListingForm,
+} from "./components/Forms/QuoteBookingForms";
+
 
 function App() {
   const location = useLocation();
@@ -65,8 +69,6 @@ function App() {
 
           {/* forms-start */}
 
-          <Route path="/wform" element={<WarehouseListing />} />
-
           <Route
             path="/warehouseRegistration"
             element={<WarehouseRegistration />}
@@ -81,7 +83,7 @@ function App() {
             element={<DistributionHubForm />}
           />
 
-          <Route path="/insurance" element={<Insurance />} />
+          <Route path="/insuranceForm" element={<Insurance />} />
           <Route path="/ulcDetails" element={<ULC />} />
           <Route
             path="/consultingRegistration"
@@ -91,6 +93,9 @@ function App() {
             path="/freightRegistration"
             element={<FreightRegistration />}
           />
+          <Route path="/bookPallet" element={<Pallet />} />
+          <Route path="/hireAFreight" element={<HireAFreight />} />
+          <Route path="/warehouseListing" element={<WarehouseListingForm />} />
 
           {/* forms-end  */}
 
