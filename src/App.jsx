@@ -44,6 +44,7 @@ import {
   WarehouseListingForm,
 } from "./components/Forms/QuoteBookingForms";
 
+import TruckDetails from "./components/ServicePages/ServiceDetails/truckdetails";
 
 function App() {
   const location = useLocation();
@@ -133,8 +134,19 @@ function App() {
             path="/freightpage"
             element={<FreightPage Data={FreightDetails} />}
           />
-          <Route path="/insurance" element={<InsurancePage Data={InsuranceDetails} />}/>
-          <Route path="/distribution" element={<DistributionPage Name="Distribution" Data={DistributionDetails} />}/>
+          <Route
+            path="/insurance"
+            element={<InsurancePage Data={InsuranceDetails} />}
+          />
+          <Route
+            path="/distribution"
+            element={
+              <DistributionPage
+                Name="Distribution"
+                Data={DistributionDetails}
+              />
+            }
+          />
           <Route path="/truckDetails" element={<TruckDetails />} />
           <Route
             path="/insurance"

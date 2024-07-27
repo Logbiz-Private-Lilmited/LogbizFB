@@ -1,7 +1,5 @@
 import React from "react";
 import useForm from "./useform";
-import axios from "axios";
-import { Link } from "react-router-dom";
 
 const DynamicForm = ({
   config,
@@ -12,7 +10,6 @@ const DynamicForm = ({
   requestID,
   note,
   ifLabel,
-  formType,
   formRadioCSS,
   formGroupCSS,
 }) => {
@@ -224,11 +221,7 @@ const DynamicForm = ({
         </div>
         <div className="w-fit">Request ID:{requestID}</div>
       </div>
-      <form
-        className={formCSS}
-        onSubmit={handleSubmit}
-        preventScrollReset={true}
-      >
+      <form className={formCSS} onSubmit={handleSubmit}>
         {formDivCSS ? (
           <div className={formDivCSS}>
             {config.map((field) => renderInput(field))}
