@@ -1,5 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import MapComponent from "./mapcomponent";
+import BackButton from "../../backbutton/BackButton";
 
 const TruckDetails = ({ data = mockData }) => {
   const navigate = useNavigate();
@@ -17,10 +19,11 @@ const TruckDetails = ({ data = mockData }) => {
 
   return (
     <div className="container mx-auto p-4">
+      <BackButton />
       <div className={`${textBase} text-4xl font-bold mb-4 text-center`}>
         {data.companyName || "M/S SK Transportation Company"}
         <div className={`${textBase} text-4xl font-medium mb-4`}>
-          {data.registrationNumber || "HR55AL4900"}
+          {data.registrationNumber || "Registration Number Here"}
         </div>
       </div>
 
@@ -45,10 +48,10 @@ const TruckDetails = ({ data = mockData }) => {
             className={`${fieldPadding} flex flex-col md:flex-row items-start`}
           >
             <div className={`${textLarge} md:w-2/5`}>Volume Metrics</div>
-            <div className="flex flex-col md:flex-row md:w-3/5">
+            <div className="flex flex-col md:flex-row md:w-3/5 justify-between">
               {[
                 { label: data.volumeMetrics?.L || "L" },
-                { label: data.volumeMetrics?.B || "B" },
+                { label: data.volumeMetrics?.W || "W" },
                 { label: data.volumeMetrics?.H || "H" },
                 { label: data.capacity || "Capacity" },
               ].map(({ label }) => (
@@ -147,7 +150,7 @@ const TruckDetails = ({ data = mockData }) => {
           </div>
           {/* Estimate box end */}
         </div>
-
+        {/* Images Box */}
         <div className="flex flex-col w-full md:w-1/4 gap-4">
           {Array(2)
             .fill()
@@ -160,6 +163,14 @@ const TruckDetails = ({ data = mockData }) => {
             ))}
         </div>
       </div>
+
+      {/* Map section starts here */}
+      <div className="w-full h-80 bg-gray-200 my-6 rounded-xl">
+        <div className="h-full p-3">
+          <MapComponent location={[12.91742, 77.67457]} zoom={10} />
+          {/* Needds confirmation about location. Is it dynamic or Static */}
+        </div>
+      </div>
     </div>
   );
 };
@@ -167,23 +178,23 @@ const TruckDetails = ({ data = mockData }) => {
 // Mock data for development/testing
 const mockData = {
   companyName: "M/S SK Transportation Company",
-  registrationNumber: "HR55AL4900",
+  registrationNumber: "",
   location: "Gurgaon",
-  pinCode: "635109",
+  pinCode: "",
   bodyType: "Closed Body",
   model: "TATA 1109G LPT DCR49CBC 85B6M5XD 2022",
   volumeMetrics: {
-    L: "L",
-    B: "B",
-    H: "H",
+    L: "Length",
+    W: "Width",
+    H: "Height",
   },
   capacity: "Capacity",
   insuranceActive: true,
-  registrationCertificateNo: "123456",
+  registrationCertificateNo: "H123ewds",
   pickUpLocation: "Pickup Location",
-  pickUpPincode: "123456",
+  pickUpPincode: "",
   dropLocation: "Drop Location",
-  dropPincode: "654321",
+  dropPincode: "",
   assetImages: ["Image1", "Image2"],
 };
 

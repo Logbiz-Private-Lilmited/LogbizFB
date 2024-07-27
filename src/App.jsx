@@ -29,7 +29,7 @@ import FinancePage from "./components/ServicePages/FinancePage";
 import {
   TransportDetails,
   LogisticsDetails,
-  WarehouseDetails,
+  WarehouseService,
   FreightDetails,
   InsuranceDetails,
   DistributionDetails,
@@ -45,6 +45,7 @@ import {
 } from "./components/Forms/QuoteBookingForms";
 
 import TruckDetails from "./components/ServicePages/ServiceDetails/truckdetails";
+import WarehouseDetails from "./components/ServicePages/WarehouseDetails/warehouseDetails";
 
 function App() {
   const location = useLocation();
@@ -115,7 +116,7 @@ function App() {
             element={
               <DynamicPage1
                 Name="Warehouse"
-                Data={WarehouseDetails}
+                Data={WarehouseService}
                 img="/src/assets/ServicePages/warehouse.png"
               />
             }
@@ -148,6 +149,7 @@ function App() {
             }
           />
           <Route path="/truckDetails" element={<TruckDetails />} />
+          <Route path="/warehouseDetails" element={<WarehouseDetails />} />
           <Route
             path="/insurance"
             element={<InsurancePage Data={InsuranceDetails} />}
