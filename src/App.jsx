@@ -44,6 +44,7 @@ import {
   WarehouseListingForm,
 } from "./components/Forms/QuoteBookingForms";
 
+
 function App() {
   const location = useLocation();
   const hideNavbarPaths = ["/signup"];
@@ -132,6 +133,9 @@ function App() {
             path="/freightpage"
             element={<FreightPage Data={FreightDetails} />}
           />
+          <Route path="/insurance" element={<InsurancePage Data={InsuranceDetails} />}/>
+          <Route path="/distribution" element={<DistributionPage Name="Distribution" Data={DistributionDetails} />}/>
+          <Route path="/truckDetails" element={<TruckDetails />} />
           <Route
             path="/insurance"
             element={<InsurancePage Data={InsuranceDetails} />}

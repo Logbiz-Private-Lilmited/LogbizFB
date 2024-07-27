@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const InfoComponent = ({ heading, paragraphs, buttonText }) => {
   return (
@@ -10,10 +11,11 @@ const InfoComponent = ({ heading, paragraphs, buttonText }) => {
           {paragraph}
         </p>
       ))}
-
+      <Link to= "/signup">
       <button className="ml-auto my-5 bg-btn-grey px-5 py-1 rounded-md font-bold hover:bg-black hover:text-white">
         {buttonText}
       </button>
+      </Link>
     </div>
   );
 };
