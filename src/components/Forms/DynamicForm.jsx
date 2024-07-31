@@ -215,7 +215,7 @@ const DynamicForm = ({
           </svg>
         </a>
         <div className="flex justify-center items-center text-center w-fit">
-          <h1 className="md:text-xl font-bold flex justify-between">
+          <h1 className="md:text-2xl font-bold flex justify-between">
             {formTitle}
           </h1>
         </div>
