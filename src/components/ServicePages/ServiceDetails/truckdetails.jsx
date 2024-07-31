@@ -18,7 +18,7 @@ const TruckDetails = ({ data = mockData }) => {
     "text-lg md:text-sm text-black font-bold text-center rounded py-3 px-4 border-2 border-black bg-white hover:bg-customOrange hover:border-customOrange hover:text-white transition-all duration-300";
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="p-4 w-full">
       <BackButton />
       <div className={`${textBase} text-4xl font-bold mb-4 text-center`}>
         {data.companyName || "M/S SK Transportation Company"}

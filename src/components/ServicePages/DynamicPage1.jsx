@@ -23,7 +23,7 @@ export default function DynamicPage1(props){
                     <a href="/" className="bg-[#d9d9d9] h-fit align-middle p-3 rounded-lg">
                         <img src="/src/assets/BackArrow.png" alt="" />
                     </a>
-                    <h1 className="text-3xl max-[435px]:text-xl font-bold">Available {props.Name} Services</h1>
+                    <h1 className="max-[435px]:text-xl">Available {props.Name} Services</h1>
                 </div>
                 <div className="inline-flex flex-row gap-3">
                     <div>

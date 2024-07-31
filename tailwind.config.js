@@ -31,6 +31,10 @@ export default {
             padding: "0", // Removes default padding
             textDecoration: "none", // default text decoration is none
             fontSize: "inherit", // font size is inherited
+            img: {
+              marginTop: "0",
+              marginBottom: "0",
+            },
             a: {
               textDecoration: "none", // Removes underline from links
               fontSize: "inherit", // Inherits font size
