@@ -2,6 +2,7 @@ import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+import "../../../../src/index.css";
 
 // Fix for marker icon not showing
 delete L.Icon.Default.prototype._getIconUrl;
@@ -13,11 +14,18 @@ L.Icon.Default.mergeOptions({
 });
 
 const MapComponent = ({ location = [51.505, -0.09], zoom = 13 }) => {
+  const mapStyles = {
+    height: "100%",
+    width: "100%",
+    zIndex: 1,
+    position: "relative",
+  };
   return (
     <MapContainer
+      scrollWheelZoom={false}
       center={location}
       zoom={zoom}
-      style={{ height: "100%", width: "100%" }}
+      style={mapStyles}
     >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
