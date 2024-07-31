@@ -1,11 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import backArrow from "../../assets/BackArrow.png";
 
 const BackButton = () => {
+  const navigate = useNavigate();
+
+  const handleBack = () => {
+    navigate(-1); // This will navigate to the previous page in the history stack
+  };
+
   return (
-    <a href="/" className="bg-[#d9d9d9] block w-12 h-auto p-2 rounded-lg">
-      <img src="/src/assets/BackArrow.png" alt="" />
-    </a>
+    <button
+      onClick={handleBack}
+      className="bg-[#d9d9d9] h-fit align-middle p-3 rounded-lg"
+    >
+      <img src={backArrow} alt="Back" />
+    </button>
   );
 };
 

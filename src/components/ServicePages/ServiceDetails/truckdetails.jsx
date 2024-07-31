@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import MapComponent from "./mapcomponent";
-import BackButton from "../../backbutton/BackButton";
+import BackButton from "../../BackButton/BackButton";
 
 const TruckDetails = ({ data = mockData }) => {
   const navigate = useNavigate();
@@ -9,7 +9,7 @@ const TruckDetails = ({ data = mockData }) => {
   // Utility classes
   const textBase = "text-black font-['SF Pro Display']";
   const textLarge = `${textBase} text-3xl font-medium`;
-  const textSmall = `${textBase} text-base font-normal text-neutral-700 leading-normal`;
+  // const textSmall = `${textBase} text-base font-normal text-neutral-700 leading-normal`;
   const boxBase = "w-full h-96 bg-zinc-300 rounded-2xl mb-4";
   const formInputBase = "w-full py-1 flex flex-col";
   const fieldPadding = "py-4";
