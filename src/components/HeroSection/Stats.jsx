@@ -11,7 +11,7 @@ const Stats = () => {
       {stats.map((item) => {
         return (
           <div className="text-white" key={item.title}>
-            <h1 className="lg:text-6xl text-5xl font-bold">
+            <h1 className="text-white lg:text-6xl text-5xl font-bold">
               {item.count}
               <span className="text-customOrange">+</span>
             </h1>

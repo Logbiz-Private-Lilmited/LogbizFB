@@ -6,10 +6,10 @@ const BoxComponent = ({ link, svgPath, text }) => {
   return (
     <Link
       to={link}
-      className="h-full rounded-lg flex flex-col justify-center items-center p-5 border-2 border-transparent duration-300 transition-border ease-linear hover:border-customOrange hover:shadow-custom-light-hover hover:bg-[#efefef]"
+      className="prose h-full rounded-lg flex flex-col justify-center items-center p-5 border-2 border-transparent duration-300 transition-border ease-linear hover:border-customOrange hover:shadow-custom-light-hover hover:bg-[#efefef]"
     >
       <img src={svgPath} alt={text} className="h-20" />
-      <p className="mt-2 text-xl font-bold text-center">{text}</p>
+      <p className="mt-2 font-bold text-center">{text}</p>
     </Link>
   );
 };
@@ -67,7 +67,9 @@ const BoxesCarousel = ({ datasets }) => {
               {data.title}
               <span className="text-customOrange italic">{data.subtitle}</span>
             </h2>
-            <h3 className="text-center text-2xl font-bold mb-10">{data.smalltitle}</h3>
+            <h3 className="text-center text-2xl font-bold mb-10">
+              {data.smalltitle}
+            </h3>
             <Slider {...settings}>
               {data.items.map((box, index) => (
                 <div key={index} className="px-2 h-[205px]">

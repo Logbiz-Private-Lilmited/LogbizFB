@@ -10,12 +10,6 @@ export default {
       fontFamily: {
         body: ["SF Pro Display", "sans-serif"],
       },
-      lineHeight: {
-        h1: "83.54px",
-        h2: "47.73px",
-        h3: "29.83px",
-        p: "23.87px",
-      },
       backgroundColor: {
         "btn-grey": "#d9d9d9",
         boxBg: "#fafafa",
@@ -27,14 +21,56 @@ export default {
       transitionDuration: {
         3000: "3000ms",
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            // Override or remove default styles
+            color: "inherit", // text color is inherited
+            maxWidth: "none", // Removes default max-width limitation
+            margin: "0", // Removes default margins
+            padding: "0", // Removes default padding
+            textDecoration: "none", // default text decoration is none
+            fontSize: "inherit", // font size is inherited
+            a: {
+              textDecoration: "none", // Removes underline from links
+              fontSize: "inherit", // Inherits font size
+            },
+            button: {
+              textDecoration: "none", // Ensures no text decoration
+              fontSize: "inherit", // Inherits font size
+            },
+            span: {
+              fontSize: "inherit", // Inherits font size
+            },
+            h1: {
+              fontWeight: "700",
+              marginBottom: "20px",
+              marginTop: "0px",
+              lineHeight: "83.54px",
+              fontSize: "40px",
+            },
+            h2: {
+              marginBottom: "15px",
+              marginTop: "0px",
+              lineHeight: "47.73px",
+              fontSize: "35px",
+            },
+            h3: {
+              marginBottom: "10px",
+              marginTop: "0px",
+              lineHeight: "29.83px",
+              fontSize: "30px",
+            },
+            p: {
+              marginBottom: "8px",
+              marginTop: "0px",
+              lineHeight: "23.87px",
+              fontSize: "20px",
+            },
+          },
+        },
+      },
     },
   },
-  variants: {
-    extend: {
-      boxShadow: ["hover"],
-      borderColor: ["hover"],
-      transitionProperty: ["hover"],
-    },
-  },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };

@@ -56,7 +56,7 @@ function App() {
     <div className="flex flex-col items-center mt-4">
       {!hideNavbarPaths.includes(location.pathname) && <Navbar />}
       <div
-        className={` w-[98%] ${
+        className={`prose w-[98%] ${
           hideNavbarPaths.includes(location.pathname) ? "mt-0" : "mt-24"
         }`}
       >

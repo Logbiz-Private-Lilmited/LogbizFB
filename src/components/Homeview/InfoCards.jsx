@@ -4,18 +4,19 @@ import { Link } from "react-router-dom";
 const InfoComponent = ({ heading, paragraphs, buttonText }) => {
   return (
     <div className="flex flex-col w-3/4 max-h-fit flex-wrap mx-auto">
-      <h2 className="text-4xl font-bold flex-1 leading-h2 mb-10">{heading}</h2>
+      <h2 className="font-bold flex-1">{heading}</h2>
 
       {paragraphs.map((paragraph, index) => (
-        <p key={index} className="leading-p text-xl text-paraColor">
+        <p key={index} className="text-paraColor">
           {paragraph}
         </p>
       ))}
-      <Link to= "/signup">
-      <button className="ml-auto my-5 bg-btn-grey px-5 py-1 rounded-md font-bold hover:bg-black hover:text-white">
-        {buttonText}
-      </button>
-      </Link>
+       <Link
+    to="/signup"
+    className="ml-auto my-5 bg-btn-grey px-5 py-1 rounded-md font-bold hover:bg-black hover:text-white inline-block text-center"
+  >
+    {buttonText}
+  </Link>
     </div>
   );
 };

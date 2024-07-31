@@ -4,17 +4,21 @@
 @tailwind components;
 @tailwind utilities;
 
-
+@layer base {
+  a {
+    @apply no-underline text-inherit;
+  }
+}
 .custom-arrow::before {
-    font-size: 60px;
-    color: #000000;
+    font-size: 60px !important;
+    color: #000000 !important;
     opacity: 1;
   }
   
   .slick-prev {
-    left: -65px; /* Adjust position */
+    left: -55px !important; /* Adjust position */
   }
   
   .slick-next {
-    right: -25px; /* Adjust position */
+    right: -25px !important; /* Adjust position */
   }
