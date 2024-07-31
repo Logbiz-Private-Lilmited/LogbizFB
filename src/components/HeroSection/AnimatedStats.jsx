@@ -123,12 +123,12 @@ function Icon() {
           >
             <use transform="scale(.001)" xlinkHref="#image0_3478_3386"></use>
           </pattern>
+          // Currently this img tag shows nothing inside the animation
           <img
             className="w-[130px] h-[130px] rounded-full absolute"
             src={AnimationLogo}
             alt="Animation Logo"
           />
-          
         </defs>
       </svg>
     </div>
