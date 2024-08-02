@@ -22,12 +22,12 @@ export default function FreightPage(props){
                     <div>
                         <input type="text" placeholder="Serach" className="border-2 border-[E9E7E2] p-1 rounded-md" />
                     </div>
-                    <h1 className="font-semibold block text-nowrap p-1">Sort by:</h1>
+                    <p className="font-semibold block text-nowrap p-1">Sort by:</p>
                     <Dropdown/>
                 </div>
             </div>
             <div className="p-6">
-                <h1 className="text-xl font-semibold">You can Quote for the following freights: </h1>
+                <p className="text-xl font-semibold">You can Quote for the following freights: </p>
                 <div className="p-5 flex flex-col justify-center items-center gap-5">
                     {
                         details.map((item, index) => {

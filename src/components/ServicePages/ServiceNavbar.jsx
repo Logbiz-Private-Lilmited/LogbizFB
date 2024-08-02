@@ -18,7 +18,7 @@ export default function ServiceNavbar(props){
                     {
                         details.map((detail, index) => {
                             return(
-                                <h1 onClick={() => handleClick(detail.index)} className={`${active === detail.index ? 'bg-[#ff6600] text-white' : 'bg-white'} text-wrap font-bold text-center text-lg max-[435px]:text-base hover:bg-[#ff6600] hover:text-white p-3 rounded-full`}>{detail.name}</h1>
+                                <p onClick={() => handleClick(detail.index)} className={`${active === detail.index ? 'bg-[#ff6600] text-white' : 'bg-white'} text-wrap font-bold text-center text-lg max-[435px]:text-base hover:bg-[#ff6600] hover:text-white p-3 rounded-full`}>{detail.name}</p>
                             )
                         })
                     }

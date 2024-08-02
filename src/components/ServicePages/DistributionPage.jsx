@@ -46,7 +46,7 @@ export default function DistributionPage(props){
                     <div>
                         <input type="text" placeholder="Serach" className="border-2 border-[E9E7E2] p-1 rounded-md max-[435px]:w-[105px]" />
                     </div>
-                    <h1 className="font-semibold block text-nowrap p-1">Sort by:</h1>
+                    <p className="font-semibold block text-nowrap p-1">Sort by:</p>
                     <Dropdown/>
                 </div>
             </div>
@@ -91,17 +91,17 @@ export default function DistributionPage(props){
             <div className="flex justify-center items-center mt-8 mb-4">
                 <div className="flex flex-col bg-black rounded-3xl p-4 w-fit justify-center items-center">
                     <img src="/src/assets/ServicePages/ULC.png" alt="" />
-                    <h1 className="bg-[#ff6600] text-white p-3 w-fit text-center rounded-lg">ULC Hire</h1>
+                    <p className="bg-[#ff6600] text-white p-3 w-fit text-center rounded-lg">ULC Hire</p>
                 </div>
             </div>
             <div className=" flex justify-center items-center mt-4">
-                        <h1 className="bg-[#f2f2f2] w-fit p-2 rounded-md font-semibold text-center">Did not find vehicle for your load destination?</h1>
+                        <p className="bg-[#f2f2f2] w-fit p-2 rounded-md font-semibold text-center">Did not find vehicle for your load destination?</p>
                         <img src="/src/assets/ServicePages/Question.png" alt="" className=" w-8 h-8 p-1 mt-1 inline-block" />
                     </div>
                     <div className="flex justify-center items-center mt-3">
                         <div className="border-2 border-black rounded-lg px-10 py-4 flex flex-col justify-center items-center w-max">
                             <div className=" flex justify-center items-center gap-2">
-                                <h1 className="font-semibold text-center ">If you want Part Load Booking click here !</h1>
+                                <p className="font-semibold text-center ">If you want Part Load Booking click here !</p>
                                 <img src="/src/assets/ServicePages/Question.png" alt="" className=" w-5 h-5 inline-block" />
                             </div>
                             <div className="mt-10">

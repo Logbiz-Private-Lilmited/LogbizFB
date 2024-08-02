@@ -11,19 +11,19 @@ export default function ServiceCard(props){
                 <h1 className="text-4xl max-[435px]:text-xl font-medium">{props.Name}</h1>
                 <div className="flex gap-2 mt-3 max-[435px]:mt-0">
                     <img src={Location} alt="" className="h-5" />
-                    <h1 className="text-[18px] max-[435px]:text-[13px]">{props.Location}</h1>
+                    <p className="text-[18px] max-[435px]:text-[13px]">{props.Location}</p>
                 </div>
                 <div className="flex gap-2">
                     <img src={Point} className="w-[20px] h-[20px] max-[435px]:h-4 max-[435px]:w-4" />
-                    <h1 className="max-[435px]:text-[13px]">{props.Model}</h1>
+                    <p className="max-[435px]:text-[13px]">{props.Model}</p>
                 </div>
                 <div className="flex gap-2">
                     <img src={Point} alt="" className="w-[20px] h-[20px] max-[435px]:h-4 max-[435px]:w-4" />
-                    <h1 className="max-[435px]:text-[13px]">Capacity <span>{props.Capacity}</span></h1>
+                    <p className="max-[435px]:text-[13px]">Capacity <span>{props.Capacity}</span></p>
                 </div>
                 <div className="flex gap-2">
                     <img src={Point} alt="" className="w-[20px] h-[20px] max-[435px]:h-4 max-[435px]:w-4" />
-                    <h1 className=" max-[435px]:text-[13px]"><span>{props.BodyType}</span> Body</h1>
+                    <p className=" max-[435px]:text-[13px]"><span>{props.BodyType}</span> Body</p>
                 </div> 
             </div>
         </div>
