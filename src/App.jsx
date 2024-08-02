@@ -8,8 +8,6 @@ import { ServicesListingView } from "./views/ServicesListingView";
 import { ContactView } from "./views/ContactView";
 import Signup from "./components/Signup/Signup";
 
-import WarehouseListing from "./components/Forms/Quote/BookingForms/WarehouseListingForm";
-
 import {
   ConsultingRegistration,
   DistributionHubForm,
@@ -31,12 +29,23 @@ import FinancePage from "./components/ServicePages/FinancePage";
 import {
   TransportDetails,
   LogisticsDetails,
-  WarehouseDetails,
+  WarehouseService,
   FreightDetails,
   InsuranceDetails,
   DistributionDetails,
-  FinanceDetails
+  FinanceDetails,
 } from "./components/ServicePages/data";
+
+import {
+  HireAFreight,
+  Insurance,
+  Pallet,
+  ULC,
+  WarehouseListingForm,
+} from "./components/Forms/QuoteBookingForms";
+
+import TruckDetails from "./components/ServicePages/ServiceDetails/truckdetails";
+import WarehouseDetails from "./components/ServicePages/WarehouseDetails/warehouseDetails";
 
 function App() {
   const location = useLocation();
@@ -47,7 +56,7 @@ function App() {
     <div className="flex flex-col items-center mt-4">
       {!hideNavbarPaths.includes(location.pathname) && <Navbar />}
       <div
-        className={` w-[98%] ${
+        className={`prose w-[98%] ${
           hideNavbarPaths.includes(location.pathname) ? "mt-0" : "mt-24"
         }`}
       >
@@ -62,8 +71,6 @@ function App() {
 
           {/* forms-start */}
 
-          <Route path="/wform" element={<WarehouseListing />} />
-
           <Route
             path="/warehouseRegistration"
             element={<WarehouseRegistration />}
@@ -77,6 +84,9 @@ function App() {
             path="/distributionHubRegistration"
             element={<DistributionHubForm />}
           />
+
+          <Route path="/insuranceForm" element={<Insurance />} />
+          <Route path="/ulcDetails" element={<ULC />} />
           <Route
             path="/consultingRegistration"
             element={<ConsultingRegistration />}
@@ -85,6 +95,9 @@ function App() {
             path="/freightRegistration"
             element={<FreightRegistration />}
           />
+          <Route path="/bookPallet" element={<Pallet />} />
+          <Route path="/hireAFreight" element={<HireAFreight />} />
+          <Route path="/warehouseListing" element={<WarehouseListingForm />} />
 
           {/* forms-end  */}
 
@@ -103,7 +116,7 @@ function App() {
             element={
               <DynamicPage1
                 Name="Warehouse"
-                Data={WarehouseDetails}
+                Data={WarehouseService}
                 img="/src/assets/ServicePages/warehouse.png"
               />
             }
@@ -122,9 +135,38 @@ function App() {
             path="/freightpage"
             element={<FreightPage Data={FreightDetails} />}
           />
-          <Route path="/insurance" element={<InsurancePage Data={InsuranceDetails} />}/>
-          <Route path="/finance" element={<FinancePage Data={FinanceDetails} />}/>
-          <Route path="/distribution" element={<DistributionPage Name="Distribution" Data={DistributionDetails} />}/>
+          <Route
+            path="/insurance"
+            element={<InsurancePage Data={InsuranceDetails} />}
+          />
+          <Route
+            path="/distribution"
+            element={
+              <DistributionPage
+                Name="Distribution"
+                Data={DistributionDetails}
+              />
+            }
+          />
+          <Route path="/truckDetails" element={<TruckDetails />} />
+          <Route path="/warehouseDetails" element={<WarehouseDetails />} />
+          <Route
+            path="/insurance"
+            element={<InsurancePage Data={InsuranceDetails} />}
+          />
+          <Route
+            path="/finance"
+            element={<FinancePage Data={FinanceDetails} />}
+          />
+          <Route
+            path="/distribution"
+            element={
+              <DistributionPage
+                Name="Distribution"
+                Data={DistributionDetails}
+              />
+            }
+          />
         </Routes>
       </div>
       {!hideFooterPaths.includes(location.pathname) && <Footer />}

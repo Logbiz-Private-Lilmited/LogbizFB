@@ -1,4 +1,4 @@
-import DynamicForm from "../../DynamicForm";
+import DynamicForm from "../DynamicForm";
 
 const WarehouseListingForm = () => {
   const initialFormData = [
@@ -151,6 +151,7 @@ const WarehouseListingForm = () => {
       formCSS={warehouseListingformCSS}
       formTitle={"Warehouse Listing Form"}
       requestID={"1234"}
+      key={"warehouseListing"}
     />
   );
 };

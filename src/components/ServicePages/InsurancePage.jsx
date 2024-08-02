@@ -51,7 +51,7 @@ export default function InsurancePage(props){
                     <a href="/" className="bg-[#d9d9d9] h-fit align-middle p-3 rounded-lg">
                         <img src="/src/assets/BackArrow.png" alt="" />
                     </a>
-                    <h1 className="text-3xl max-[435px]:text-2xl font-bold">Insurance Services</h1>
+                    <h1 className="max-[435px]:text-2xl">Insurance Services</h1>
             </div>
             <div className="flex justify-center items-center"> 
                 <Slider {...settings} className="w-[40%] max-[768px]:w-[60%]">

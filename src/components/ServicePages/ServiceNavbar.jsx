@@ -18,7 +18,11 @@ export default function ServiceNavbar(props){
                     {
                         details.map((detail, index) => {
                             return(
+<<<<<<< HEAD
                                 <p onClick={() => handleClick(detail.index)} className={`${active === detail.index ? 'bg-[#ff6600] text-white' : 'bg-white'} text-wrap font-bold text-center text-lg max-[435px]:text-base hover:bg-[#ff6600] hover:text-white p-3 rounded-full`}>{detail.name}</p>
+=======
+                                <h1 onClick={() => handleClick(detail.index)} className={`${active === detail.index ? 'bg-[#ff6600] text-white' : 'bg-white'} text-wrap text-center max-[435px]:text-base hover:bg-[#ff6600] hover:text-white p-3 rounded-full`}>{detail.name}</h1>
+>>>>>>> 89bf2e7593c13eb858df933cf405954997e81346
                             )
                         })
                     }
@@ -27,7 +31,7 @@ export default function ServiceNavbar(props){
                     {
                         desc.map((line) =>{
                         return(
-                            <li className="text-lg max-[435px]:text-base text-wrap">{line}</li>
+                            <li className="max-[435px]:text-base text-wrap">{line}</li>
                         )
                     })}
                 </div>

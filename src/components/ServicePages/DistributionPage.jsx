@@ -46,7 +46,11 @@ export default function DistributionPage(props){
                     <div>
                         <input type="text" placeholder="Serach" className="border-2 border-[E9E7E2] p-1 rounded-md max-[435px]:w-[105px]" />
                     </div>
+<<<<<<< HEAD
                     <p className="font-semibold block text-nowrap p-1">Sort by:</p>
+=======
+                    <h1 className="block text-nowrap p-1">Sort by:</h1>
+>>>>>>> 89bf2e7593c13eb858df933cf405954997e81346
                     <Dropdown/>
                 </div>
             </div>

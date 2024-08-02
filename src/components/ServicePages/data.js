@@ -116,7 +116,7 @@ export const LogisticsDetails = [
 
 
 
-export const WarehouseDetails = [
+export const WarehouseService = [
     {
         "name" : "SK Warehouse",
         "location" : "Mumbai",
