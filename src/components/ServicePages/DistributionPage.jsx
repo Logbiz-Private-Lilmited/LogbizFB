@@ -4,6 +4,7 @@ import Dropdown from "./Dropdown";
 import PLImg1 from "/src/assets/ServicePages/PartLoadImg1.png"
 import PLImg2 from "/src/assets/ServicePages/PartLoadImg2.png"
 import PLImg3 from "/src/assets/ServicePages/PartLoadImg3.png"
+import BackButton from "../BackButton/BackButton";
 
 const PLImgs = [PLImg1,PLImg2,PLImg3]
 
@@ -37,21 +38,14 @@ export default function DistributionPage(props){
         <div>
             <div className="flex max-[435px]:flex-col justify-between mb-6">
                 <div className=" inline-flex gap-3">
-                    <a href="/" className="bg-[#d9d9d9] h-fit align-middle p-3 rounded-lg">
-                        <img src="/src/assets/BackArrow.png" alt="" />
-                    </a>
+                    <BackButton />
                     <h1 className="text-3xl max-[435px]:text-xl font-bold">Available {props.Name} Services</h1>
                 </div>
                 <div className="inline-flex flex-row gap-3">
                     <div>
                         <input type="text" placeholder="Serach" className="border-2 border-[E9E7E2] p-1 rounded-md max-[435px]:w-[105px]" />
                     </div>
-<<<<<<< HEAD
-                    <p className="font-semibold block text-nowrap p-1">Sort by:</p>
-=======
-                    <h1 className="block text-nowrap p-1">Sort by:</h1>
->>>>>>> 89bf2e7593c13eb858df933cf405954997e81346
-                    <Dropdown/>
+                    <p className="font-semibold block text-nowrap p-1">Sort by:</p><Dropdown />
                 </div>
             </div>
             <div className="flex justify-center items-center mb-4">
