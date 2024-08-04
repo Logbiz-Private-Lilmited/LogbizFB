@@ -6,7 +6,7 @@ const BoxComponent = ({ link, svgPath, text }) => {
   return (
     <Link
       to={link}
-      className="prose h-full rounded-lg flex flex-col justify-center items-center p-5 border-2 border-transparent duration-300 transition-border ease-linear hover:border-customOrange hover:shadow-custom-light-hover hover:bg-[#efefef]"
+      className="prose h-full rounded-xl flex flex-col justify-center items-center p-5 border-2 border-transparent duration-300 transition-border ease-linear hover:border-customOrange hover:shadow-custom-light-hover hover:bg-[#fff]"
     >
       <img src={svgPath} alt={text} className="h-20" />
       <p className="mt-2 font-bold text-center">{text}</p>
