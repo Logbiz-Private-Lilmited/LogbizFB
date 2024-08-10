@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import MapComponent from "./mapcomponent";
-import BackButton from "../../BackButton/BackButton";
+import BackButton from "../../Backbutton/BackButton";
 
 const TruckDetails = ({ data = mockData }) => {
   const navigate = useNavigate();

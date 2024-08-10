@@ -4,7 +4,7 @@ import Dropdown from "./Dropdown";
 import PLImg1 from "/src/assets/ServicePages/PartLoadImg1.png";
 import PLImg2 from "/src/assets/ServicePages/PartLoadImg2.png";
 import PLImg3 from "/src/assets/ServicePages/PartLoadImg3.png";
-import BackButton from "../BackButton/BackButton";
+import BackButton from "../Backbutton/BackButton";
 
 const PLImgs = [PLImg1, PLImg2, PLImg3];
 
@@ -32,13 +32,13 @@ export default function DynamicPage1(props) {
               className="border-2 border-[E9E7E2] p-1 rounded-md max-[435px]:w-[105px]"
             />
           </div>
-          <h1 className="font-semibold block text-nowrap p-1">Sort by:</h1>
+          <p className="font-semibold block text-nowrap p-1">Sort by:</p>
           <Dropdown />
         </div>
       </div>
       <div className="p-4">
         <div>
-          <h1 className="text-2xl font-medium mb-6">On Demand</h1>
+          <p className="text-2xl font-medium mb-6">On Demand</p>
           <div className="flex flex-wrap justify-stretch px-4 gap-8">
             {details.map((detail, index) => {
               if (detail.on_demand == true) {
@@ -58,7 +58,7 @@ export default function DynamicPage1(props) {
           </div>
         </div>
         <div className="mt-4">
-          <h1 className="text-2xl font-medium mb-6 ">Advanced Booking</h1>
+          <p className="text-2xl font-medium mb-6 ">Advanced Booking</p>
           <div className="flex flex-wrap px-4 gap-8">
             {details.map((detail, index) => {
               if (detail.advanced === true) {
@@ -77,9 +77,9 @@ export default function DynamicPage1(props) {
             })}
           </div>
           <div className=" flex justify-center items-center mt-4">
-            <h1 className="bg-[#f2f2f2] w-fit p-2 rounded-md font-semibold text-center">
+            <p className="bg-[#f2f2f2] w-fit p-2 rounded-md font-semibold text-center">
               Did not find vehicle for your load destination?
-            </h1>
+            </p>
             <img
               src="/src/assets/ServicePages/Question.png"
               alt=""
@@ -89,9 +89,9 @@ export default function DynamicPage1(props) {
           <div className="flex justify-center items-center mt-3">
             <div className="border-2 border-black rounded-lg px-10 py-4 flex flex-col justify-center items-center w-max">
               <div className=" flex justify-center items-center gap-2">
-                <h1 className="font-semibold text-center ">
+                <p className="font-semibold text-center ">
                   If you want Part Load Booking click here !
-                </h1>
+                </p>
                 <img
                   src="/src/assets/ServicePages/Question.png"
                   alt=""
@@ -110,8 +110,8 @@ export default function DynamicPage1(props) {
                   );
                 })}
               </div>
-              <div className="font-semibold mt-2">
-                Book cube space shipments on pallets for efficient transport
+              <div className="font-semibold mt-2 max-[435px]:text-[20px] ">
+                <p>Book cube space shipments on pallets for efficient transport</p>
               </div>
             </div>
           </div>
