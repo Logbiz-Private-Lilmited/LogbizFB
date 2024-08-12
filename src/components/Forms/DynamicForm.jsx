@@ -1,6 +1,6 @@
 import React from "react";
 import useForm from "./useform";
-import BackButton from "../BackButton/BackButton";
+import BackButton from '../Backbutton/BackButton';
 
 const DynamicForm = ({
   config,
