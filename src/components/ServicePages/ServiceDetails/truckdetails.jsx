@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MapComponent from "./mapcomponent";
 import BackButton from "../../BackButton/BackButton";
@@ -6,11 +6,43 @@ import BackButton from "../../BackButton/BackButton";
 const TruckDetails = ({ data = mockData }) => {
   const navigate = useNavigate();
 
+  // Initialize state for the form fields
+  const [formState, setFormState] = useState({
+    pickUpLocation: data.pickUpLocation || "",
+    pickUpPincode: data.pickUpPincode || "",
+    dropLocation: data.dropLocation || "",
+    dropPincode: data.dropPincode || "",
+  });
+
+  // Handle input changes
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+
+    // Limit pin code to 6 digits
+    if (name === "pickUpPincode" || name === "dropPincode") {
+      // Allow only numbers and restrict to 6 digits
+      const numericValue = value.replace(/[^0-9]/g, ""); // Remove non-numeric characters
+      if (numericValue.length > 6) {
+        return;
+      }
+      setFormState((prevState) => ({
+        ...prevState,
+        [name]: numericValue,
+      }));
+    } else {
+      // For other fields, allow any value
+      setFormState((prevState) => ({
+        ...prevState,
+        [name]: value,
+      }));
+    }
+  };
+
   // Utility classes
   const textBase = "text-black font-['SF Pro Display']";
   const textLarge = `${textBase} text-3xl font-medium`;
   // const textSmall = `${textBase} text-base font-normal text-neutral-700 leading-normal`;
-  const boxBase = "w-full h-96 bg-zinc-300 rounded-2xl mb-4";
+  const boxBase = "w-full h-96 bg-zinc-300 rounded-xl mb-4";
   const formInputBase = "w-full py-1 flex flex-col";
   const fieldPadding = "py-4";
   const inputBase = "w-full px-4 py-2 rounded-md border-2 border-stone-200";
@@ -82,7 +114,7 @@ const TruckDetails = ({ data = mockData }) => {
           ))}
 
           {/* Estimate box */}
-          <div className="bg-neutral-50 rounded-3xl border border-black w-full h-auto mb-4 p-4">
+          <div className="bg-neutral-50 rounded-xl border border-black w-full h-auto mb-4 p-4">
             <div className={`${textBase} text-2xl font-medium mb-4 w-full`}>
               Estimation
             </div>
@@ -93,11 +125,16 @@ const TruckDetails = ({ data = mockData }) => {
                   fields: [
                     {
                       placeholder: "Enter pick up location",
-                      value: data.pickUpLocation || "",
+                      name: "pickUpLocation",
+                      value: formState.pickUpLocation,
+                      maxLength: 100,
                     },
                     {
                       placeholder: "Enter pincode",
-                      value: data.pickUpPincode || "",
+                      name: "pickUpPincode",
+                      value: formState.pickUpPincode,
+                      type: "number",
+                      maxLength: 6,
                     },
                   ],
                 },
@@ -106,11 +143,16 @@ const TruckDetails = ({ data = mockData }) => {
                   fields: [
                     {
                       placeholder: "Enter drop location",
-                      value: data.dropLocation || "",
+                      name: "dropLocation",
+                      value: formState.dropLocation,
+                      maxLength: 100,
                     },
                     {
                       placeholder: "Enter pincode",
-                      value: data.dropPincode || "",
+                      name: "dropPincode",
+                      value: formState.dropPincode,
+                      type: "number",
+                      maxLength: 6,
                     },
                   ],
                 },
@@ -119,18 +161,22 @@ const TruckDetails = ({ data = mockData }) => {
                   <div className={`${textBase} text-2xl font-medium mb-4`}>
                     {title}
                   </div>
-                  <div className="flex flex-col gap-4">
-                    {fields.map(({ placeholder, value }, idx) => (
-                      <div className={formInputBase} key={idx}>
-                        <input
-                          type="text"
-                          placeholder={placeholder}
-                          className={inputBase}
-                          value={value}
-                          readOnly
-                        />
-                      </div>
-                    ))}
+                  <div className="flex flex-col lg:flex-row gap-4">
+                    {fields.map(
+                      ({ placeholder, name, value, maxLength }, idx) => (
+                        <div className={formInputBase} key={idx}>
+                          <input
+                            type={name.includes("Pincode") ? "number" : "text"}
+                            placeholder={placeholder}
+                            name={name}
+                            className={inputBase}
+                            value={value}
+                            onChange={handleInputChange}
+                            maxLength={maxLength}
+                          />
+                        </div>
+                      )
+                    )}
                   </div>
                 </div>
               ))}
@@ -168,7 +214,7 @@ const TruckDetails = ({ data = mockData }) => {
       <div className="w-full h-80 bg-gray-200 my-6 rounded-xl">
         <div className="h-full p-3">
           <MapComponent location={[12.91742, 77.67457]} zoom={10} />
-          {/* Needds confirmation about location. Is it dynamic or Static */}
+          {/* Needs confirmation about location. Is it dynamic or Static */}
         </div>
       </div>
     </div>
@@ -191,11 +237,11 @@ const mockData = {
   capacity: "Capacity",
   insuranceActive: true,
   registrationCertificateNo: "H123ewds",
-  pickUpLocation: "Pickup Location",
+  pickUpLocation: "",
   pickUpPincode: "",
-  dropLocation: "Drop Location",
+  dropLocation: "",
   dropPincode: "",
-  assetImages: ["Image1", "Image2"],
+  assetImages: ["", ""],
 };
 
 export default TruckDetails;
