@@ -4,7 +4,7 @@ import Dropdown from "./Dropdown";
 import PLImg1 from "/src/assets/ServicePages/PartLoadImg1.png";
 import PLImg2 from "/src/assets/ServicePages/PartLoadImg2.png";
 import PLImg3 from "/src/assets/ServicePages/PartLoadImg3.png";
-import BackButton from "../Backbutton/BackButton";
+import BackButton from '../BackButtonModule/BackButton';
 
 const PLImgs = [PLImg1, PLImg2, PLImg3];
 
