@@ -1,6 +1,8 @@
 import React from "react";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
+import "../../../../src/index.css";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
 const BoxComponent = ({ link, svgPath, text }) => {
   return (
@@ -18,7 +20,7 @@ const CustomPrevArrow = (props) => {
   const { className, onClick } = props;
   return (
     <button className={`${className} custom-arrow`} onClick={onClick}>
-      Previous
+      <ChevronLeftIcon className="w-12 h-12 text-black stroke-[3px]" />
     </button>
   );
 };
@@ -27,7 +29,7 @@ const CustomNextArrow = (props) => {
   const { className, onClick } = props;
   return (
     <button className={`${className} custom-arrow`} onClick={onClick}>
-      Next
+      <ChevronRightIcon className="w-12 h-12 text-black stroke-[3px]" />
     </button>
   );
 };

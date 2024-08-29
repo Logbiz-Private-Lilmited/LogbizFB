@@ -14,7 +14,7 @@ import LogoWithLines from "../components/Homeview/LogoLine";
 export const HomeView = () => {
   return (
     <div className="mx-auto">
-      <section className="flex flex-col h-fit justify-between w-full mb-10 bg-[#D9D9D9] rounded-xl p-4 gap-8 md:gap-16">
+      <section className="flex flex-col h-fit justify-between w-full mb-10 bg-[#D9D9D9] rounded-xl p-6 gap-8 md:gap-16 relative">
         <AnimatedStats />
         <Stats />
       </section>
@@ -24,18 +24,21 @@ export const HomeView = () => {
       <VideoPlayback />
       <RegBoxes />
       <div className="w-full flex items-center justify-center text-center">
-        <button className="flex md:p-8 bg-[#f2f2f2] md:text-2xl text-lg items-center md:gap-4 gap-2 p-4">
+        <button className="flex md:p-4 rounded-md bg-[#f2f2f2] md:text-2xl text-lg items-center md:gap-4 gap-2 p-2">
           Get an advantage with Logbiz Plans <GoArrowRight size={30} />
           <Link></Link>
         </button>
       </div>
-      <div className="subscribe-button w-fit text-sm font-bold p-3 md:mx-4 bg-black text-white rounded-md my-2">
-        <Link>
-          {" "}
-          Subscribe to our{" "}
-          <span className="text-customOrange">News Letters</span> here
-        </Link>
-      </div>
+
+      {/* NEWSLETTER BUTTON */}
+      <Link to="/subscribe">
+        {" "}
+        {/* Update the 'to' attribute to your desired route */}
+        <button className="w-fit text-sm font-bold p-3 bg-black text-white rounded-md my-6">
+          <span className="text-white">Subscribe to our</span>
+          <span className="text-customOrange"> News Letters</span> here
+        </button>
+      </Link>
     </div>
   );
 };
