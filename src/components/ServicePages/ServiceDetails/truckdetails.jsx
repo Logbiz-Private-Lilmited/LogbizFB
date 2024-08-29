@@ -1,36 +1,47 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import MapComponent from "./mapcomponent";
-import BackButton from '../../BackButtonModule/BackButton';
+import BackButton from "../../BackButtonModule/BackButton";
+import { TransportDetails } from "../data";
 
-const TruckDetails = ({ data = mockData }) => {
+const TruckDetails = () => {
   const navigate = useNavigate();
-
-  // Initialize state for the form fields
+  const { slug } = useParams();
+  const [data, setData] = useState(null);
   const [formState, setFormState] = useState({
-    pickUpLocation: data.pickUpLocation || "",
-    pickUpPincode: data.pickUpPincode || "",
-    dropLocation: data.dropLocation || "",
-    dropPincode: data.dropPincode || "",
+    pickUpLocation: "",
+    pickUpPincode: "",
+    dropLocation: "",
+    dropPincode: "",
   });
+
+  // Dynamic rendering based on the slug
+  useEffect(() => {
+    const selectedTruck = TransportDetails.find((truck) => truck.slug === slug);
+    if (selectedTruck) {
+      setData(selectedTruck);
+      // Initialize formState based on selectedTruck data
+      setFormState({
+        pickUpLocation: selectedTruck.pickUpLocation || "",
+        pickUpPincode: selectedTruck.pickUpPincode || "",
+        dropLocation: selectedTruck.dropLocation || "",
+        dropPincode: selectedTruck.dropPincode || "",
+      });
+    }
+  }, [slug]);
 
   // Handle input changes
   const handleInputChange = (event) => {
     const { name, value } = event.target;
 
-    // Limit pin code to 6 digits
     if (name === "pickUpPincode" || name === "dropPincode") {
-      // Allow only numbers and restrict to 6 digits
-      const numericValue = value.replace(/[^0-9]/g, ""); // Remove non-numeric characters
-      if (numericValue.length > 6) {
-        return;
-      }
+      const numericValue = value.replace(/[^0-9]/g, "");
+      if (numericValue.length > 6) return;
       setFormState((prevState) => ({
         ...prevState,
         [name]: numericValue,
       }));
     } else {
-      // For other fields, allow any value
       setFormState((prevState) => ({
         ...prevState,
         [name]: value,
@@ -41,13 +52,14 @@ const TruckDetails = ({ data = mockData }) => {
   // Utility classes
   const textBase = "text-black font-['SF Pro Display']";
   const textLarge = `${textBase} text-3xl font-medium`;
-  // const textSmall = `${textBase} text-base font-normal text-neutral-700 leading-normal`;
   const boxBase = "w-full h-96 bg-zinc-300 rounded-xl mb-4";
   const formInputBase = "w-full py-1 flex flex-col";
   const fieldPadding = "py-4";
   const inputBase = "w-full px-4 py-2 rounded-md border-2 border-stone-200";
   const buttonBase =
     "text-lg md:text-sm text-black font-bold text-center rounded py-3 px-4 border-2 border-black bg-white hover:bg-customOrange hover:border-customOrange hover:text-white transition-all duration-300";
+
+  if (!data) return <h1>Loading....</h1>;
 
   return (
     <div className="p-4 w-full">
@@ -219,29 +231,6 @@ const TruckDetails = ({ data = mockData }) => {
       </div>
     </div>
   );
-};
-
-// Mock data for development/testing
-const mockData = {
-  companyName: "M/S SK Transportation Company",
-  registrationNumber: "",
-  location: "Gurgaon",
-  pinCode: "",
-  bodyType: "Closed Body",
-  model: "TATA 1109G LPT DCR49CBC 85B6M5XD 2022",
-  volumeMetrics: {
-    L: "Length",
-    W: "Width",
-    H: "Height",
-  },
-  capacity: "Capacity",
-  insuranceActive: true,
-  registrationCertificateNo: "H123ewds",
-  pickUpLocation: "",
-  pickUpPincode: "",
-  dropLocation: "",
-  dropPincode: "",
-  assetImages: ["", ""],
 };
 
 export default TruckDetails;

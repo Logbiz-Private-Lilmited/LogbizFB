@@ -12,7 +12,7 @@ const BackButton = () => {
   return (
     <button
       onClick={handleBack}
-      className="bg-[#d9d9d9] h-fit align-middle p-3 rounded-lg"
+      className="bg-[#d9d9d9] h-fit align-middle px-3 p-1.5 rounded-lg"
     >
       <img src={backArrow} alt="Back" />
     </button>

@@ -45,7 +45,7 @@ import {
 } from "./components/Forms/QuoteBookingForms";
 
 import TruckDetails from "./components/ServicePages/ServiceDetails/truckdetails";
-import WarehouseDetails from "./components/ServicePages/WarehouseDetails/warehouseDetails";
+import WarehouseDetails from "./components/ServicePages/ServiceDetails/WarehouseDetails/warehouseDetails";
 
 function App() {
   const location = useLocation();
@@ -61,7 +61,7 @@ function App() {
         }`}
       >
         <Routes>
-          <Route path="*" element={<Navigate to="/" />} />
+          <Route path="/home" element={<Navigate to="/" />} />
           <Route path="/" element={<HomeView />} />
           <Route path="/services" element={<ServicesView />} />
           <Route path="/dashboard" element={<DashboardView />} />
@@ -105,21 +105,14 @@ function App() {
             path="/transportpage"
             element={
               <DynamicPage1
-                Name="Road Transportation"
-                Data={TransportDetails}
-                img={"/src/assets/ServicePages/transport.png"}
+                mame="Road Transportation"
+                data={TransportDetails}
               />
             }
           />
           <Route
             path="/warehousepage"
-            element={
-              <DynamicPage1
-                Name="Warehouse"
-                Data={WarehouseService}
-                img="/src/assets/ServicePages/warehouse.png"
-              />
-            }
+            element={<DynamicPage1 Name="Warehouse" Data={WarehouseService} />}
           />
           <Route
             path="/logisticspage"
@@ -148,7 +141,6 @@ function App() {
               />
             }
           />
-          <Route path="/truckDetails" element={<TruckDetails />} />
           <Route path="/warehouseDetails" element={<WarehouseDetails />} />
           <Route
             path="/insurance"
@@ -167,6 +159,9 @@ function App() {
               />
             }
           />
+
+          {/* dynamicRouting of Transport  */}
+          <Route path="transportpage/:slug" element={<TruckDetails />} />
         </Routes>
       </div>
       {!hideFooterPaths.includes(location.pathname) && <Footer />}
