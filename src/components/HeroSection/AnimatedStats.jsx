@@ -146,11 +146,8 @@ const AnimatedStats = () => {
         <span className="text-customOrange"> Solutions </span> to all your
         logistics needs
       </div>
-      {/* <div className="h-fit lg:absolute lg:right-0 lg:bottom-[4%]">
-        <Icon />
-      </div> */}
 
-      <div className="h-fit right-0 transform -translate-y-1/3 lg:absolute lg:right-4 lg:w-1/3 lg:top-1/2">
+      <div className="w-full lg:w-1/3 h-fit lg:absolute lg:top-1/2 lg:right-4 transform translate-y-3 lg:-translate-y-1/2">
         <Animation />
       </div>
     </div>
