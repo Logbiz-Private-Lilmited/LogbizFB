@@ -4,25 +4,23 @@ import Dropdown from "./Dropdown";
 import PLImg1 from "/src/assets/ServicePages/PartLoadImg1.png";
 import PLImg2 from "/src/assets/ServicePages/PartLoadImg2.png";
 import PLImg3 from "/src/assets/ServicePages/PartLoadImg3.png";
-import BackButton from '../BackButtonModule/BackButton';
+import BackButton from "../BackButtonModule/BackButton";
 
 const PLImgs = [PLImg1, PLImg2, PLImg3];
 
-export default function DynamicPage1(props) {
+export default function DynamicPage1({ data, name }) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const details = [...props.Data];
-
   return (
     <div>
       <div className="flex max-[435px]:flex-col justify-between">
-        <div className=" inline-flex gap-3">
+        <div className=" inline-flex gap-3 items-center">
           <BackButton />
-          <h1 className="max-[435px]:text-xl">
-            Available {props.Name} Services
-          </h1>
+          <div className="md:text-2xl text-xl font-bold">
+            Available {name} Services
+          </div>
         </div>
         <div className="inline-flex flex-row gap-3">
           <div>
@@ -40,17 +38,19 @@ export default function DynamicPage1(props) {
         <div>
           <p className="text-2xl font-medium mb-6">On Demand</p>
           <div className="flex flex-wrap justify-stretch px-4 gap-8">
-            {details.map((detail, index) => {
-              if (detail.on_demand == true) {
+            {data.map((detail, index) => {
+              console.log("deatil:", detail);
+              if (detail.on_demand === true) {
                 return (
                   <ServiceCard
-                    key={index}
-                    Img={props.img}
-                    Name={detail.name}
+                    key={detail.name}
+                    Img={detail.img}
+                    Name={detail.companyName}
                     Location={detail.location}
-                    Model={detail.vehicle_model}
+                    Model={detail.model}
                     Capacity={detail.capacity}
                     BodyType={detail.body_type}
+                    linkTo={detail.slug}
                   />
                 );
               }
@@ -60,22 +60,25 @@ export default function DynamicPage1(props) {
         <div className="mt-4">
           <p className="text-2xl font-medium mb-6 ">Advanced Booking</p>
           <div className="flex flex-wrap px-4 gap-8">
-            {details.map((detail, index) => {
-              if (detail.advanced === true) {
+            {data.map((detail, index) => {
+              console.log("deatil:", detail);
+              if (detail.on_demand === false) {
                 return (
                   <ServiceCard
-                    key={index}
-                    Img={props.img}
-                    Name={detail.name}
+                    key={detail.name}
+                    Img={detail.img}
+                    Name={detail.companyName}
                     Location={detail.location}
-                    Model={detail.vehicle_model}
+                    Model={detail.model}
                     Capacity={detail.capacity}
                     BodyType={detail.body_type}
+                    linkTo={detail.slug}
                   />
                 );
               }
             })}
           </div>
+
           <div className=" flex justify-center items-center mt-4">
             <p className="bg-[#f2f2f2] w-fit p-2 rounded-md font-semibold text-center">
               Did not find vehicle for your load destination?
@@ -111,7 +114,9 @@ export default function DynamicPage1(props) {
                 })}
               </div>
               <div className="font-semibold mt-2 max-[435px]:text-[20px] ">
-                <p>Book cube space shipments on pallets for efficient transport</p>
+                <p>
+                  Book cube space shipments on pallets for efficient transport
+                </p>
               </div>
             </div>
           </div>

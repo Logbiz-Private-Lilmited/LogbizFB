@@ -3,6 +3,7 @@ import { useState } from "react";
 import { NavbarLink } from "./NavbarLink";
 import { Sidebar } from "./Sidebar";
 import { NavbarButton } from "./NavbarButton";
+import { Link } from "react-scroll";
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -20,7 +21,19 @@ export const Navbar = () => {
         }`}
       >
         <NavbarLink to="/home" view="Home"></NavbarLink>
-        <NavbarLink to="/services" view="Services"></NavbarLink>
+
+        <Link
+          to="servicesAvailable"
+          spy={true}
+          smooth={true}
+          offset={-200}
+          duration={500}
+          className="text-lg text-white font-medium text-center py-3 px-4 rounded hover:bg-customOrange transition-all duration-300"
+        >
+          Services
+        </Link>
+        {/* <NavbarLink view="Services" /> */}
+
         <NavbarLink to="/dashboard" view="Dashboard"></NavbarLink>
         <NavbarLink to="/services-listing" view="Service Listing"></NavbarLink>
       </nav>
