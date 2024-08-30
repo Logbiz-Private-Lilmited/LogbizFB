@@ -5,7 +5,6 @@ import infoDetails from "../components/Homeview/InfoDetails";
 import InfoCards from "../components/Homeview/InfoCards";
 import AnimatedStats from "../components/HeroSection/AnimatedStats";
 import VideoPlayback from "../components/Homeview/VideoPlayback";
-import { BiArrowFromRight, BiLeftArrow } from "react-icons/bi";
 import { GoArrowRight } from "react-icons/go";
 import RegBoxes from "../components/Homeview/ServiceBoxes/RegBox";
 import ServiceBoxes from "../components/Homeview/ServiceBoxes/ServiceBox";

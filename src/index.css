@@ -10,24 +10,24 @@ html {
 body {
   /* Apply custom scrollbar styles globally */
   scrollbar-width: thin;
-  scrollbar-color: #ff6600 #fafafa; /* Firefox */
+  scrollbar-color: #ff6600 #fafafa; 
 }
 
 ::-webkit-scrollbar {
-  width: 11px; /* WebKit browsers */
+  width: 11px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #fafafa; /* WebKit browsers */
+  background: #fafafa; 
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #f48941; /* WebKit browsers */
+  background: #f48941; 
   border-radius: 100px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ff6600; /* WebKit browsers */
+  background: #ff6600; 
 }
 
 @layer base {
@@ -60,9 +60,9 @@ body {
 /* Rotating circle animation */
 .circle-container {
   position: relative;
-  width: 450px; /* Size of the outer circle */
+  width: 450px; 
   height: 450px;
-  margin: auto; /* Center the container */
+  margin: auto; 
 }
 
 /* Animation for the outer circle */
@@ -117,13 +117,13 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 150px; /* Adjust the size of the image */
-  height: 150px; /* Adjust the size of the image */
+  width: 150px;
+  height: 150px;
   transform: translate(-50%, -50%);
-  z-index: 1; /* Ensures the image is on top of the circles */
+  z-index: 1; /* Ensures the image is on top of the circles if background is used*/
 }
 
-/* Ensuring responsiveness */
+/* Circle responsiveness */
 @media (max-width: 500px) {
   .circle-container {
     width: 300px;
