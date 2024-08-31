@@ -3,7 +3,7 @@ import "../src/index.css";
 import { Navbar } from "./components/Navbar/Navbar";
 import { HomeView } from "./views/HomeView";
 import { ServicesView } from "./views/ServicesView";
-import { DashboardView } from "./views/DashboardView";
+import DashboardView from "./views/DashboardView";
 import { ServicesListingView } from "./views/ServicesListingView";
 import { ContactView } from "./views/ContactView";
 import Signup from "./components/Signup/Signup";
@@ -46,6 +46,7 @@ import {
 
 import TruckDetails from "./components/ServicePages/ServiceDetails/truckdetails";
 import WarehouseDetails from "./components/ServicePages/ServiceDetails/WarehouseDetails/warehouseDetails";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   const location = useLocation();
@@ -64,7 +65,17 @@ function App() {
           <Route path="/home" element={<Navigate to="/" />} />
           <Route path="/" element={<HomeView />} />
           <Route path="/services" element={<ServicesView />} />
-          <Route path="/dashboard" element={<DashboardView />} />
+
+          <Route
+            path="/dashboard"
+            element={
+              // private hides if not logged in
+              <PrivateRoute>
+                <DashboardView />
+              </PrivateRoute>
+            }
+          />
+
           <Route path="/services-listing" element={<ServicesListingView />} />
           <Route path="/contact" element={<ContactView />} />
           <Route path="/signup" element={<Signup />} />

@@ -12,7 +12,7 @@ import LogoWithLines from "../components/Homeview/LogoLine";
 
 export const HomeView = () => {
   return (
-    <div className="mx-auto">
+    <div className="mx-auto overflow-x-hidden">
       <section className="flex flex-col h-fit justify-between w-full mb-10 bg-[#D9D9D9] rounded-xl p-6 gap-8 md:gap-16 relative">
         <AnimatedStats />
         <Stats />
