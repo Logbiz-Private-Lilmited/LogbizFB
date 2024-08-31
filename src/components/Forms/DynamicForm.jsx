@@ -13,6 +13,7 @@ const DynamicForm = ({
   ifLabel,
   formRadioCSS,
   formGroupCSS,
+  isInsurance,
 }) => {
   const initialValues = config.reduce((acc, field) => {
     if (field.type === "checkbox") {
@@ -36,10 +37,26 @@ const DynamicForm = ({
   const radioInputCSS = "w-fit";
 
   const bankDetails = [
-    { label: "Name", name: "name" },
+    { label: "Name", name: "bankName" },
     { label: "Account Number", name: "accountNumber" },
     { label: "Branch Name", name: "branchName" },
     { label: "IFSC Code", name: "ifscCode" },
+  ];
+  const insuranceDetails = [
+    {
+      name: "insuranceCompany",
+      placeholder: "Insurance Company",
+      type: "text",
+    },
+    { name: "policyNumber", placeholder: "Policy Number", type: "text" },
+    { name: "insuranceCover", placeholder: "Insurance Cover", type: "text" },
+    {
+      name: "insurancePremium",
+      placeholder: "Insurance Premium",
+      type: "text",
+    },
+    { name: "startDate", placeholder: "Start Date", type: "date" },
+    { name: "endDate", placeholder: "End Date", type: "date" },
   ];
 
   const renderInput = (field) => {
@@ -127,7 +144,7 @@ const DynamicForm = ({
               id={field.name}
               value={values[field.name]}
               onChange={handleChange}
-              className={inputCSS}
+              className={`${inputCSS}`}
             >
               {field.options.map((option) => (
                 <option key={option} value={option}>
@@ -210,15 +227,32 @@ const DynamicForm = ({
           config.map((field) => renderInput(field))
         )}
         {isBankDetails && (
-          <div className="border-2 gap-4 flex flex-col p-4 rounded w-full md:w-fit">
-            <h1 className="md:text-lg">Bank Details</h1>
-            <div className="flex md:flex-row flex-col gap-4">
+          <div className="md:gap-4 gap-1 flex flex-col rounded w-2/3 border p-4">
+            <h1 className="md:text-lg text-base">Bank Details</h1>
+            <div className="flex md:flex-row flex-col gap-4 flex-wrap ">
               {bankDetails.map((item) => (
                 <input
                   className={inputCSS}
                   placeholder={item.label}
                   name={item.name}
                   key={item.name}
+                  onChange={handleChange}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+        {isInsurance && (
+          <div className="md:gap-4 gap-1 flex flex-col rounded w-2/3">
+            <h1 className="md:text-lg text-base">Insurance Details</h1>
+            <div className="flex sm:flex-row flex-col gap-4 flex-wrap">
+              {insuranceDetails.map((item) => (
+                <input
+                  className={inputCSS}
+                  placeholder={item.placeholder}
+                  name={item.name}
+                  key={item.name}
+                  type={item.type}
                   onChange={handleChange}
                 />
               ))}

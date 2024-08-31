@@ -1,5 +1,5 @@
 import React from "react";
-import AnimationLogo from "../../../public/AnimationLogo.svg";
+
 import Animation from "./Animation";
 
 const AnimatedStats = () => {

@@ -89,9 +89,9 @@ body {
   width: 450px;
   height: 450px;
   border-radius: 50%;
-  border: 15px solid transparent; 
-  border-left-color: #ff6600;
-  border-right-color: #ff6600;
+  border: 25px solid transparent; 
+  border-left-color: #fafafa;
+  border-right-color: #fafafa;
   animation: rotate-circle 5s linear infinite;
   position: absolute;
   top: 0;
@@ -103,9 +103,9 @@ body {
   width: 350px;
   height: 350px;
   border-radius: 50%;
-  border: 15px solid transparent;
-  border-left-color: #fafafa;
-  border-right-color: #fafafa;
+  border: 25px solid transparent;
+  border-left-color: #ff6600;
+  border-right-color: #ff6600;
   animation: rotate-circle 8s linear infinite;
   position: absolute;
   top: 50px;
@@ -117,8 +117,8 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 150px;
-  height: 150px;
+  width: 250px;
+  height: 250px;
   transform: translate(-50%, -50%);
   z-index: 1; /* Ensures the image is on top of the circles if background is used*/
 }
@@ -133,6 +133,9 @@ body {
   .rotate-circle {
     width: 300px;
     height: 300px;
+    border: 15px solid transparent;
+    border-left-color: #fafafa;
+  border-right-color: #fafafa;
   }
 
   .rotate-circle2 {
@@ -140,10 +143,13 @@ body {
     height: 250px;
     top: 25px;
     left: 25px;
+    border: 15px solid transparent;
+    border-left-color: #ff6600;
+    border-right-color: #ff6600;
   }
 
   .center-image {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
   }
 }
