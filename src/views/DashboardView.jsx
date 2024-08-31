@@ -1,17 +1,28 @@
-export const DashboardView = () => {
-  return (
-    <div className='w-11/12 mx-auto'>
-      <h1 className='font-bold text-center mb-16'>Dashboard View</h1>
+import React from "react";
+import BackButton from "../components/BackButtonModule/BackButton";
+import DashboardComp from "../components/Dashboard/DashboardComp";
 
-      <section className='flex flex-col gap-20'>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet modi minus delectus officia, accusamus deserunt quo sit repellat voluptas quae, voluptates aspernatur ducimus? Aspernatur ipsum odio provident ea. Totam, adipisci?</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet modi minus delectus officia, accusamus deserunt quo sit repellat voluptas quae, voluptates aspernatur ducimus? Aspernatur ipsum odio provident ea. Totam, adipisci?</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet modi minus delectus officia, accusamus deserunt quo sit repellat voluptas quae, voluptates aspernatur ducimus? Aspernatur ipsum odio provident ea. Totam, adipisci?</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet modi minus delectus officia, accusamus deserunt quo sit repellat voluptas quae, voluptates aspernatur ducimus? Aspernatur ipsum odio provident ea. Totam, adipisci?</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet modi minus delectus officia, accusamus deserunt quo sit repellat voluptas quae, voluptates aspernatur ducimus? Aspernatur ipsum odio provident ea. Totam, adipisci?</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet modi minus delectus officia, accusamus deserunt quo sit repellat voluptas quae, voluptates aspernatur ducimus? Aspernatur ipsum odio provident ea. Totam, adipisci?</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet modi minus delectus officia, accusamus deserunt quo sit repellat voluptas quae, voluptates aspernatur ducimus? Aspernatur ipsum odio provident ea. Totam, adipisci?</p>
-      </section>
-    </div>
-  )
-}
+const DashboardView = () => {
+  return (
+    <section className="py-4 space-y-4">
+      <div className="flex items-center md:gap-4 gap-2">
+        <BackButton /> <span className="text-2xl font-bold">Dashboard</span>
+      </div>
+
+      <DashboardComp
+        serviceName={"Sk Tranport"}
+        requestId={12345}
+        status={"Approval pending"}
+        freightType={"International"}
+      />
+      <DashboardComp
+        serviceName={"Sk Tranport"}
+        requestId={12345}
+        status={"Approval pending"}
+        freightType={"International"}
+      />
+    </section>
+  );
+};
+
+export default DashboardView;

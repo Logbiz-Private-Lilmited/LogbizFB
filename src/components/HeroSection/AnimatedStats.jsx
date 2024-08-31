@@ -12,7 +12,7 @@ const AnimatedStats = () => {
         logistics needs
       </div>
 
-      <div className="w-full lg:w-1/3 h-fit lg:absolute lg:top-1/2 lg:right-4 transform translate-y-3 lg:-translate-y-1/2">
+      <div className="w-full lg:w-1/3 h-fit lg:absolute lg:top-1/2 lg:right-24 transform translate-y-3 lg:-translate-y-1/2">
         <Animation />
       </div>
     </div>
