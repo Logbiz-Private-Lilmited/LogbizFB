@@ -83,6 +83,12 @@ body {
     transform: rotate(0deg);
   }
 }
+.circle-container:hover .label-right {
+  animation: rightAnim 1s ease 0s 1 normal forwards;
+}
+.circle-container:hover .label-left {
+  animation: leftAnim 1s ease 0s 1 normal forwards;
+}
 
 /* Outer rotating circle */
 .rotate-circle {
@@ -122,6 +128,12 @@ body {
   transform: translate(-50%, -50%);
   z-index: 1; /* Ensures the image is on top of the circles if background is used*/
 }
+.circle-container:hover .rotate-circle{
+  animation-play-state: paused;
+}
+.circle-container:hover .rotate-circle2{
+  animation-play-state: paused;
+}
 
 /* Circle responsiveness */
 @media (max-width: 500px) {
@@ -152,4 +164,29 @@ body {
     width: 150px;
     height: 150px;
   }
+}
+
+
+@keyframes rightAnim {
+	0% {
+		opacity: 0;
+		transform: translateX(250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes leftAnim {
+	0% {
+		opacity: 0;
+		transform: translateX(-250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
 }
