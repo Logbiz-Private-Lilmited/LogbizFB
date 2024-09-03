@@ -37,7 +37,7 @@ export default function DynamicPage1({ data, name }) {
       <div className="p-4">
         <div>
           <p className="text-2xl font-medium mb-6">On Demand</p>
-          <div className="flex flex-wrap justify-stretch px-4 gap-8">
+          <div className="flex flex-wrap justify-between px-4 gap-8">
             {data.map((detail, index) => {
               console.log("deatil:", detail);
               if (detail.on_demand === true) {
@@ -59,7 +59,7 @@ export default function DynamicPage1({ data, name }) {
         </div>
         <div className="mt-4">
           <p className="text-2xl font-medium mb-6 ">Advanced Booking</p>
-          <div className="flex flex-wrap px-4 gap-8">
+          <div className="flex flex-wrap justify-between px-4 gap-8">
             {data.map((detail, index) => {
               console.log("deatil:", detail);
               if (detail.on_demand === false) {

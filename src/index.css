@@ -89,6 +89,12 @@ body {
 .circle-container:hover .label-left {
   animation: leftAnim 1s ease 0s 1 normal forwards;
 }
+.circle-container:hover{
+  cursor: pointer;
+}
+.circle-container:hover{
+  cursor: pointer;
+}
 
 /* Outer rotating circle */
 .rotate-circle {
@@ -128,12 +134,12 @@ body {
   transform: translate(-50%, -50%);
   z-index: 1; /* Ensures the image is on top of the circles if background is used*/
 }
-.circle-container:hover .rotate-circle{
+/* .circle-container:hover .rotate-circle{
   animation-play-state: paused;
 }
 .circle-container:hover .rotate-circle2{
   animation-play-state: paused;
-}
+} */
 
 /* Circle responsiveness */
 @media (max-width: 500px) {

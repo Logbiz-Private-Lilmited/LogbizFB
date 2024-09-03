@@ -33,7 +33,7 @@ const DynamicForm = ({
   const { values, handleChange, setValues } = useForm(initialValues);
 
   const inputCSS =
-    "border rounded-sm p-2 md:w-fit w-full placeholder:text-sm mt-2 placeholder:text-gray-800";
+    "border rounded-sm p-2 w-full placeholder:text-sm mt-2 placeholder:text-gray-800";
   const radioInputCSS = "w-fit";
 
   const bankDetails = [
@@ -209,14 +209,14 @@ const DynamicForm = ({
 
   return (
     <>
-      <div className="flex justify-between md:items-center md:text-center h-full w-screen md:px-12 md:py-4 px-4 py-2">
+      <div className="flex flex-col justify-between md:flex-row md:items-center md:text-center h-full mb-10">
         <BackButton />
         <div className="flex justify-center items-center text-center w-fit">
           <div className="md:text-2xl font-bold flex justify-between">
-            {formTitle}
+            <h2> {formTitle} </h2>
           </div>
         </div>
-        <div className="w-fit">Request ID:{requestID}</div>
+        <div className="w-fit pr-2">Request ID:{requestID}</div>
       </div>
       <form className={formCSS} onSubmit={handleSubmit}>
         {formDivCSS ? (
@@ -263,7 +263,7 @@ const DynamicForm = ({
         <div className="md:col-span-2 lg:col-span-4 flex justify-end w-full">
           <button
             type="submit"
-            className="border rounded-md px-8 py-1 text-sm bg-gray-200"
+            className="border rounded-md px-6 py-2 text-md bg-btn-grey hover:bg-customOrange hover:text-white"
           >
             Submit
           </button>

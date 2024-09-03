@@ -57,7 +57,7 @@ function App() {
     <div className="flex flex-col items-center mt-4">
       {!hideNavbarPaths.includes(location.pathname) && <Navbar />}
       <div
-        className={`prose w-[98%] ${
+        className={`prose w-[98%] pb-10 ${
           hideNavbarPaths.includes(location.pathname) ? "mt-0" : "mt-24"
         }`}
       >
@@ -65,58 +65,52 @@ function App() {
           <Route path="/home" element={<Navigate to="/" />} />
           <Route path="/" element={<HomeView />} />
           <Route path="/services" element={<ServicesView />} />
-
-          <Route
-            path="/dashboard"
-            element={
-              // private hides if not logged in
-              <PrivateRoute>
-                <DashboardView />
-              </PrivateRoute>
-            }
-          />
-
           <Route path="/services-listing" element={<ServicesListingView />} />
           <Route path="/contact" element={<ContactView />} />
           <Route path="/signup" element={<Signup />} />
 
-          {/* forms-start */}
-
-          <Route
-            path="/warehouseRegistration"
-            element={<WarehouseRegistration />}
-          />
-          <Route path="/ispRegistration" element={<ISPRegistration />} />
-          <Route path="/parcelRegistration" element={<ParcelRegistration />} />
-          <Route path="/3plRegistration" element={<ThreePL />} />
-          <Route path="/transportRegistration" element={<Transport />} />
-          <Route path="/fspRegistration" element={<FSPRegistration />} />
-          <Route
-            path="/distributionHubRegistration"
-            element={<DistributionHubForm />}
-          />
-
-          <Route path="/insuranceForm" element={<Insurance />} />
-          <Route path="/ulcDetails" element={<ULC />} />
-          <Route
-            path="/consultingRegistration"
-            element={<ConsultingRegistration />}
-          />
-          <Route
-            path="/freightRegistration"
-            element={<FreightRegistration />}
-          />
-          <Route path="/bookPallet" element={<Pallet />} />
-          <Route path="/hireAFreight" element={<HireAFreight />} />
-          <Route path="/warehouseListing" element={<WarehouseListingForm />} />
-
-          {/* forms-end  */}
+          {/* Pages that requires authentication goes here */}
+          <Route element={<PrivateRoute />}>
+            <Route path="/dashboard" element={<DashboardView />} />
+            <Route
+              path="/warehouseRegistration"
+              element={<WarehouseRegistration />}
+            />
+            <Route path="/ispRegistration" element={<ISPRegistration />} />
+            <Route
+              path="/parcelRegistration"
+              element={<ParcelRegistration />}
+            />
+            <Route path="/3plRegistration" element={<ThreePL />} />
+            <Route path="/transportRegistration" element={<Transport />} />
+            <Route path="/fspRegistration" element={<FSPRegistration />} />
+            <Route
+              path="/distributionHubRegistration"
+              element={<DistributionHubForm />}
+            />
+            <Route path="/insuranceForm" element={<Insurance />} />
+            <Route path="/ulcDetails" element={<ULC />} />
+            <Route
+              path="/consultingRegistration"
+              element={<ConsultingRegistration />}
+            />
+            <Route
+              path="/freightRegistration"
+              element={<FreightRegistration />}
+            />
+            <Route path="/bookPallet" element={<Pallet />} />
+            <Route path="/hireAFreight" element={<HireAFreight />} />
+            <Route
+              path="/warehouseListing"
+              element={<WarehouseListingForm />}
+            />
+          </Route>
 
           <Route
             path="/transportpage"
             element={
               <DynamicPage1
-                mame="Road Transportation"
+                name="Road Transportation"
                 data={TransportDetails}
               />
             }
@@ -154,10 +148,6 @@ function App() {
           />
           <Route path="/warehouseDetails" element={<WarehouseDetails />} />
           <Route
-            path="/insurance"
-            element={<InsurancePage Data={InsuranceDetails} />}
-          />
-          <Route
             path="/finance"
             element={<FinancePage Data={FinanceDetails} />}
           />
@@ -171,7 +161,7 @@ function App() {
             }
           />
 
-          {/* dynamicRouting of Transport  */}
+          {/* Dynamic Routing of Transport */}
           <Route path="transportpage/:slug" element={<TruckDetails />} />
         </Routes>
       </div>

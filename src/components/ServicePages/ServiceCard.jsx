@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function ServiceCard(props) {
   return (
     <Link to={props.linkTo}>
-      <div className="border border-black rounded-lg h-fit w-fit p-2 pr-[15px] flex gap-4 items-center">
+      <div className="border border-black rounded-lg h-fit w-[500px] p-2 pr-[15px] flex gap-4 items-center">
         <img
           src={props.Img}
           alt=""

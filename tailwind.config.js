@@ -25,26 +25,26 @@ export default {
         DEFAULT: {
           css: {
             // Override or remove default styles
-            color: "inherit", // text color is inherited
-            maxWidth: "none", // Removes default max-width limitation
-            margin: "0", // Removes default margins
-            padding: "0", // Removes default padding
-            textDecoration: "none", // default text decoration is none
-            fontSize: "inherit", // font size is inherited
+            color: "inherit",
+            maxWidth: "none",
+            margin: "0",
+            padding: "0",
+            textDecoration: "none",
+            fontSize: "inherit",
             img: {
               marginTop: "0",
               marginBottom: "0",
             },
             a: {
-              textDecoration: "none", // Removes underline from links
-              fontSize: "inherit", // Inherits font size
+              textDecoration: "none",
+              fontSize: "inherit",
             },
             button: {
-              textDecoration: "none", // Ensures no text decoration
-              fontSize: "inherit", // Inherits font size
+              textDecoration: "none",
+              fontSize: "inherit",
             },
             span: {
-              fontSize: "inherit", // Inherits font size
+              fontSize: "inherit",
             },
             h1: {
               fontWeight: "700",
@@ -54,7 +54,7 @@ export default {
               fontSize: "40px",
             },
             h2: {
-              marginBottom: "15px",
+              marginBottom: "0px",
               marginTop: "0px",
               lineHeight: "47.73px",
               fontSize: "35px",

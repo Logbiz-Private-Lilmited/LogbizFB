@@ -7,9 +7,9 @@ import label4 from "/label4.svg";
 
 const Animation = () => {
   return (
-    <div class="circle-container">
-      <div class="rotate-circle"></div>
-      <div class="rotate-circle2 "></div>
+    <div className="circle-container">
+      <div className="rotate-circle"></div>
+      <div className="rotate-circle2 "></div>
       <img
         src={label1}
         alt="label"

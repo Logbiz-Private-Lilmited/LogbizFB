@@ -31,9 +31,7 @@ export const HomeView = () => {
 
       {/* NEWSLETTER BUTTON */}
       <Link to="/subscribe">
-        {" "}
-        {/* Update the 'to' attribute to your desired route */}
-        <button className="w-fit text-sm font-bold p-3 bg-black text-white rounded-md my-6">
+        <button className="w-fit text-sm font-bold p-3 bg-black text-white rounded-md mt-6">
           <span className="text-white">Subscribe to our</span>
           <span className="text-customOrange"> News Letters</span> here
         </button>
