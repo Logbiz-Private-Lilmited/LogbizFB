@@ -7,10 +7,11 @@
 html {
   scroll-behavior: smooth;
 }
+
 body {
   /* Apply custom scrollbar styles globally */
   scrollbar-width: thin;
-  scrollbar-color: #ff6600 #fafafa; 
+  scrollbar-color: #ff6600 #fafafa;
 }
 
 ::-webkit-scrollbar {
@@ -18,16 +19,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #fafafa; 
+  background: #fafafa;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #f48941; 
+  background: #f48941;
   border-radius: 100px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ff6600; 
+  background: #ff6600;
 }
 
 @layer base {
@@ -35,34 +36,36 @@ body {
     @apply no-underline text-inherit;
   }
 }
+
 .custom-arrow::before {
-    display: none;
-    font-size: 0px !important;
-    color: #000000 !important;
-    opacity: 1;
-  }
-  
-  .slick-prev {
-    left: -30px !important; 
-    z-index: 10;
-    top: 45% !important;
-  }
-  
-  .slick-next {
-    right: -3px !important;
-    z-index: 10;
-    top: 45% !important; 
-  }
-  .footer-link {
-    @apply hover:underline;
-  }
+  display: none;
+  font-size: 0px !important;
+  color: #000000 !important;
+  opacity: 1;
+}
+
+.slick-prev {
+  left: -30px !important;
+  z-index: 10;
+  top: 45% !important;
+}
+
+.slick-next {
+  right: -3px !important;
+  z-index: 10;
+  top: 45% !important;
+}
+
+.footer-link {
+  @apply hover:underline;
+}
 
 /* Rotating circle animation */
 .circle-container {
   position: relative;
-  width: 450px; 
+  width: 450px;
   height: 450px;
-  margin: auto; 
+  margin: auto;
 }
 
 /* Animation for the outer circle */
@@ -70,29 +73,36 @@ body {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
+
 /* Animation for the inner circle */
 @keyframes rotate-circle2 {
   0% {
     transform: rotate(360deg);
   }
+
   100% {
     transform: rotate(0deg);
   }
 }
+
 .circle-container:hover .label-right {
   animation: rightAnim 1s ease 0s 1 normal forwards;
 }
+
 .circle-container:hover .label-left {
   animation: leftAnim 1s ease 0s 1 normal forwards;
 }
-.circle-container:hover{
+
+.circle-container:hover {
   cursor: pointer;
 }
-.circle-container:hover{
+
+.circle-container:hover {
   cursor: pointer;
 }
 
@@ -101,9 +111,9 @@ body {
   width: 450px;
   height: 450px;
   border-radius: 50%;
-  border: 25px solid transparent; 
-  border-left-color: #fafafa;
-  border-right-color: #fafafa;
+  border: 25px solid transparent;
+  border-left-color: #d9d9d9;
+  border-right-color: #d9d9d9;
   animation: rotate-circle 5s linear infinite;
   position: absolute;
   top: 0;
@@ -132,8 +142,10 @@ body {
   width: 250px;
   height: 250px;
   transform: translate(-50%, -50%);
-  z-index: 1; /* Ensures the image is on top of the circles if background is used*/
+  z-index: 1;
+  /* Ensures the image is on top of the circles if background is used*/
 }
+
 /* .circle-container:hover .rotate-circle{
   animation-play-state: paused;
 }
@@ -153,7 +165,7 @@ body {
     height: 300px;
     border: 15px solid transparent;
     border-left-color: #fafafa;
-  border-right-color: #fafafa;
+    border-right-color: #fafafa;
   }
 
   .rotate-circle2 {
@@ -174,25 +186,25 @@ body {
 
 
 @keyframes rightAnim {
-	0% {
-		opacity: 0;
-		transform: translateX(250px);
-	}
+  0% {
+    opacity: 0;
+    transform: translateX(250px);
+  }
 
-	100% {
-		opacity: 1;
-		transform: translateX(0);
-	}
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes leftAnim {
-	0% {
-		opacity: 0;
-		transform: translateX(-250px);
-	}
+  0% {
+    opacity: 0;
+    transform: translateX(-250px);
+  }
 
-	100% {
-		opacity: 1;
-		transform: translateX(0);
-	}
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
