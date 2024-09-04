@@ -2,7 +2,7 @@ import googleLogo from "../../assets/google-logo.png";
 import facebookLogo from "../../assets/facebook-logo.png";
 import { LuEye, LuEyeOff } from "react-icons/lu";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import BackButton from "../BackButtonModule/BackButton";
 
 const Signup = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -20,31 +20,15 @@ const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(values);
+    const from = location.state?.from?.pathname || "/";
+    navigate(from, { replace: true });
   };
 
   return (
     <div className="m-auto">
       <div className="flex flex-col flex-wrap space-y-5 justify-center items-center mb-10">
-        <div className="flex md:items-center md:text-center h-full w-screen md:px-12 md:py-4 px-4 py-2">
-          <Link to={"/"} className="border rounded px-2 bg-gray-300 w-fit">
-            <svg
-              fill="#000000"
-              version="1.1"
-              id="Layer_1"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlnsXlink="http://www.w3.org/1999/xlink"
-              viewBox="0 0 330 330"
-              xmlSpace="preserve"
-              stroke="#000000"
-              transform="rotate(90)"
-              className="md:h-[24px] md:w-[24px] h-[18px] w-[18px]"
-            >
-              <path
-                id="XMLID_30_"
-                d="M154.394,325.606C157.322,328.535,161.161,330,165,330s7.678-1.465,10.607-4.394l75-75 c5.858-5.857,5.858-15.355,0-21.213c-5.858-5.857-15.356-5.857-21.213,0L180,278.787V15c0-8.284-6.716-15-15-15 c-8.284,0-15,6.716-15,15v263.787l-49.394-49.394c-5.858-5.857-15.355-5.857-21.213,0c-5.858,5.857-5.858,15.355,0,21.213 L154.394,325.606z"
-              />
-            </svg>
-          </Link>
+        <div className="flex md:items-center md:text-center h-full w-full md:px-12 md:py-4 px-4 py-2">
+          <BackButton />
         </div>
         <div className="">
           <svg
@@ -54,14 +38,14 @@ const Signup = () => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path d="M233 52H246" stroke="white" stroke-width="3" />
+            <path d="M233 52H246" stroke="white" strokeWidth="3" />
             <path
               d="M52.77 32.0761L19.1002 57.4647"
               stroke="#918F8E"
-              stroke-opacity="0.6"
-              stroke-width="3"
+              strokeOpacity="0.6"
+              strokeWidth="3"
             />
-            <path d="M69 20L119.97 56.6333" stroke="#1E1E1E" stroke-width="3" />
+            <path d="M69 20L119.97 56.6333" stroke="#1E1E1E" strokeWidth="3" />
             <circle
               cx="68.2482"
               cy="20.2481"
@@ -83,13 +67,13 @@ const Signup = () => {
               x2="119"
               y2="55.5"
               stroke="black"
-              stroke-opacity="0.4"
-              stroke-width="3"
+              strokeOpacity="0.4"
+              strokeWidth="3"
             />
             <path
               d="M234.981 56.4453L248.019 56.554"
               stroke="white"
-              stroke-width="3"
+              strokeWidth="3"
             />
             <ellipse
               cx="172.99"
@@ -102,7 +86,7 @@ const Signup = () => {
             <path
               d="M68.1035 20.0742L52.3651 32.3524"
               stroke="white"
-              stroke-width="3"
+              strokeWidth="3"
             />
             <path
               d="M41.7998 39H0.90625V3.96582H15.6035V30.333H41.7998V39ZM118.899 39.7568C110.241 39.7568 103.868 37.9746 99.7832 34.4102C96.1699 31.2526 94.3633 26.9557 94.3633 21.5195C94.3633 16.0671 96.1699 11.762 99.7832 8.60449C103.868 5.04004 110.241 3.25781 118.899 3.25781C123.831 3.25781 127.933 3.8112 131.204 4.91797C134.476 6.02474 137.039 7.53841 138.895 9.45898C140.766 11.3633 142.044 13.5605 142.728 16.0508H127.005C125.361 13.7884 122.659 12.6572 118.899 12.6572C115.351 12.6572 112.739 13.6745 111.062 15.709C109.728 17.3529 109.061 19.2897 109.061 21.5195C109.061 23.7493 109.728 25.6781 111.062 27.3057C112.739 29.3402 115.351 30.3574 118.899 30.3574C121.764 30.3574 123.912 30.1133 125.345 29.625C126.793 29.1204 127.851 28.4694 128.519 27.6719H122.781V21.5195H142.728V39.0244H136.624L135.379 35.6309C131.489 38.3815 125.996 39.7568 118.899 39.7568Z"
@@ -156,7 +140,7 @@ const Signup = () => {
         Register as a Logistic service provider
       </span>
       <form
-        className="md:flex hidden flex-col mt-10 items-center justify-center ml-8"
+        className="md:flex hidden flex-col mt-10 items-center justify-center"
         onSubmit={handleSubmit}
       >
         <input

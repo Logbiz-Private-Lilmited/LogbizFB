@@ -1,13 +1,13 @@
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavbarLink } from "./NavbarLink";
 import { Sidebar } from "./Sidebar";
 import { NavbarButton } from "./NavbarButton";
 import { Link } from "react-scroll";
+import PrivateRoute from "../PrivateRoute";
 
-export const Navbar = () => {
+export const Navbar = ({ handleAuthToggle, isAuthenticated }) => {
   const [menuOpen, setMenuOpen] = useState(false);
-
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -33,7 +33,6 @@ export const Navbar = () => {
           Services
         </Link>
         {/* <NavbarLink view="Services" /> */}
-
         <NavbarLink to="/dashboard" view="Dashboard"></NavbarLink>
         <NavbarLink to="/services-listing" view="Service Listing"></NavbarLink>
       </nav>
@@ -52,11 +51,17 @@ export const Navbar = () => {
       </NavLink>
 
       {/* Buttons */}
-      <nav className="hidden lg:flex justify-end items-center gap-2 w-5/12">
-        <NavbarButton to="/contact" view="Contact us"></NavbarButton>
-        <NavbarButton to="/signup" view="Sign up/login"></NavbarButton>
+       <nav className="hidden lg:flex justify-end items-center gap-2 w-5/12">
+       {/* <button className="text-white" onClick={handleAuthToggle}>
+        {isAuthenticated ? "Log Out" : "Log In"}
+       </button> */}
+       <NavbarButton
+          view={isAuthenticated ? "Log Out" : "Log In"}
+          onClick={handleAuthToggle}
+        />
+        <NavbarButton to="/contact" view="Contact us" />
+        <NavbarButton to="/signup" view="Sign up/login" />
       </nav>
-
       {/* Hamburger Menu Button */}
       <button className="lg:hidden" onClick={toggleMenu}>
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="white">

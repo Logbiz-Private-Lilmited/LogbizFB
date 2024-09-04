@@ -47,15 +47,29 @@ import {
 import TruckDetails from "./components/ServicePages/ServiceDetails/truckdetails";
 import WarehouseDetails from "./components/ServicePages/ServiceDetails/WarehouseDetails/warehouseDetails";
 import PrivateRoute from "./components/PrivateRoute";
+import { useState } from "react";
 
 function App() {
   const location = useLocation();
   const hideNavbarPaths = ["/signup"];
   const hideFooterPaths = ["/signup"];
 
+  // Manage the isAuthenticated state
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  // Toggle the authentication state
+  const handleAuthToggle = () => {
+    setIsAuthenticated((prev) => !prev);
+  };
+
   return (
     <div className="flex flex-col items-center mt-4">
-      {!hideNavbarPaths.includes(location.pathname) && <Navbar />}
+      {!hideNavbarPaths.includes(location.pathname) && (
+        <Navbar
+          handleAuthToggle={handleAuthToggle}
+          isAuthenticated={isAuthenticated}
+        />
+      )}
       <div
         className={`prose w-[98%] pb-10 ${
           hideNavbarPaths.includes(location.pathname) ? "mt-0" : "mt-24"
@@ -69,18 +83,17 @@ function App() {
           <Route path="/contact" element={<ContactView />} />
           <Route path="/signup" element={<Signup />} />
 
-          {/* Pages that requires authentication goes here */}
-          <Route element={<PrivateRoute />}>
+          {/* Pages that require authentication go here */}
+          <Route
+            element={<PrivateRoute isAuthenticated={isAuthenticated} />}
+          >
             <Route path="/dashboard" element={<DashboardView />} />
             <Route
               path="/warehouseRegistration"
               element={<WarehouseRegistration />}
             />
             <Route path="/ispRegistration" element={<ISPRegistration />} />
-            <Route
-              path="/parcelRegistration"
-              element={<ParcelRegistration />}
-            />
+            <Route path="/parcelRegistration" element={<ParcelRegistration />} />
             <Route path="/3plRegistration" element={<ThreePL />} />
             <Route path="/transportRegistration" element={<Transport />} />
             <Route path="/fspRegistration" element={<FSPRegistration />} />
@@ -94,25 +107,16 @@ function App() {
               path="/consultingRegistration"
               element={<ConsultingRegistration />}
             />
-            <Route
-              path="/freightRegistration"
-              element={<FreightRegistration />}
-            />
+            <Route path="/freightRegistration" element={<FreightRegistration />} />
             <Route path="/bookPallet" element={<Pallet />} />
             <Route path="/hireAFreight" element={<HireAFreight />} />
-            <Route
-              path="/warehouseListing"
-              element={<WarehouseListingForm />}
-            />
+            <Route path="/warehouseListing" element={<WarehouseListingForm />} />
           </Route>
 
           <Route
             path="/transportpage"
             element={
-              <DynamicPage1
-                name="Road Transportation"
-                data={TransportDetails}
-              />
+              <DynamicPage1 name="Road Transportation" data={TransportDetails} />
             }
           />
           <Route
@@ -147,10 +151,7 @@ function App() {
             }
           />
           <Route path="/warehouseDetails" element={<WarehouseDetails />} />
-          <Route
-            path="/finance"
-            element={<FinancePage Data={FinanceDetails} />}
-          />
+          <Route path="/finance" element={<FinancePage Data={FinanceDetails} />} />
           <Route
             path="/distribution"
             element={
