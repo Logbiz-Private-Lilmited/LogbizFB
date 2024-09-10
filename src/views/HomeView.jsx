@@ -23,10 +23,12 @@ export const HomeView = () => {
       <VideoPlayback />
       <RegBoxes />
       <div className="w-full flex items-center justify-center text-center">
-        <button className="flex md:p-4 rounded-md bg-[#f2f2f2] md:text-2xl text-lg items-center md:gap-4 gap-2 p-2">
+        <Link
+          className="flex md:p-4 rounded-md bg-[#f2f2f2] md:text-2xl text-lg items-center md:gap-4 gap-2 p-2"
+          to="promotion-page"
+        >
           Get an advantage with Logbiz Plans <GoArrowRight size={30} />
-          <Link></Link>
-        </button>
+        </Link>
       </div>
 
       {/* NEWSLETTER BUTTON */}
