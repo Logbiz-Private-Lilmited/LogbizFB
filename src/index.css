@@ -102,10 +102,6 @@ body {
   cursor: pointer;
 }
 
-.circle-container:hover {
-  cursor: pointer;
-}
-
 /* Outer rotating circle */
 .rotate-circle {
   width: 450px;
