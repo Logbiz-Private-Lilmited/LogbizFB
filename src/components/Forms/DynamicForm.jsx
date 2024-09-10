@@ -117,7 +117,7 @@ const DynamicForm = ({
               {field.options.map((option) => (
                 <div
                   key={option.name}
-                  className="checkbox-group flex items-center"
+                  className="checkbox-group flex items-baseline"
                 >
                   <input
                     type="checkbox"
@@ -160,7 +160,7 @@ const DynamicForm = ({
             <label className="flex flex-col">{field.label}</label>
             <div className={!formRadioCSS ? `flex flex-col` : formRadioCSS}>
               {field.options.map((option) => (
-                <label key={option} className="flex items-center mt-2 gap-1">
+                <label key={option} className="flex items-center mt-2 gap-1 hover:cursor-pointer">
                   <input
                     type="radio"
                     name={field.name}
@@ -227,7 +227,7 @@ const DynamicForm = ({
           config.map((field) => renderInput(field))
         )}
         {isBankDetails && (
-          <div className="md:gap-4 gap-1 flex flex-col rounded w-2/3 border p-4">
+          <div className="md:gap-4 gap-1 flex flex-col rounded md:w-4/5 w-11/12 border p-4">
             <h1 className="md:text-lg text-base">Bank Details</h1>
             <div className="flex md:flex-row flex-col gap-4 flex-wrap ">
               {bankDetails.map((item) => (
@@ -243,7 +243,7 @@ const DynamicForm = ({
           </div>
         )}
         {isInsurance && (
-          <div className="md:gap-4 gap-1 flex flex-col rounded w-2/3">
+          <div className="md:gap-4 gap-1 flex flex-col rounded w-4/5">
             <h1 className="md:text-lg text-base">Insurance Details</h1>
             <div className="flex sm:flex-row flex-col gap-4 flex-wrap">
               {insuranceDetails.map((item) => (
@@ -260,7 +260,7 @@ const DynamicForm = ({
           </div>
         )}
 
-        <div className="md:col-span-2 lg:col-span-4 flex justify-end w-full">
+        <div className="md:col-span-2 lg:col-span-4 flex justify-end md:w-4/5">
           <button
             type="submit"
             className="border rounded-md px-6 py-2 text-md bg-btn-grey hover:bg-customOrange hover:text-white"
