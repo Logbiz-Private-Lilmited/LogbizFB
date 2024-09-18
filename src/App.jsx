@@ -133,17 +133,11 @@ function App() {
           />
           <Route
             path="/warehousepage"
-            element={<DynamicPage1 Name="Warehouse" Data={WarehouseService} />}
+            element={<DynamicPage1 Name="Warehouse" data={WarehouseService} />}
           />
           <Route
             path="/logisticspage"
-            element={
-              <DynamicPage1
-                Name="Logistics"
-                Data={LogisticsDetails}
-                img="/src/assets/ServicePages/logistics.jpg"
-              />
-            }
+            element={<DynamicPage1 Name="Logistics" data={LogisticsDetails} />}
           />
           <Route
             path="/freightpage"
@@ -151,7 +145,12 @@ function App() {
           />
           <Route
             path="/insurance"
-            element={<InsurancePage Data={InsuranceDetails} />}
+            element={
+              <InsurancePage
+                Data={InsuranceDetails}
+                linkTo={"/insuranceForm"}
+              />
+            }
           />
           <Route
             path="/distribution"

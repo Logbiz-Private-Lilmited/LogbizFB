@@ -160,7 +160,10 @@ const DynamicForm = ({
             <label className="flex flex-col">{field.label}</label>
             <div className={!formRadioCSS ? `flex flex-col` : formRadioCSS}>
               {field.options.map((option) => (
-                <label key={option} className="flex items-center mt-2 gap-1 hover:cursor-pointer">
+                <label
+                  key={option}
+                  className="flex items-center mt-2 gap-1 hover:cursor-pointer"
+                >
                   <input
                     type="radio"
                     name={field.name}
@@ -229,7 +232,7 @@ const DynamicForm = ({
         {isBankDetails && (
           <div className="md:gap-4 gap-1 flex flex-col rounded md:w-4/5 w-11/12 border p-4">
             <h1 className="md:text-lg text-base">Bank Details</h1>
-            <div className="flex md:flex-row flex-col gap-4 flex-wrap ">
+            <div className="flex md:flex-row flex-col gap-4 flex-wrap md:flex-nowrap ">
               {bankDetails.map((item) => (
                 <input
                   className={inputCSS}

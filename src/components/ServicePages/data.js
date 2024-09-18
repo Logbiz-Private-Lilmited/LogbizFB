@@ -1,4 +1,5 @@
 import TransportPhoto from '../../assets/ServicePages/transport.png'
+import LogisticsImage from '../../assets/ServicePages/logistics.jpg'
 export const TransportDetails = [
     {
       companyName: "Rapid Transports",
@@ -164,7 +165,8 @@ export const LogisticsDetails = [
         "capacity": 6000,
         "body_type":"Closed",
         "on_demand":true,
-        "advanced":false
+        "advanced":false,
+        img:LogisticsImage
     },
     {
         "name" : "SK Logistics",
@@ -173,7 +175,8 @@ export const LogisticsDetails = [
         "capacity": 6000,
         "body_type":"Closed",
         "on_demand":true,
-        "advanced":false
+        "advanced":false,
+        img:LogisticsImage
     },
     {
         "name" : "SK Logistics",
@@ -182,7 +185,8 @@ export const LogisticsDetails = [
         "capacity": 6000,
         "body_type":"Closed",
         "on_demand":true,
-        "advanced":false
+        "advanced":false,
+        img:LogisticsImage
     },
     {
         "name" : "SK Logistics",
@@ -191,7 +195,8 @@ export const LogisticsDetails = [
         "capacity": 6000,
         "body_type":"Closed",
         "on_demand":false,
-        "advanced":true
+        "advanced":true,
+        img:LogisticsImage
     },
     {
         "name" : "SK Logistics",
@@ -200,7 +205,8 @@ export const LogisticsDetails = [
         "capacity": 6000,
         "body_type":"Closed",
         "on_demand":false,
-        "advanced":true
+        "advanced":true,
+        img:LogisticsImage
     },
     {
         "name" : "SK Logistics",
@@ -209,7 +215,8 @@ export const LogisticsDetails = [
         "capacity": 6000,
         "body_type":"Closed",
         "on_demand":false,
-        "advanced":true
+        "advanced":true,
+        img:LogisticsImage
     }
 ]
 
@@ -217,7 +224,8 @@ export const LogisticsDetails = [
 
 export const WarehouseService = [
     {
-        "name" : "SK Warehouse",
+        "companyName" : "SK Warehouse",
+        "img":TransportPhoto,
         "location" : "Mumbai",
         "vehicle_model" : "TATA 1190G",
         "capacity": 6000,
@@ -226,7 +234,8 @@ export const WarehouseService = [
         "advanced":false
     },
     {
-        "name" : "SK Warehouse",
+        "companyName" : "SK Warehouse",
+        "img":TransportPhoto,
         "location" : "Mumbai",
         "vehicle_model" : "TATA 1190G",
         "capacity": 6000,
@@ -235,7 +244,9 @@ export const WarehouseService = [
         "advanced":false
     },
     {
-        "name" : "SK Warehouse",
+        "companyName" : "SK Warehouse",
+        "img":TransportPhoto,
+
         "location" : "Mumbai",
         "vehicle_model" : "TATA 1190G",
         "capacity": 6000,
@@ -244,7 +255,9 @@ export const WarehouseService = [
         "advanced":false
     },
     {
-        "name" : "SK Warehouse",
+        "companyName" : "SK Warehouse",
+        "img":TransportPhoto,
+
         "location" : "Mumbai",
         "vehicle_model" : "TATA 1190G",
         "capacity": 6000,
@@ -253,7 +266,9 @@ export const WarehouseService = [
         "advanced":true
     },
     {
-        "name" : "SK Warehouse",
+        "companyName" : "SK Warehouse",
+        "img":TransportPhoto,
+
         "location" : "Mumbai",
         "vehicle_model" : "TATA 1190G",
         "capacity": 6000,
@@ -262,7 +277,9 @@ export const WarehouseService = [
         "advanced":true
     },
     {
-        "name" : "SK Warehouse",
+        "companyName" : "SK Warehouse",
+        "img":TransportPhoto,
+
         "location" : "Mumbai",
         "vehicle_model" : "TATA 1190G",
         "capacity": 6000,

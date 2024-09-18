@@ -47,7 +47,7 @@ export default function DynamicPage1({ data, name }) {
                     Img={detail.img}
                     Name={detail.companyName}
                     Location={detail.location}
-                    Model={detail.model}
+                    Model={detail.vehicle_model}
                     Capacity={detail.capacity}
                     BodyType={detail.body_type}
                     linkTo={detail.slug}
@@ -69,7 +69,7 @@ export default function DynamicPage1({ data, name }) {
                     Img={detail.img}
                     Name={detail.companyName}
                     Location={detail.location}
-                    Model={detail.model}
+                    Model={detail.vehicle_model}
                     Capacity={detail.capacity}
                     BodyType={detail.body_type}
                     linkTo={detail.slug}
