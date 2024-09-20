@@ -68,10 +68,11 @@ function App() {
         />
       )}
       <div
-        className={`prose w-[98%] pb-10 ${hideNavbarPaths.includes(location.pathname)
-          ? "mt-0"
-          : "mt-20 sm:mt-24" // only this css works for both breakpoints
-          }`}
+        className={`prose w-[98%] pb-10 ${
+          hideNavbarPaths.includes(location.pathname)
+            ? "mt-0"
+            : "mt-20 sm:mt-24" // only this css works for both breakpoints
+        }`}
       >
         <Routes>
           <Route path="/home" element={<Navigate to="/" />} />
@@ -112,7 +113,11 @@ function App() {
               element={<FreightRegistration />}
             />
             <Route path="/bookPallet" element={<Pallet />} />
-            <Route path="/hireAFreight" element={<HireAFreight />} />
+            <Route
+              path="/hireAFreight/:freightType"
+              element={<HireAFreight />}
+            />
+
             <Route
               path="/warehouseListing"
               element={<WarehouseListingForm />}
@@ -184,11 +189,7 @@ function App() {
           <Route path="logisticspage/:companyName" element={<TruckDetails />} />
           <Route
             path="/logisticspage"
-            element={<DynamicPage1
-              name="Logistics"
-              data={LogisticsDetails}
-            />
-            }
+            element={<DynamicPage1 name="Logistics" data={LogisticsDetails} />}
           />
         </Routes>
       </div>

@@ -1,7 +1,13 @@
 import React from "react";
 import ScrollToTopOnMount from "../ScrollToTop";
 import DynamicForm from "../DynamicForm";
+import { useParams } from "react-router-dom";
 const HireAFreight = () => {
+  const { freightType } = useParams();
+  const formattedFreightType =
+    freightType.charAt(0).toUpperCase() + freightType.slice(1);
+  const title = formattedFreightType + " Freight";
+
   const formInputs = [
     {
       name: "freightDestination",
@@ -105,7 +111,7 @@ const HireAFreight = () => {
       <ScrollToTopOnMount />
       <DynamicForm
         config={formInputs}
-        formTitle={"Hire A Freight"}
+        formTitle={title}
         key={"hireAFreight"}
         formRadioCSS={"flex gap-2 md:flex-row flex-col md:gap-4"}
         formCSS="md:w-fit flex flex-wrap gap-6 lg:mx-24 my-2 mx-4 text-start items-end"
