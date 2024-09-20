@@ -6,7 +6,7 @@ import { TransportDetails, LogisticsDetails, WarehouseServiceDetails } from "../
 
 const TruckDetails = () => {
   const navigate = useNavigate();
-  const { slug } = useParams();
+  const { companyName } = useParams();
   const [data, setData] = useState(null);
   const [formState, setFormState] = useState({
     pickUpLocation: "",
@@ -17,16 +17,16 @@ const TruckDetails = () => {
 
   // Dynamic rendering based on the slug
   useEffect(() => {
-    let selectedTruck = TransportDetails.find((truck) => truck.slug === slug);
+    let selectedTruck = TransportDetails.find((truck) => truck.companyName === companyName);
 
     if (!selectedTruck) {
       // Search in WarehouseServiceDetails
-      selectedTruck = WarehouseServiceDetails.find((truck) => truck.slug === slug);
+      selectedTruck = WarehouseServiceDetails.find((truck) => truck.companyName === companyName);
     }
 
     if (!selectedTruck) {
       // Search in LogisticsDetails
-      selectedTruck = LogisticsDetails.find((truck) => truck.slug === slug);
+      selectedTruck = LogisticsDetails.find((truck) => truck.companyName === companyName);
     }
 
     if (selectedTruck) {
@@ -39,7 +39,7 @@ const TruckDetails = () => {
         dropPincode: selectedTruck.dropPincode || "",
       });
     }
-  }, [slug]);
+  }, [companyName]);
 
   // Handle input changes
   const handleInputChange = (event) => {

@@ -23,7 +23,7 @@ export const TransportDetails = [
       dropPincode: "122003",
       assetImages: ["image1.jpg", "image2.jpg"],
       on_demand: true,
-      advanced: false,
+      advanced: true,
       slug: "rapid-transports-gurgaon-tata-1190g",
       img: TransportPhoto,
     },

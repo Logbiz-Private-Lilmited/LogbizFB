@@ -157,7 +157,7 @@ function App() {
           />
 
           {/* Dynamic Routing of Transport */}
-          <Route path="transportpage/:slug" element={<TruckDetails />} />
+          <Route path="transportpage/:companyName" element={<TruckDetails />} />
           <Route
             path="/transportpage"
             element={
@@ -169,7 +169,7 @@ function App() {
           />
 
           {/* Dynamic Routing of Warehouse */}
-          <Route path="warehousepage/:slug" element={<TruckDetails />} />
+          <Route path="warehousepage/:companyName" element={<TruckDetails />} />
           <Route
             path="/warehousepage"
             element={
@@ -181,7 +181,7 @@ function App() {
           />
 
           {/* Dynamic Routing of Logistic Consulting */}
-          <Route path="logisticspage/:slug" element={<TruckDetails />} />
+          <Route path="logisticspage/:companyName" element={<TruckDetails />} />
           <Route
             path="/logisticspage"
             element={<DynamicPage1

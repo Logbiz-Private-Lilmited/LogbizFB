@@ -50,7 +50,7 @@ export default function DynamicPage1({ data, name }) {
                     Model={detail.vehicle_model}
                     Capacity={detail.capacity}
                     BodyType={detail.body_type}
-                    linkTo={detail.slug}
+                    linkTo={detail.companyName}
                   />
                 );
               }
@@ -72,7 +72,7 @@ export default function DynamicPage1({ data, name }) {
                     Model={detail.vehicle_model}
                     Capacity={detail.capacity}
                     BodyType={detail.body_type}
-                    linkTo={detail.slug}
+                    linkTo={detail.companyName}
                   />
                 );
               }
