@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import MapComponent from "./mapcomponent";
 import BackButton from "../../BackButtonModule/BackButton";
-import { TransportDetails } from "../data";
+import { TransportDetails, LogisticsDetails, WarehouseServiceDetails } from "../data";
 
 const TruckDetails = () => {
   const navigate = useNavigate();
@@ -17,7 +17,18 @@ const TruckDetails = () => {
 
   // Dynamic rendering based on the slug
   useEffect(() => {
-    const selectedTruck = TransportDetails.find((truck) => truck.slug === slug);
+    let selectedTruck = TransportDetails.find((truck) => truck.slug === slug);
+
+    if (!selectedTruck) {
+      // Search in WarehouseServiceDetails
+      selectedTruck = WarehouseServiceDetails.find((truck) => truck.slug === slug);
+    }
+
+    if (!selectedTruck) {
+      // Search in LogisticsDetails
+      selectedTruck = LogisticsDetails.find((truck) => truck.slug === slug);
+    }
+
     if (selectedTruck) {
       setData(selectedTruck);
       // Initialize formState based on selectedTruck data
@@ -52,7 +63,7 @@ const TruckDetails = () => {
   // Utility classes
   const textBase = "text-black font-['SF Pro Display']";
   const textLarge = `${textBase} text-3xl font-medium`;
-  const boxBase = "w-full h-96 bg-zinc-300 rounded-xl mb-4";
+  const boxBase = "w-full h-auto bg-zinc-300 rounded-xl";
   const formInputBase = "w-full py-1 flex flex-col";
   const fieldPadding = "py-4";
   const inputBase = "w-full px-4 py-2 rounded-md border-2 border-stone-200";
@@ -175,8 +186,8 @@ const TruckDetails = () => {
                   </div>
                   <div className="flex flex-col lg:flex-row gap-4">
                     {fields.map(
-                      ({ placeholder, name, value, maxLength }, idx) => (
-                        <div className={formInputBase} key={idx}>
+                      ({ placeholder, name, value, maxLength }, index) => (
+                        <div className={formInputBase} key={index}>
                           <input
                             type={name.includes("Pincode") ? "number" : "text"}
                             placeholder={placeholder}
@@ -212,11 +223,19 @@ const TruckDetails = () => {
         <div className="flex flex-col w-full md:w-1/4 gap-4">
           {Array(2)
             .fill()
-            .map((_, idx) => (
-              <div className={boxBase} key={idx}>
-                <div className={`${textBase} text-3xl font-normal text-center`}>
-                  {data.assetImages?.[idx] || "Images of LSP’S asset"}
-                </div>
+            .map((_, index) => (
+              <div className={`${boxBase} p-4 my-auto`} key={index}>
+                
+                  {data.img?.[index] ? (
+                    <img
+                      src={data.img}
+                      alt={`Asset Image ${data.companyName}`}
+                      className="w-full rounded-xl h-96"
+                    />
+                  ) : (
+                    "Images of LSP’s asset"
+                  )}
+                
               </div>
             ))}
         </div>

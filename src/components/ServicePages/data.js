@@ -1,5 +1,6 @@
 import TransportPhoto from '../../assets/ServicePages/transport.png'
 import LogisticsImage from '../../assets/ServicePages/logistics.jpg'
+
 export const TransportDetails = [
     {
       companyName: "Rapid Transports",
@@ -7,7 +8,7 @@ export const TransportDetails = [
       location: "Gurgaon",
       pinCode: "122001",
       bodyType: "Closed Body",
-      model: "TATA 1190G",
+      vehicle_model: "TATA 1190G",
       volumeMetrics: {
         L: "10m",
         W: "2.5m",
@@ -24,7 +25,7 @@ export const TransportDetails = [
       on_demand: true,
       advanced: false,
       slug: "rapid-transports-gurgaon-tata-1190g",
-      photo: "TransportPhoto1.jpg",
+      img: TransportPhoto,
     },
     {
       companyName: "Swift Haulers",
@@ -32,7 +33,7 @@ export const TransportDetails = [
       location: "Mumbai",
       pinCode: "400001",
       bodyType: "Open Body",
-      model: "Mahindra XUV300",
+      vehicle_model: "Mahindra XUV300",
       volumeMetrics: {
         L: "8m",
         W: "2.2m",
@@ -49,7 +50,7 @@ export const TransportDetails = [
       on_demand: true,
       advanced: false,
       slug: "swift-haulers-mumbai-mahindra-xuv300",
-      photo: "TransportPhoto2.jpg",
+      img: TransportPhoto,
     },
     {
       companyName: "Urban Logistics",
@@ -57,7 +58,7 @@ export const TransportDetails = [
       location: "Delhi",
       pinCode: "110001",
       bodyType: "Closed Body",
-      model: "Ashok Leyland Ecomet",
+      vehicle_model: "Ashok Leyland Ecomet",
       volumeMetrics: {
         L: "12m",
         W: "2.7m",
@@ -74,7 +75,7 @@ export const TransportDetails = [
       on_demand: true,
       advanced: false,
       slug: "urban-logistics-delhi-ashok-leyland-ecomet",
-      photo: "TransportPhoto3.jpg",
+      img: "TransportPhoto3.jpg",
     },
     {
       companyName: "National Movers",
@@ -82,7 +83,7 @@ export const TransportDetails = [
       location: "Chennai",
       pinCode: "600001",
       bodyType: "Open Body",
-      model: "TATA 1512 LPT",
+      vehicle_model: "TATA 1512 LPT",
       volumeMetrics: {
         L: "14m",
         W: "2.8m",
@@ -99,7 +100,7 @@ export const TransportDetails = [
       on_demand: false,
       advanced: true,
       slug: "national-movers-chennai-tata-1512-lpt",
-      photo: "TransportPhoto4.jpg",
+      img: "TransportPhoto4.jpg",
     },
     {
       companyName: "Express Carriers",
@@ -107,7 +108,7 @@ export const TransportDetails = [
       location: "Hyderabad",
       pinCode: "500001",
       bodyType: "Closed Body",
-      model: "Eicher Pro 2110",
+      vehicle_model: "Eicher Pro 2110",
       volumeMetrics: {
         L: "10m",
         W: "2.5m",
@@ -124,7 +125,7 @@ export const TransportDetails = [
       on_demand: false,
       advanced: true,
       slug: "express-carriers-hyderabad-eicher-pro-2110",
-      photo: "TransportPhoto5.jpg",
+      img: "TransportPhoto5.jpg",
     },
     {
       companyName: "Metro Freight",
@@ -132,7 +133,7 @@ export const TransportDetails = [
       location: "Pune",
       pinCode: "411001",
       bodyType: "Open Body",
-      model: "BharatBenz 1415R",
+      vehicle_model: "BharatBenz 1415R",
       volumeMetrics: {
         L: "11m",
         W: "2.6m",
@@ -149,7 +150,7 @@ export const TransportDetails = [
       on_demand: false,
       advanced: true,
       slug: "metro-freight-pune-bharatbenz-1415r",
-      photo: "TransportPhoto6.jpg",
+      img: "TransportPhoto6.jpg",
     }
   ];
   
@@ -159,133 +160,142 @@ export const TransportDetails = [
 
 export const LogisticsDetails = [
     {
-        "name" : "SK Logistics",
-        "location" : "Hyderabad",
-        "vehicle_model" : "TATA 1190G",
-        "capacity": 6000,
-        "body_type":"Closed",
-        "on_demand":true,
-        "advanced":false,
+        companyName : "AB Logistics",
+        location : "Hyderabad",
+        vehicle_model : "TATA 1190G",
+        capacity : 6000,
+        body_type : "Closed",
+        on_demand : false,
+        advanced : true,
+        slug: "ab-logistics",
         img:LogisticsImage
     },
     {
-        "name" : "SK Logistics",
-        "location" : "Hyderabad",
-        "vehicle_model" : "TATA 1190G",
-        "capacity": 6000,
-        "body_type":"Closed",
-        "on_demand":true,
-        "advanced":false,
+        companyName : "CD Logistics",
+        location : "Hyderabad",
+        vehicle_model : "TATA 1190G",
+        capacity : 6000,
+        body_type : "Closed",
+        on_demand : false,
+        advanced : true,
+        slug: "cd-logistics",
         img:LogisticsImage
     },
     {
-        "name" : "SK Logistics",
-        "location" : "Hyderabad",
-        "vehicle_model" : "TATA 1190G",
-        "capacity": 6000,
-        "body_type":"Closed",
-        "on_demand":true,
-        "advanced":false,
+        companyName : "EF Logistics",
+        location : "Hyderabad",
+        vehicle_model : "TATA 1190G",
+        capacity : 6000,
+        body_type : "Closed",
+        on_demand : false,
+        advanced : true,
+        slug: "ef-logistics",
         img:LogisticsImage
     },
     {
-        "name" : "SK Logistics",
-        "location" : "Hyderabad",
-        "vehicle_model" : "TATA 1190G",
-        "capacity": 6000,
-        "body_type":"Closed",
-        "on_demand":false,
-        "advanced":true,
+        companyName : "GH Logistics",
+        location : "Hyderabad",
+        vehicle_model : "TATA 1190G",
+        capacity : 6000,
+        body_type : "Closed",
+        on_demand : false,
+        advanced : true,
+        slug: "gh-logistics",
         img:LogisticsImage
     },
     {
-        "name" : "SK Logistics",
-        "location" : "Hyderabad",
-        "vehicle_model" : "TATA 1190G",
-        "capacity": 6000,
-        "body_type":"Closed",
-        "on_demand":false,
-        "advanced":true,
+        companyName : "IJ Logistics",
+        location : "Hyderabad",
+        vehicle_model : "TATA 1190G",
+        capacity : 6000,
+        body_type : "Closed",
+        on_demand : false,
+        advanced : true,
+        slug: "ij-logistics",
         img:LogisticsImage
     },
     {
-        "name" : "SK Logistics",
-        "location" : "Hyderabad",
-        "vehicle_model" : "TATA 1190G",
-        "capacity": 6000,
-        "body_type":"Closed",
-        "on_demand":false,
-        "advanced":true,
+        companyName : "KL Logistics",
+        location : "Hyderabad",
+        vehicle_model : "TATA 1190G",
+        capacity : 6000,
+        body_type : "Closed",
+        on_demand : false,
+        advanced : true,
+        slug: "lk-logistics",
         img:LogisticsImage
     }
 ]
 
 
 
-export const WarehouseService = [
+export const WarehouseServiceDetails = [
     {
-        "companyName" : "SK Warehouse",
-        "img":TransportPhoto,
-        "location" : "Mumbai",
-        "vehicle_model" : "TATA 1190G",
-        "capacity": 6000,
-        "body_type":"Closed",
-        "on_demand":true,
-        "advanced":false
+        companyName : "AB Warehouse",
+        pinCode: "411001",
+        img:TransportPhoto,
+        location : "Mumbai",
+        vehicle_model : "TATA 1190G",
+        capacity : 6000,
+        body_type:"Closed",
+        on_demand:true,
+        advanced:false,
+        slug: "ab-warehouse",
     },
     {
-        "companyName" : "SK Warehouse",
-        "img":TransportPhoto,
-        "location" : "Mumbai",
-        "vehicle_model" : "TATA 1190G",
-        "capacity": 6000,
-        "body_type":"Closed",
-        "on_demand":true,
-        "advanced":false
+        companyName : "CD Warehouse",
+        img:TransportPhoto,
+        location : "Mumbai",
+        vehicle_model : "TATA 1190G",
+        capacity : 6000,
+        body_type:"Closed",
+        on_demand:true,
+        advanced:false,
+        slug: "cd-warehouse",
     },
     {
-        "companyName" : "SK Warehouse",
-        "img":TransportPhoto,
-
-        "location" : "Mumbai",
-        "vehicle_model" : "TATA 1190G",
-        "capacity": 6000,
-        "body_type":"Closed",
-        "on_demand":true,
-        "advanced":false
+        companyName : "EF Warehouse",
+        img:TransportPhoto,
+        location : "Mumbai",
+        vehicle_model : "TATA 1190G",
+        capacity : 6000,
+        body_type:"Closed",
+        on_demand:true,
+        advanced:false,
+        slug: "ef-warehouse",
     },
     {
-        "companyName" : "SK Warehouse",
-        "img":TransportPhoto,
-
-        "location" : "Mumbai",
-        "vehicle_model" : "TATA 1190G",
-        "capacity": 6000,
-        "body_type":"Closed",
-        "on_demand":false,
-        "advanced":true
+        companyName : "GH Warehouse",
+        img :TransportPhoto,
+        location : "Mumbai",
+        vehicle_model : "TATA 1190G",
+        capacity : 6000,
+        body_type:"Closed",
+        on_demand:true,
+        advanced:false,
+        slug: "gh-warehouse",
     },
     {
-        "companyName" : "SK Warehouse",
-        "img":TransportPhoto,
-
-        "location" : "Mumbai",
-        "vehicle_model" : "TATA 1190G",
-        "capacity": 6000,
-        "body_type":"Closed",
-        "on_demand":false,
-        "advanced":true
+        companyName : "IJ Warehouse",
+        img :TransportPhoto,
+        location : "Mumbai",
+        vehicle_model : "TATA 1190G",
+        capacity : 6000,
+        body_type:"Closed",
+        on_demand:true,
+        advanced:false,
+        slug: "ij-warehouse",
     },
     {
-        "companyName" : "SK Warehouse",
-        "img":TransportPhoto,
-
-        "location" : "Mumbai",
-        "vehicle_model" : "TATA 1190G",
-        "capacity": 6000,
-        "body_type":"Closed",
-        "on_demand":false,
-        "advanced":true
+        companyName : "KL Warehouse",
+        img :TransportPhoto,
+        location : "Mumbai",
+        vehicle_model : "TATA 1190G",
+        capacity : 6000,
+        body_type:"Closed",
+        on_demand:true,
+        advanced:false,
+        slug: "kl-warehouse",
     }
 ]
 

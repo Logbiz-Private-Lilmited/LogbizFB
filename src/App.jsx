@@ -7,7 +7,6 @@ import DashboardView from "./views/DashboardView";
 import { ServicesListingView } from "./views/ServicesListingView";
 import { ContactView } from "./views/ContactView";
 import Signup from "./components/Signup/Signup";
-
 import {
   ConsultingRegistration,
   DistributionHubForm,
@@ -19,7 +18,6 @@ import {
   Transport,
   WarehouseRegistration,
 } from "./components/Forms/RegistrationForms";
-
 import Footer from "./components/Footer/Footer";
 import DynamicPage1 from "./components/ServicePages/DynamicPage1";
 import InsurancePage from "./components/ServicePages/InsurancePage";
@@ -29,13 +27,12 @@ import FinancePage from "./components/ServicePages/FinancePage";
 import {
   TransportDetails,
   LogisticsDetails,
-  WarehouseService,
+  WarehouseServiceDetails,
   FreightDetails,
   InsuranceDetails,
   DistributionDetails,
   FinanceDetails,
 } from "./components/ServicePages/data";
-
 import {
   HireAFreight,
   Insurance,
@@ -43,7 +40,6 @@ import {
   ULC,
   WarehouseListingForm,
 } from "./components/Forms/QuoteBookingForms";
-
 import TruckDetails from "./components/ServicePages/ServiceDetails/truckdetails";
 import WarehouseDetails from "./components/ServicePages/ServiceDetails/WarehouseDetails/warehouseDetails";
 import PrivateRoute from "./components/PrivateRoute";
@@ -72,9 +68,10 @@ function App() {
         />
       )}
       <div
-        className={`prose w-[98%] pb-10 ${
-          hideNavbarPaths.includes(location.pathname) ? "mt-0" : "mt-24"
-        }`}
+        className={`prose w-[98%] pb-10 ${hideNavbarPaths.includes(location.pathname)
+          ? "mt-0"
+          : "mt-20 sm:mt-24" // only this css works for both breakpoints
+          }`}
       >
         <Routes>
           <Route path="/home" element={<Navigate to="/" />} />
@@ -123,23 +120,6 @@ function App() {
           </Route>
 
           <Route
-            path="/transportpage"
-            element={
-              <DynamicPage1
-                name="Road Transportation"
-                data={TransportDetails}
-              />
-            }
-          />
-          <Route
-            path="/warehousepage"
-            element={<DynamicPage1 Name="Warehouse" data={WarehouseService} />}
-          />
-          <Route
-            path="/logisticspage"
-            element={<DynamicPage1 Name="Logistics" data={LogisticsDetails} />}
-          />
-          <Route
             path="/freightpage"
             element={<FreightPage Data={FreightDetails} />}
           />
@@ -178,6 +158,38 @@ function App() {
 
           {/* Dynamic Routing of Transport */}
           <Route path="transportpage/:slug" element={<TruckDetails />} />
+          <Route
+            path="/transportpage"
+            element={
+              <DynamicPage1
+                name="Road Transportation"
+                data={TransportDetails}
+              />
+            }
+          />
+
+          {/* Dynamic Routing of Warehouse */}
+          <Route path="warehousepage/:slug" element={<TruckDetails />} />
+          <Route
+            path="/warehousepage"
+            element={
+              <DynamicPage1
+                name="Warehouse Details"
+                data={WarehouseServiceDetails}
+              />
+            }
+          />
+
+          {/* Dynamic Routing of Logistic Consulting */}
+          <Route path="logisticspage/:slug" element={<TruckDetails />} />
+          <Route
+            path="/logisticspage"
+            element={<DynamicPage1
+              name="Logistics"
+              data={LogisticsDetails}
+            />
+            }
+          />
         </Routes>
       </div>
       {!hideFooterPaths.includes(location.pathname) && <Footer />}

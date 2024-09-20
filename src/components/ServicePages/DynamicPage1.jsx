@@ -39,11 +39,11 @@ export default function DynamicPage1({ data, name }) {
           <p className="text-2xl font-medium mb-6">On Demand</p>
           <div className="flex flex-wrap justify-between px-4 gap-8">
             {data.map((detail, index) => {
-              console.log("deatil:", detail);
+              // console.log("deatil:", detail);
               if (detail.on_demand === true) {
                 return (
                   <ServiceCard
-                    key={detail.name}
+                    key={index}
                     Img={detail.img}
                     Name={detail.companyName}
                     Location={detail.location}
@@ -61,11 +61,11 @@ export default function DynamicPage1({ data, name }) {
           <p className="text-2xl font-medium mb-6 ">Advanced Booking</p>
           <div className="flex flex-wrap justify-between px-4 gap-8">
             {data.map((detail, index) => {
-              console.log("deatil:", detail);
+              // console.log("deatil:", detail);
               if (detail.on_demand === false) {
                 return (
                   <ServiceCard
-                    key={detail.name}
+                    key={index}
                     Img={detail.img}
                     Name={detail.companyName}
                     Location={detail.location}
