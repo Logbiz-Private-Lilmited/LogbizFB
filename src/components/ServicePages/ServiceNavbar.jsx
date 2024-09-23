@@ -17,20 +17,21 @@ export default function ServiceNavbar(props) {
       <div className="flex flex-wrap gap-8 max-[435px]:gap-4 border-2 rounded-full max-[435px]:rounded-md max-[780px]:rounded-lg p-4 border-black w-fit">
         {details.map((detail, index) => {
           return (
-            <p
+            <button
+              key={detail.index}
               onClick={() => handleClick(detail.index)}
-              className={`${
-                active === detail.index ? "bg-[#ff6600] text-white" : "bg-white"
-              } text-wrap font-bold text-center text-lg max-[435px]:text-base hover:bg-[#ff6600] hover:text-white p-3 rounded-full`}
+              className={`${active === detail.index ? "bg-[#ff6600] text-white" : "bg-white"
+                } text-wrap font-bold text-center text-lg max-[435px]:text-base hover:bg-[#ff6600] hover:text-white p-3 rounded-full cursor-pointer`}
             >
               {detail.name}
-            </p>
+            </button>
+
           );
         })}
       </div>
       <div className="bg-[#eae6e6] w-[700px] max-[435px]:w-fit mt-4 p-5 rounded-xl">
-        {desc.map((line) => {
-          return <li className="max-[435px]:text-base text-wrap">{line}</li>;
+        {desc.map((line, index) => {
+          return <li key={index} className="max-[435px]:text-base text-wrap">{line}</li>;
         })}
       </div>
       <Link
