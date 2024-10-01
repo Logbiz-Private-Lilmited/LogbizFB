@@ -41,9 +41,9 @@ export default function DistributionPage(props) {
       <div className="flex max-[435px]:flex-col justify-between mb-6">
         <div className=" inline-flex gap-3">
           <BackButton />
-          <h1 className="max-[435px]:text-xl font-bold">
+          <span className="md:text-3xl text-xl font-bold">
             Available {props.Name} Services
-          </h1>
+          </span>
         </div>
         <div className="inline-flex flex-row gap-3">
           <div>

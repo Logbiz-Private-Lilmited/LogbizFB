@@ -24,9 +24,9 @@ export default function FreightPage(props) {
       <div className="flex flex-col md:flex-row justify-between">
         <div className="flex-col md:flex-row inline-flex gap-3">
           <BackButton />
-          <h1 className="max-[435px]:text-lg mb-0 leading-none">
+          <span className="md:text-3xl text-xl font-bold">
             Available Freight Forwarding Services
-          </h1>
+          </span>
         </div>
         <div className="flex flex-row flex-wrap gap-3 min-w-fit">
           <div>

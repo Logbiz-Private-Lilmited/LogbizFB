@@ -46,16 +46,18 @@ export default function InsurancePage(props) {
 
   return (
     <div>
-      <div className=" inline-flex gap-3">
-        <BackButton/>
-        <h1 className="max-[435px]:text-2xl">Insurance Services</h1>
+      <div className="flex gap-3 items-center">
+        <BackButton />
+        <span className="md:text-3xl text-xl font-bold">
+          Insurance Services
+        </span>
       </div>
       <div className="flex justify-center items-center">
         <Slider {...settings} className="w-[40%] max-[768px]:w-[60%]">
           {images.map((img, index) => {
             return (
               <div key={index}>
-                <img               
+                <img
                   src={img}
                   alt=""
                   className="w-[300px] max-[435px]:w-fit max-[768px]:w-fit h-[300px] max-[435px]:h-fit max-[768px]:h-fit rounded-xl"
