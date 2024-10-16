@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import "../../../../src/index.css";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+import ScrollReveal from "scrollreveal";
 
 const BoxComponent = ({ link, svgPath, text }) => {
   return (
@@ -35,9 +36,8 @@ const CustomNextArrow = (props) => {
 };
 
 const BoxesCarousel = ({ datasets }) => {
-
-  ScrollReveal({ reset: true }); 
-  ScrollReveal().reveal('.box-carousel');
+  ScrollReveal({ reset: true });
+  ScrollReveal().reveal(".box-carousel");
 
   const settings = {
     dots: true,

@@ -3,11 +3,10 @@ import { Link } from "react-router-dom";
 import ScrollReveal from "scrollreveal";
 
 const InfoComponent = ({ heading, paragraphs, buttonText }) => {
-
   ScrollReveal({ reset: true });
-  ScrollReveal().reveal('.info-cards')
+  ScrollReveal().reveal(".info-cards");
   return (
-    <div className="flex flex-col w-3/4 max-h-fit flex-wrap info-cards">
+    <div className="flex flex-col w-3/4 max-h-fit flex-wrap info-cards m-auto">
       <h2 className="font-bold flex-1">{heading}</h2>
 
       {paragraphs.map((paragraph, index) => (
@@ -15,12 +14,12 @@ const InfoComponent = ({ heading, paragraphs, buttonText }) => {
           {paragraph}
         </p>
       ))}
-       <Link
-    to="/signup"
-    className="ml-auto my-5 bg-btn-grey px-5 py-1 rounded-md font-bold hover:bg-black hover:text-white inline-block text-center"
-  >
-    {buttonText}
-  </Link>
+      <Link
+        to="/signup"
+        className="ml-auto my-5 bg-btn-grey px-5 py-1 rounded-md font-bold hover:bg-black hover:text-white inline-block text-center"
+      >
+        {buttonText}
+      </Link>
     </div>
   );
 };
