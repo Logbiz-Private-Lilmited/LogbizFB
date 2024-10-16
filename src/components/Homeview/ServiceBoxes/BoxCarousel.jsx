@@ -1,6 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
+import ScrollReveal from "scrollreveal";
 
 const BoxComponent = ({ link, svgPath, text }) => {
   return (
@@ -33,6 +34,10 @@ const CustomNextArrow = (props) => {
 };
 
 const BoxesCarousel = ({ datasets }) => {
+
+  ScrollReveal({ reset: true }); 
+  ScrollReveal().reveal('.box-carousel');
+
   const settings = {
     dots: true,
     infinite: true,
@@ -59,7 +64,7 @@ const BoxesCarousel = ({ datasets }) => {
     ],
   };
   return (
-    <div className="Slider-wrapper p-10">
+    <div className="Slider-wrapper p-10 box-carousel">
       {datasets &&
         datasets.map((data, dataIndex) => (
           <div key={dataIndex} className="mb-20 sm:w-4/5 lg:w-2/5 mx-auto">

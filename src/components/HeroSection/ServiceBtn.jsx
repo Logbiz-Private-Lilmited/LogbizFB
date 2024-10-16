@@ -1,5 +1,6 @@
 import React from "react";
 import RightArrow from "../../assets/HeroSection/right-arrow.svg";
+import ScrollReveal from "scrollreveal";
 
 const ServiceBtn = ({ title, img, scrollTo }) => {
   console.log("scrollTo:", scrollTo); // Debugging the scrollTo prop

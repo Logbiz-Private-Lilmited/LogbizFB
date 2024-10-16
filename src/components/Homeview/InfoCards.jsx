@@ -1,9 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ScrollReveal from "scrollreveal";
 
 const InfoComponent = ({ heading, paragraphs, buttonText }) => {
+
+  ScrollReveal({ reset: true });
+  ScrollReveal().reveal('.info-cards')
   return (
-    <div className="flex flex-col w-3/4 max-h-fit flex-wrap mx-auto">
+    <div className="flex flex-col w-3/4 max-h-fit flex-wrap info-cards">
       <h2 className="font-bold flex-1">{heading}</h2>
 
       {paragraphs.map((paragraph, index) => (

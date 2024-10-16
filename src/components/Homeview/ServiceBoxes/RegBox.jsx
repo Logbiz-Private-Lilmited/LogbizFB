@@ -10,6 +10,7 @@ const RegBoxes = () => {
       smalltitle: "Register in any of the services you would like to offer.",
     },
   ];
+  
 
   return (
     <div id="registerCarousel">

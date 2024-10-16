@@ -1,6 +1,7 @@
 import React from "react";
 import AnimationLogo from "../../../public/AnimationLogo.svg";
 
+
 function Icon() {
   return (
     <div className="">
