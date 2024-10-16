@@ -24,6 +24,7 @@ import InsurancePage from "./components/ServicePages/InsurancePage";
 import DistributionPage from "./components/ServicePages/DistributionPage";
 import FreightPage from "./components/ServicePages/FreightPage";
 import FinancePage from "./components/ServicePages/FinancePage";
+import TestPage from "./components/ServicePages/DynamicPage1";
 import {
   TransportDetails,
   LogisticsDetails,

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Dropdown from "./Dropdown";
 import FreightCard from "./FreightCard";
 import BackButton from "../BackButtonModule/BackButton";
@@ -11,13 +11,25 @@ export default function FreightPage(props) {
     window.scrollTo(0, 0);
   }, []);
 
-  const details = [...props.Data];
-  console.log;
+  const details = ["Air", "Sea", "Rail"]; // Match types in FreightDetails
+
+  const freightDetails = [...props.Data]; // Assuming props.Data is FreightDetails array
+
+  const [active, setActive] = useState(0); // Default active index
+
+  function handleClick(item) {
+    setActive(item); // Update the active index
+  }
 
   // Function to handle clicking on a FreightCard
   const handleFreightCardClick = (type) => {
     navigate("/hireAFreight", { state: { freightType: type } }); // Navigate to hireAFreight with state
   };
+
+  // Filter freight details based on the active selection (Air, Sea, Rail)
+  const filteredFreights = freightDetails.filter(
+    (item) => item.type === details[active]
+  );
 
   return (
     <div>
@@ -44,21 +56,41 @@ export default function FreightPage(props) {
         <h3 className="my-6 font-semibold">
           You can Quote for the following freights:{" "}
         </h3>
-
-        <div className="mx-auto flex flex-col justify-center items-center gap-5">
-          {/* Map through details and render FreightCard as a button */}
-          {details.map((item, index) => {
-            return (
-              <FreightCard
-                key={index}
-                Image={item.image}
-                Name={item.type}
-                Description={item.description}
-                onClick={() => handleFreightCardClick(item.type)} // Pass freight type when card is clicked
-                // linkTo={item.linkTo}
-              />
-            );
-          })}
+        <div className="flex justify-center items-center">
+          <div className="flex flex-wrap gap-8 max-[435px]:gap-4 border-2 rounded-full max-[435px]:rounded-md max-[780px]:rounded-lg p-4 border-black w-fit">
+            {details.map((detail, index) => {
+              return (
+                <button
+                  key={index}
+                  onClick={() => handleClick(index)}
+                  className={`${
+                    active === index ? "bg-[#ff6600] text-white" : "bg-white"
+                  } text-wrap font-bold text-center text-lg max-[435px]:text-base hover:bg-[#ff6600] hover:text-white p-3 rounded-full cursor-pointer`}
+                >
+                  {detail} Freight
+                </button>
+              );
+            })}
+          </div>
+        </div>
+        <div className="flex justify-center items-center mt-3">
+          {filteredFreights.length > 0 ? (
+            filteredFreights.map((item, index) => {
+              return (
+                <FreightCard
+                  key={index}
+                  Image={item.image}
+                  Name={item.type + " Freight"} // Add " Freight" for consistency
+                  Description={item.description}
+                  onClick={() => handleFreightCardClick(item.type)} // Pass freight type when card is clicked
+                />
+              );
+            })
+          ) : (
+            <p className="text-center font-semibold">
+              No freight services available for {details[active]}.
+            </p>
+          )}
         </div>
       </div>
     </div>

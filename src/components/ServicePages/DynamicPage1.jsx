@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import ServiceCard from "./ServiceCard";
 import Dropdown from "./Dropdown";
 import PLImg1 from "/src/assets/ServicePages/PartLoadImg1.png";
@@ -8,13 +8,21 @@ import BackButton from "../BackButtonModule/BackButton";
 
 const PLImgs = [PLImg1, PLImg2, PLImg3];
 
-export default function DynamicPage1({ data, name }) {
+export default function TestPage({ data, name }) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const details = ["On Demand","Advanced Booking"]
+
+  const [active, isActive] = useState(0);
+
+  function handleClick(item) {
+    isActive(item);
+  }
+
   return (
-    <div>
+    <div className="flex flex-col gap-5">
       <div className="flex max-[435px]:flex-col justify-between">
         <div className=" inline-flex gap-3 items-center">
           <BackButton />
@@ -34,52 +42,62 @@ export default function DynamicPage1({ data, name }) {
           <Dropdown />
         </div>
       </div>
-      <div className="p-4">
-        <div>
-          <p className="text-2xl font-medium mb-6">On Demand</p>
-          <div className="flex flex-wrap justify-between px-4 gap-8">
-            {data.map((detail, index) => {
-              // console.log("deatil:", detail);
-              if (detail.on_demand === true) {
-                return (
-                  <ServiceCard
-                    key={index}
-                    Img={detail.img}
-                    Name={detail.companyName}
-                    Location={detail.location}
-                    Model={detail.vehicle_model}
-                    Capacity={detail.capacity}
-                    BodyType={detail.body_type}
-                    linkTo={detail.companyName}
-                  />
-                );
-              }
-            })}
-          </div>
-        </div>
-        <div className="mt-4">
-          <p className="text-2xl font-medium mb-6 ">Advanced Booking</p>
-          <div className="flex flex-wrap justify-between px-4 gap-8">
-            {data.map((detail, index) => {
-              // console.log("deatil:", detail);
-              if (detail.on_demand === false) {
-                return (
-                  <ServiceCard
-                    key={index}
-                    Img={detail.img}
-                    Name={detail.companyName}
-                    Location={detail.location}
-                    Model={detail.vehicle_model}
-                    Capacity={detail.capacity}
-                    BodyType={detail.body_type}
-                    linkTo={detail.companyName}
-                  />
-                );
-              }
-            })}
-          </div>
+      <div className="flex justify-center items-center">
+        <div className="flex flex-wrap gap-8 max-[435px]:gap-4 border-2 rounded-full max-[435px]:rounded-md max-[780px]:rounded-lg p-4 border-black w-fit">
+          {details.map((detail, index) => {
+            return (
+              <button
+                key={index}
+                onClick={() => handleClick(index)}
+                className={`${active === index ? "bg-[#ff6600] text-white" : "bg-white"
+                  } text-wrap font-bold text-center text-lg max-[435px]:text-base hover:bg-[#ff6600] hover:text-white p-3 rounded-full cursor-pointer`}
+              >
+                {detail}
+              </button>
 
-          <div className=" flex justify-center items-center mt-4">
+            );
+          })}
+        </div>
+      </div>
+      <div className="flex flex-wrap justify-center items-center gap-3 px-[50px]">
+        {
+          data.map((detail,index) => {
+            if(active === 0 & detail.on_demand === true){
+              return(
+              <ServiceCard
+                key={index}
+                Img={detail.img}
+                Name={detail.companyName}
+                Location={detail.location}
+                Model={detail.vehicle_model}
+                Capacity={detail.capacity}
+                BodyType={detail.body_type}
+                linkTo={detail.companyName}
+              />
+            )
+            }
+          })
+        }
+        {
+          data.map((detail,index) => {
+            if(active === 1 & detail.on_demand === false){
+              return(
+              <ServiceCard
+                key={index}
+                Img={detail.img}
+                Name={detail.companyName}
+                Location={detail.location}
+                Model={detail.vehicle_model}
+                Capacity={detail.capacity}
+                BodyType={detail.body_type}
+                linkTo={detail.companyName}
+              />
+            )
+            }
+          })
+        }
+      </div>
+      <div className=" flex justify-center items-center mt-4">
             <p className="bg-[#f2f2f2] w-fit p-2 rounded-md font-semibold text-center">
               Did not find vehicle for your load destination?
             </p>
@@ -119,9 +137,7 @@ export default function DynamicPage1({ data, name }) {
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+          </div>  
     </div>
   );
 }
