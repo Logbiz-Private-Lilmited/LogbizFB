@@ -5,7 +5,7 @@ const ServiceBoxes = () => {
   const datasets = [{ title: "Services Available", items: boxData }];
 
   return (
-    <div>
+    <div id="servicesAvailable">
       <BoxesCarousel datasets={datasets} />
     </div>
   );

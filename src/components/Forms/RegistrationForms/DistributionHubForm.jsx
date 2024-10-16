@@ -25,7 +25,7 @@ const DistributionHubForm = () => {
     { name: "complianceForm", label: "Compliance Form", type: "text" },
     {
       name: "serviceType",
-      label: "Service Type",
+      // label: "Service Type",
       type: "select",
       options: ["Option 1", "Option 2"],
     },
@@ -46,7 +46,7 @@ const DistributionHubForm = () => {
         config={distributionHubOwnerformData}
         isBankDetails={true}
         formCSS={distributionHubOwnerformCSS}
-        formDivCSS="grid grid-cols-1 md:grid-cols-3 w-full md:w-fit justify-center items-center gap-5"
+        formDivCSS="grid grid-cols-1 md:grid-cols-3 w-11/12 sm:w-11/12 md:w-4/5 justify-center items-center gap-5"
         formTitle={"Distribution Hub Owner"}
         requestID={"12345"}
         key={"distributionHubForm"}

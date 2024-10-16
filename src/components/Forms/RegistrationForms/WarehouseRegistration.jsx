@@ -122,7 +122,7 @@ const WarehouseRegistration = () => {
     { name: "siteLayout", label: "Site Layout", type: "file" },
   ];
   const warehouseRegistrationFormCSS =
-    "h-full w-full px-8 md:px-28 grid grid-flow-row md:grid-cols-2 lg:grid-cols-4 md:justify-around py-4 gap-5 md:gap-6 lg:gap-10 items-end text-justify";
+    "h-full sm:w-11/12 md:w-4/5 m-auto grid grid-flow-row md:grid-cols-2 lg:grid-cols-4 md:justify-around py-4 gap-5 md:gap-6 lg:gap-10 items-end text-justify";
 
   return (
     <div>

@@ -55,7 +55,7 @@ const FreightRegistration = () => {
         config={formInputs}
         formCSS="md:w-fit flex justify-center items-center flex-col gap-6 lg:mx-16 my-2 mx-4"
         isBankDetails={true}
-        formDivCSS="w-full flex flex-col gap-4 flex md:flex-row flex-wrap md:w-2/3"
+        formDivCSS="w-full flex flex-col gap-4 flex md:flex-row flex-wrap sm:w-11/12 md:w-4/5"
         formTitle={"Freight Registration"}
         requestID={"1234"}
         ifLabel={false}

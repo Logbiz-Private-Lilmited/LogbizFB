@@ -1,6 +1,6 @@
 import React from "react";
 import useForm from "./useform";
-import BackButton from '../Backbutton/BackButton';
+import BackButton from "../BackButtonModule/BackButton";
 
 const DynamicForm = ({
   config,
@@ -13,6 +13,7 @@ const DynamicForm = ({
   ifLabel,
   formRadioCSS,
   formGroupCSS,
+  isInsurance,
 }) => {
   const initialValues = config.reduce((acc, field) => {
     if (field.type === "checkbox") {
@@ -32,14 +33,30 @@ const DynamicForm = ({
   const { values, handleChange, setValues } = useForm(initialValues);
 
   const inputCSS =
-    "border rounded-sm p-2 md:w-fit w-full placeholder:text-sm mt-2 placeholder:text-gray-800";
+    "border rounded-sm p-2 w-full placeholder:text-sm mt-2 placeholder:text-gray-800";
   const radioInputCSS = "w-fit";
 
   const bankDetails = [
-    { label: "Name", name: "name" },
+    { label: "Name", name: "bankName" },
     { label: "Account Number", name: "accountNumber" },
     { label: "Branch Name", name: "branchName" },
     { label: "IFSC Code", name: "ifscCode" },
+  ];
+  const insuranceDetails = [
+    {
+      name: "insuranceCompany",
+      placeholder: "Insurance Company",
+      type: "text",
+    },
+    { name: "policyNumber", placeholder: "Policy Number", type: "text" },
+    { name: "insuranceCover", placeholder: "Insurance Cover", type: "text" },
+    {
+      name: "insurancePremium",
+      placeholder: "Insurance Premium",
+      type: "text",
+    },
+    { name: "startDate", placeholder: "Start Date", type: "date" },
+    { name: "endDate", placeholder: "End Date", type: "date" },
   ];
 
   const renderInput = (field) => {
@@ -100,7 +117,7 @@ const DynamicForm = ({
               {field.options.map((option) => (
                 <div
                   key={option.name}
-                  className="checkbox-group flex items-center"
+                  className="checkbox-group flex items-baseline"
                 >
                   <input
                     type="checkbox"
@@ -127,7 +144,7 @@ const DynamicForm = ({
               id={field.name}
               value={values[field.name]}
               onChange={handleChange}
-              className={inputCSS}
+              className={`${inputCSS}`}
             >
               {field.options.map((option) => (
                 <option key={option} value={option}>
@@ -143,7 +160,10 @@ const DynamicForm = ({
             <label className="flex flex-col">{field.label}</label>
             <div className={!formRadioCSS ? `flex flex-col` : formRadioCSS}>
               {field.options.map((option) => (
-                <label key={option} className="flex items-center mt-2 gap-1">
+                <label
+                  key={option}
+                  className="flex items-center mt-2 gap-1 hover:cursor-pointer"
+                >
                   <input
                     type="radio"
                     name={field.name}
@@ -192,36 +212,14 @@ const DynamicForm = ({
 
   return (
     <>
-      <div className="flex justify-between md:items-center md:text-center h-full w-screen md:px-12 md:py-4 px-4 py-2">
-        {/* <a
-          href="/registerCarousel"
-          className="border rounded-lg px-2 bg-gray-300 w-fit"
-        >
-          <svg
-            fill="#000000"
-            version="1.1"
-            id="Layer_1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlnsXlink="http://www.w3.org/1999/xlink"
-            viewBox="0 0 330 330"
-            xmlSpace="preserve"
-            stroke="#000000"
-            transform="rotate(90)"
-            className="md:h-[24px] md:w-[24px] h-[18px] w-[18px]"
-          >
-            <path
-              id="XMLID_30_"
-              d="M154.394,325.606C157.322,328.535,161.161,330,165,330s7.678-1.465,10.607-4.394l75-75 c5.858-5.857,5.858-15.355,0-21.213c-5.858-5.857-15.356-5.857-21.213,0L180,278.787V15c0-8.284-6.716-15-15-15 c-8.284,0-15,6.716-15,15v263.787l-49.394-49.394c-5.858-5.857-15.355-5.857-21.213,0c-5.858,5.857-5.858,15.355,0,21.213 L154.394,325.606z"
-            />
-          </svg>
-        </a> */}
+      <div className="flex flex-col justify-between md:flex-row md:items-center md:text-center h-full mb-10">
         <BackButton />
         <div className="flex justify-center items-center text-center w-fit">
-          <h1 className="md:text-2xl font-bold flex justify-between">
-            {formTitle}
-          </h1>
+          <div className="md:text-2xl font-bold flex justify-between">
+            <h2> {formTitle} </h2>
+          </div>
         </div>
-        <div className="w-fit">Request ID:{requestID}</div>
+        <div className="w-fit pr-2">Request ID:{requestID}</div>
       </div>
       <form className={formCSS} onSubmit={handleSubmit}>
         {formDivCSS ? (
@@ -232,9 +230,9 @@ const DynamicForm = ({
           config.map((field) => renderInput(field))
         )}
         {isBankDetails && (
-          <div className="border-2 gap-4 flex flex-col p-4 rounded w-full md:w-fit">
-            <h1 className="md:text-lg">Bank Details</h1>
-            <div className="flex md:flex-row flex-col gap-4">
+          <div className="md:gap-4 gap-1 flex flex-col rounded md:w-4/5 w-11/12 border p-4">
+            <h1 className="md:text-lg text-base">Bank Details</h1>
+            <div className="flex md:flex-row flex-col gap-4 flex-wrap md:flex-nowrap ">
               {bankDetails.map((item) => (
                 <input
                   className={inputCSS}
@@ -247,11 +245,28 @@ const DynamicForm = ({
             </div>
           </div>
         )}
+        {isInsurance && (
+          <div className="md:gap-4 gap-1 flex flex-col rounded w-4/5">
+            <h1 className="md:text-lg text-base">Insurance Details</h1>
+            <div className="flex sm:flex-row flex-col gap-4 flex-wrap">
+              {insuranceDetails.map((item) => (
+                <input
+                  className={inputCSS}
+                  placeholder={item.placeholder}
+                  name={item.name}
+                  key={item.name}
+                  type={item.type}
+                  onChange={handleChange}
+                />
+              ))}
+            </div>
+          </div>
+        )}
 
-        <div className="md:col-span-2 lg:col-span-4 flex justify-end w-full">
+        <div className="md:col-span-2 lg:col-span-4 flex justify-end md:w-4/5">
           <button
             type="submit"
-            className="border rounded-md px-8 py-1 text-sm bg-gray-200"
+            className="border rounded-md px-6 py-2 text-md bg-btn-grey hover:bg-customOrange hover:text-white"
           >
             Submit
           </button>

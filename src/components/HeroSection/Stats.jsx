@@ -7,7 +7,7 @@ const Stats = () => {
     { title: "Connections", count: "200" },
   ];
   return (
-    <div className="bg-black w-full md:w-2/5 lg:w-1/4 2xl:h-[440px] h-[400px] rounded-[30px] text-start flex justify-evenly flex-col px-10">
+    <div className="bg-black w-full md:w-2/5 lg:w-1/4 2xl:h-[440px] h-[400px] rounded-xl text-start flex justify-evenly flex-col px-10">
       {stats.map((item) => {
         return (
           <div className="text-white" key={item.title}>
